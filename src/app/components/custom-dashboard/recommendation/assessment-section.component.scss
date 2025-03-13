@@ -1,0 +1,55 @@
+.assessment-container {
+  border-radius: 6px;
+  border-bottom: 1px solid #d4d4d4;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  padding: 12px;
+  // width: calc(50% - 8px);
+  width: auto;
+  background-color: #fff;
+}
+
+// @media (max-width: 991px) {
+//   .assessment-container {
+//     width: 100%;
+//   }
+// }
+
+// @media (max-width: 640px) {
+//   .assessment-container {
+//     padding: 8px;
+//   }
+// }
+
+.assessment-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.assessment-title {
+  color: #171717;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 20px;
+  margin: 0;
+}
+
+.menu-icon {
+  padding: 2px;
+  cursor: pointer;
+}
+
+.assessment-content {
+  color: #171717;
+  font-size: 12px;
+  line-height: 20px;
+}
+
+.metric {
+  margin-bottom: 16px;
+}
+
+.metric-title {
+  font-weight: 700;
+}

@@ -1,0 +1,265 @@
+<nav class="sidebar" [ngClass]="{ 'collapsed': isCollapsed }" role="navigation" aria-label="Main navigation">
+  <div class="logo-container" [ngClass]="{ 'collapsed': isCollapsed }">
+    <div class="logo-wrapper">
+      <img
+        src="https://cdn.builder.io/api/v1/image/assets/TEMP/5d12401b900484ea8b84008b6abcca75f25520ef91a2166d2e181092edef0152?placeholderIfAbsent=true&apiKey=43632c7bd1d84079a851d9b51a08f2e5"
+        alt="ChatSee Bot Logo" class="logo-icon" />
+    </div>
+    <span class="brand-name" *ngIf="!isCollapsed">ChatSee</span>
+  </div>
+
+  <div class="nav-section">
+    <div class="nav-group">
+      
+      <a href="/cross-agent" class="nav-item" routerLink="/cross-agent" [class.active]="currentRoute === '/cross-agent'"
+        [attr.aria-current]="currentRoute === '/cross-agent' ? 'page' : null">
+        <img
+          src="https://cdn.builder.io/api/v1/image/assets/TEMP/ceef28252cebf003ca48ebd5884ec59036b3448906db0e5ff1a02b8b723cb98c?placeholderIfAbsent=true&apiKey=43632c7bd1d84079a851d9b51a08f2e5"
+          alt="" class="nav-icon" />
+        <span class="nav-text">Cross Agent Performance</span>
+      </a>
+
+      <header class="category-header" *ngIf="!isCollapsed">AGENT PERFORMANCE</header>
+      <!-- Dropdown Container -->
+      <div class="dropdown" (click)="toggleDropdown()" #dropdown>
+        <!-- Dropdown Header -->
+        <div class="dropdown-header">
+          <span class="dropdown-text">{{ selectedAgent?.name || 'Select an agent' }}</span>
+          <div class="dropdown-icon">
+            <!-- Chevron Icon -->
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"
+              class="chevron-icon">
+              <g opacity="0.5">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M4.19526 9.52827C4.45561 9.26792 4.87772 9.26792 5.13807 9.52827L8 12.3902L10.8619 9.52827C11.1223 9.26792 11.5444 9.26792 11.8047 9.52827C12.0651 9.78862 12.0651 10.2107 11.8047 10.4711L8.4714 13.8044C8.21106 14.0648 7.78894 14.0648 7.5286 13.8044L4.19526 10.4711C3.93491 10.2107 3.93491 9.78862 4.19526 9.52827Z"
+                  fill="#171717"></path>
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M7.5286 2.19526C7.78894 1.93491 8.21106 1.93491 8.4714 2.19526L11.8047 5.5286C12.0651 5.78894 12.0651 6.21105 11.8047 6.4714C11.5444 6.73175 11.1223 6.73175 10.8619 6.4714L8 3.60948L5.13807 6.4714C4.87772 6.73175 4.45561 6.73175 4.19526 6.4714C3.93491 6.21105 3.93491 5.78894 4.19526 5.5286L7.5286 2.19526Z"
+                  fill="#171717"></path>
+              </g>
+            </svg>
+          </div>
+        </div>
+        <!-- Dropdown Menu -->
+        <div class="dropdown-menu" *ngIf="isOpen">
+          <div *ngFor="let agent of agents" class="dropdown-item" [class.selected]="agent === selectedAgent"
+            (click)="selectAgent(agent)">
+            {{ agent.name }}
+          </div>
+        </div>
+      </div>
+
+
+      <a href="/home" routerLink="/home" [class.active]="currentRoute === '/home'" class="nav-item"
+        [attr.aria-current]="currentRoute === '/home' ? 'page' : null">
+        <img
+          src="https://cdn.builder.io/api/v1/image/assets/TEMP/ceef28252cebf003ca48ebd5884ec59036b3448906db0e5ff1a02b8b723cb98c?placeholderIfAbsent=true&apiKey=43632c7bd1d84079a851d9b51a08f2e5"
+          alt="" class="nav-icon" />
+        <span class="nav-text">Home</span>
+      </a>
+
+      <a href="/query" class="nav-item" routerLink="/query" [class.active]="currentRoute === '/query'"
+        [attr.aria-current]="currentRoute === '/query' ? 'page' : null">
+        <img
+          src="https://cdn.builder.io/api/v1/image/assets/TEMP/a346a30d847b584aaa1fa38465c342c2902039743173b22c75d70c1b60188c98?placeholderIfAbsent=true&apiKey=43632c7bd1d84079a851d9b51a08f2e5"
+          alt="" class="nav-icon" />
+        <span class="nav-text">Custom Business Query</span>
+      </a>
+
+      <a href="/customdash" routerLink="/customdash" [class.active]="currentRoute === '/customdash'" class="nav-item"
+        [attr.aria-current]="currentRoute === '/customdash' ? 'page' : null">
+        <img
+          src="https://cdn.builder.io/api/v1/image/assets/TEMP/b353c44b9a71005dd3da261aef75a0ebe1acef21d81d1243ddb90f759a9169c5?placeholderIfAbsent=true&apiKey=43632c7bd1d84079a851d9b51a08f2e5"
+          alt="" class="nav-icon" />
+        <span class="nav-text">Custom Dashboards</span>
+      </a>
+
+      <header class="category-header" *ngIf="!isCollapsed">USER ENGAGEMENT</header>
+
+      <a href="/topic" routerLink="/topic" [class.active]="currentRoute === '/topic'" style="text-decoration: none;"
+        class="nav-item" [attr.aria-current]="currentRoute === '/topic' ? 'page' : null">
+        <img
+          src="https://cdn.builder.io/api/v1/image/assets/TEMP/a225395e8ef7e13e22ce1ec1b120bc709d2e02d475fbb1caa3415c5ad303c5c6?placeholderIfAbsent=true&apiKey=43632c7bd1d84079a851d9b51a08f2e5"
+          alt="" class="nav-icon" />
+        <span class="nav-text">Topics</span>
+      </a>
+
+      <a href="/userintent" routerLink="/userintent" style="text-decoration: none;"
+        [class.active]="currentRoute === '/userintent'" class="nav-item"
+        [attr.aria-current]="currentRoute === '/userintent' ? 'page' : null">
+        <img
+          src="https://cdn.builder.io/api/v1/image/assets/TEMP/403c24192757a4a54f70d8accd0b5185e28e087cd18f1f2a7b92e2e31b37ba11?placeholderIfAbsent=true&apiKey=43632c7bd1d84079a851d9b51a08f2e5"
+          alt="" class="nav-icon" />
+        <span class="nav-text">User Intent</span>
+      </a>
+
+      <a href="/actions" routerLink="/actions" class="nav-item" [class.active]="currentRoute === '/actions'"
+        [attr.aria-current]="currentRoute === '/actions' ? 'page' : null">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+          class="lucide lucide-send">
+          <path
+            d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z" />
+          <path d="m21.854 2.147-10.94 10.939" />
+        </svg>
+        <span class="nav-text">User Actions</span>
+      </a>
+
+      <a href="/sentiment" routerLink="/sentiment" class="nav-item" [class.active]="currentRoute === '/sentiment'"
+        [attr.aria-current]="currentRoute === '/sentiment' ? 'page' : null">
+        <img
+          src="https://cdn.builder.io/api/v1/image/assets/TEMP/d427d0c176789ae6e209cddfc0fba1d691f10b9d06759541d75ef013e3fc6b28?placeholderIfAbsent=true&apiKey=43632c7bd1d84079a851d9b51a08f2e5"
+          alt="" class="nav-icon" />
+        <span class="nav-text">User Sentiment</span>
+      </a>
+
+      <a href="/risk" routerLink="/risk" style="text-decoration: none;" [class.active]="currentRoute === '/risk'"
+        class="nav-item" [attr.aria-current]="currentRoute === '/risk' ? 'page' : null">
+        <img
+          src="https://cdn.builder.io/api/v1/image/assets/TEMP/24e7ce02f852c05d3690d2a3f77cd4d38f3704581bf61bcb9721df7af7e389b7?placeholderIfAbsent=true&apiKey=43632c7bd1d84079a851d9b51a08f2e5"
+          alt="" class="nav-icon" />
+        <span class="nav-text">Risky Behaviour</span>
+      </a>
+
+      <a href="/emotion" routerLink="/emotion" class="nav-item" [class.active]="currentRoute === '/emotion'"
+        [attr.aria-current]="currentRoute === '/emotion' ? 'page' : null">
+        <img
+          src="https://cdn.builder.io/api/v1/image/assets/TEMP/d3cecae2295b454c5b8b39447b8f1d00b1487e7c7eb803b15f2dcf4b16fc3e79?placeholderIfAbsent=true&apiKey=43632c7bd1d84079a851d9b51a08f2e5"
+          alt="" class="nav-icon" />
+        <span class="nav-text">Emotional Patterns</span>
+      </a>
+
+      <a href="/userGeography" routerLink="/userGeography" class="nav-item"
+        [class.active]="currentRoute === '/userGeography'"
+        [attr.aria-current]="currentRoute === '/userGeography' ? 'page' : null">
+        <img
+          src="https://cdn.builder.io/api/v1/image/assets/TEMP/1ad6b610eae112d4ce3f9ce3c6d35030df9e9472178c6b24b255779976f7be33?placeholderIfAbsent=true&apiKey=43632c7bd1d84079a851d9b51a08f2e5"
+          alt="" class="nav-icon" />
+        <span class="nav-text">User Geography</span>
+      </a>
+
+      <a href="/flow" routerLink="/flow" class="nav-item" [class.active]="currentRoute === '/flow'"
+        [attr.aria-current]="currentRoute === '/flow' ? 'page' : null">
+        <img
+          src="https://cdn.builder.io/api/v1/image/assets/TEMP/43dc7782a0bf374b5c6eff259e7c9e9963cfe6a2a753b4c5798b3ceef1cb4510?placeholderIfAbsent=true&apiKey=43632c7bd1d84079a851d9b51a08f2e5"
+          alt="" class="nav-icon" />
+        <span class="nav-text">User Flow & Drop-off</span>
+      </a>
+
+      <a href="/retention" routerLink="/retention" class="nav-item" [class.active]="currentRoute === '/retention'"
+        [attr.aria-current]="currentRoute === '/retention' ? 'page' : null">
+        <img
+          src="https://cdn.builder.io/api/v1/image/assets/TEMP/ace2c6e454a675256f773ed87638f22e175563a9184518052c67460c8c8e5f3e?placeholderIfAbsent=true&apiKey=43632c7bd1d84079a851d9b51a08f2e5"
+          alt="" class="nav-icon" />
+        <span class="nav-text">User Retention</span>
+      </a>
+
+      <a href="/users" routerLink="/users" class="nav-item" [class.active]="currentRoute === '/users'"
+        [attr.aria-current]="currentRoute === '/users' ? 'page' : null">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"
+          class="lucide lucide-users">
+          <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+          <circle cx="9" cy="7" r="4" />
+          <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+          <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+        </svg> <span class="nav-text">Users</span>
+      </a>
+
+      <a href="/usertypes" routerLink="/usertypes" class="nav-item" [class.active]="currentRoute === '/usertypes'"
+        [attr.aria-current]="currentRoute === '/usertypes' ? 'page' : null">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"
+          class="lucide lucide-user-round-cog">
+          <path d="M2 21a8 8 0 0 1 10.434-7.62" />
+          <circle cx="10" cy="8" r="5" />
+          <circle cx="18" cy="18" r="3" />
+          <path d="m19.5 14.3-.4.9" />
+          <path d="m16.9 20.8-.4.9" />
+          <path d="m21.7 19.5-.9-.4" />
+          <path d="m15.2 16.9-.9-.4" />
+          <path d="m21.7 16.5-.9.4" />
+          <path d="m15.2 19.1-.9.4" />
+          <path d="m19.5 21.7-.4-.9" />
+          <path d="m16.9 15.2-.4-.9" />
+        </svg> <span class="nav-text">User Types</span>
+      </a>
+
+      <a href="/conversation" routerLink="/conversation" class="nav-item"
+        [class.active]="currentRoute === '/conversation'"
+        [attr.aria-current]="currentRoute === '/conversation' ? 'page' : null">
+        <img
+          src="https://cdn.builder.io/api/v1/image/assets/TEMP/bafa93f7010080acd5166e58db7be865fe383c2eaa567b94922063e4eb0f26e5?placeholderIfAbsent=true&apiKey=43632c7bd1d84079a851d9b51a08f2e5"
+          alt="" class="nav-icon" />
+        <span class="nav-text">Conversations Map</span>
+      </a>
+
+      <a href="/usertesting" routerLink="/usertesting" class="nav-item" [class.active]="currentRoute === '/usertesting'"
+        [attr.aria-current]="currentRoute === '/usertesting' ? 'page' : null">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"
+          class="lucide lucide-split">
+          <path d="M16 3h5v5" />
+          <path d="M8 3H3v5" />
+          <path d="M12 22v-8.3a4 4 0 0 0-1.172-2.872L3 3" />
+          <path d="m15 9 6-6" />
+        </svg>
+        <span class="nav-text">User A/B Testing</span>
+      </a>
+
+      <a href="/rag" routerLink="/rag" class="nav-item" [class.active]="currentRoute === '/rag'"
+        [attr.aria-current]="currentRoute === '/rag' ? 'page' : null">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"
+          class="lucide lucide-database">
+          <ellipse cx="12" cy="5" rx="9" ry="3" />
+          <path d="M3 5V19A9 3 0 0 0 21 19V5" />
+          <path d="M3 12A9 3 0 0 0 21 12" />
+        </svg> <span class="nav-text">RAG Sources</span>
+      </a>
+
+      <a href="/errorRate" routerLink="/errorRate" class="nav-item" [class.active]="currentRoute === '/errorRate'"
+        [attr.aria-current]="currentRoute === '/errorRate' ? 'page' : null">
+        <img
+          src="https://cdn.builder.io/api/v1/image/assets/TEMP/bafa93f7010080acd5166e58db7be865fe383c2eaa567b94922063e4eb0f26e5?placeholderIfAbsent=true&apiKey=43632c7bd1d84079a851d9b51a08f2e5"
+          alt="" class="nav-icon" />
+        <span class="nav-text">Error Interactions</span>
+      </a>
+
+      <a href="/help" routerLink="/help" class="nav-item" [class.active]="currentRoute === '/help'"
+        [attr.aria-current]="currentRoute === '/dashboards' ? 'page' : null">
+        <img
+          src="https://cdn.builder.io/api/v1/image/assets/TEMP/5c04835977fd49194726dee074ec3c44082d642fc13aeaa00b2e3759d60bce28?placeholderIfAbsent=true&apiKey=43632c7bd1d84079a851d9b51a08f2e5"
+          alt="" class="nav-icon" />
+        <span class="nav-text">Help</span>
+      </a>
+
+      <button (click)="logout()" class="nav-item logout">
+        <img
+          src="https://cdn.builder.io/api/v1/image/assets/TEMP/11b8b76beeb547a1db48e96a9b6a32b67dc61a7dbfca5ebd85c9978f006d0fba?placeholderIfAbsent=true&apiKey=43632c7bd1d84079a851d9b51a08f2e5"
+          alt="" class="nav-icon" />
+        <span class="nav-text">Log Out</span>
+      </button>
+    </div>
+  </div>
+
+  <div class="collapse-sidebar left-btn">
+    <button class="toggle-btn" *ngIf="!isCollapsed" (click)="toggleSidebar(true)">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+        class="lucide lucide-chevrons-left">
+        <path d="m11 17-5-5 5-5" />
+        <path d="m18 17-5-5 5-5" />
+      </svg>
+    </button>
+
+    <button class="toggle-btn right-btn" *ngIf="isCollapsed" (click)="toggleSidebar(false)">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+        class="lucide lucide-chevrons-right">
+        <path d="m6 17 5-5-5-5" />
+        <path d="m13 17 5-5-5-5" />
+      </svg>
+    </button>
+  </div>
+</nav>

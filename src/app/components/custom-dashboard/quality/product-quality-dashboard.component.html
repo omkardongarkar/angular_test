@@ -1,0 +1,76 @@
+<div class="dashboard-container">
+  <div class="charts-row">
+    <section class="chart-card bar-chart-card">
+      <header class="card-header">
+        <h2 class="card-title">Daily Count of Users Reporting Issues with Product Quality</h2>
+        <div class="info-icon-container">
+          <img
+            src="https://cdn.builder.io/api/v1/image/assets/TEMP/7871c070ca430b0c883cfe870e3c445a8feb0af5e985495ec8558fb068955065?placeholderIfAbsent=true&apiKey=43632c7bd1d84079a851d9b51a08f2e5"
+            class="info-icon"
+            alt="Information"
+          />
+        </div>
+      </header>
+      <div class="chart-container">
+        <canvas #barChart></canvas>
+      </div>
+    </section>
+
+    <section class="chart-card pie-chart-card">
+      <header class="card-header">
+        <h2 class="card-title">Most Common Issues with Product Quality</h2>
+        <div class="info-icon-container">
+          <img
+            src="https://cdn.builder.io/api/v1/image/assets/TEMP/7871c070ca430b0c883cfe870e3c445a8feb0af5e985495ec8558fb068955065?placeholderIfAbsent=true&apiKey=43632c7bd1d84079a851d9b51a08f2e5"
+            class="info-icon"
+            alt="Information"
+          />
+        </div>
+      </header>
+      <div class="chart-container">
+        <canvas #pieChart></canvas>
+      </div>
+    </section>
+  </div>
+
+  <div class="assessment-row">
+    <section class="assessment-card">
+      <header class="card-header">
+        <h2 class="card-title">Weekly Assessment of ChatAgent's Performance (Browsing Time)</h2>
+        <div class="info-icon-container">
+          <img
+            src="https://cdn.builder.io/api/v1/image/assets/TEMP/7871c070ca430b0c883cfe870e3c445a8feb0af5e985495ec8558fb068955065?placeholderIfAbsent=true&apiKey=43632c7bd1d84079a851d9b51a08f2e5"
+            class="info-icon"
+            alt="Information"
+          />
+        </div>
+      </header>
+      <article class="assessment-content">
+        <ol>
+          <li *ngFor="let item of assessmentItems">
+            <span class="highlight">{{ item.title }}</span>: {{ item.description }}
+          </li>
+        </ol>
+      </article>
+    </section>
+
+    <section class="assessment-card">
+      <header class="card-header">
+        <h2 class="card-title">Weekly Review of Additional Support That Could Have Been Offered</h2>
+        <div class="info-icon-container">
+          <img
+            src="https://cdn.builder.io/api/v1/image/assets/TEMP/7871c070ca430b0c883cfe870e3c445a8feb0af5e985495ec8558fb068955065?placeholderIfAbsent=true&apiKey=43632c7bd1d84079a851d9b51a08f2e5"
+            class="info-icon"
+            alt="Information"
+          />
+        </div>
+      </header>
+      <article class="assessment-content">
+        <ng-container *ngFor="let suggestion of supportSuggestions; let last = last">
+          {{ suggestion.text }}
+          <br *ngIf="!last" />
+        </ng-container>
+      </article>
+    </section>
+  </div>
+</div>

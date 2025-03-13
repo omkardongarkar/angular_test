@@ -1,0 +1,385 @@
+:host {
+  display: contents;
+}
+
+.dashboard {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: 16px;
+  font-family: "Inter", sans-serif;
+}
+.front-row {
+  display: flex; /* Use flexbox for rows */
+  justify-content: space-between; /* Space cards evenly */
+  margin-bottom: 20px; /* Add space between rows */
+}
+
+.front-row .card {
+  flex: 1; /* Allow cards to grow and shrink */
+  margin-right: 10px;
+}
+
+.front-row .card:last-child {
+  margin-right: 0;
+}
+.card-pie{
+  margin-right: 0px;
+}
+.card-bar{
+  width: 460px;
+}
+.card {
+  border-radius: 6px;
+  border-bottom: 1px solid #d4d4d4;
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
+  padding: 12px;
+  flex: 1 1 ;
+  min-width: 300px;
+  background-color: #fff;
+}
+
+@media (max-width: 991px) {
+  .card {
+    flex: 1 1 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  .card {
+    padding: 8px;
+  }
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.title {
+  color: #171717;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 20px;
+  margin: 0;
+}
+
+.menu-icon {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.ti {
+  color: #171717;
+  font-size: 16px;
+}
+
+.chart-container {
+  position: relative;
+  height: 284px;
+  padding: 24px 8px 8px 8px;
+}
+
+@media (max-width: 640px) {
+  .chart-container {
+    padding: 16px 4px 4px 4px;
+  }
+}
+
+.y-axis {
+  position: absolute;
+  left: 0;
+  top: 24px;
+  height: 207px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0 4px;
+}
+
+.y-label {
+  color: rgba(0, 0, 0, 0.7);
+  font-size: 12px;
+}
+
+.chart {
+  position: relative;
+  margin-left: 23px;
+  height: 207px;
+  border-bottom: 1px solid rgba(0, 0, 26, 0.3);
+}
+
+.grid-lines {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.horizontal-line {
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  background-color: rgba(0, 0, 26, 0.15);
+}
+
+.vertical-lines {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.vertical-line {
+  width: 1px;
+  height: 100%;
+  background-color: rgba(0, 0, 26, 0.15);
+}
+
+.bars {
+  position: relative;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  padding-bottom: 8px;
+}
+
+.bar-group {
+  width: 79px;
+  display: flex;
+  justify-content: center;
+}
+
+.bar {
+  position: relative;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgba(0, 0, 0, 0.7);
+  font-size: 10px;
+  height: 141px;
+  width: 100%;
+  background: linear-gradient(180deg, #a5b4fc 0%, rgba(255, 255, 255, 0) 100%);
+  border: 1px solid #4f46e5;
+  border-bottom: none;
+}
+
+.bar-2 {
+  position: relative;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgba(0, 0, 0, 0.7);
+  font-size: 10px;
+  height: 134px;
+  width: 100%;
+  background: linear-gradient(180deg, #a5b4fc 0%, rgba(255, 255, 255, 0) 100%);
+  border: 1px solid #4f46e5;
+  border-bottom: none;
+}
+
+.bar-3 {
+  position: relative;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgba(0, 0, 0, 0.7);
+  font-size: 10px;
+  height: 147px;
+  width: 100%;
+  background: linear-gradient(180deg, #a5b4fc 0%, rgba(255, 255, 255, 0) 100%);
+  border: 1px solid #4f46e5;
+  border-bottom: none;
+}
+
+.bar-4 {
+  position: relative;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgba(0, 0, 0, 0.7);
+  font-size: 10px;
+  height: 136px;
+  width: 100%;
+  background: linear-gradient(180deg, #a5b4fc 0%, rgba(255, 255, 255, 0) 100%);
+  border: 1px solid #4f46e5;
+  border-bottom: none;
+}
+
+.x-axis {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 8px;
+  padding: 0 23px;
+}
+
+.x-label {
+  color: rgba(0, 0, 0, 0.7);
+  font-size: 12px;
+  text-align: center;
+}
+
+@media (max-width: 640px) {
+  .x-label {
+    font-size: 10px;
+  }
+}
+
+.legend {
+  display: flex;
+  justify-content: center;
+  margin-top: 8px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.legend-color {
+  width: 8px;
+  height: 8px;
+  background: linear-gradient(180deg, #a5b4fc 0%, rgba(255, 255, 255, 0) 100%);
+  border: 1px solid #4f46e5;
+}
+
+.legend-text {
+  color: rgba(0, 0, 0, 0.7);
+  font-size: 12px;
+}
+
+.pie-chart-container {
+  height: 284px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.pie-chart-labels {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.pie-label {
+  position: absolute;
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  flex-direction: column;
+}
+
+.label-text {
+  margin-bottom: 2px;
+}
+
+.label-value {
+  font-weight: bold;
+
+  &.orange {
+    color: #ea580c;
+  }
+
+  &.purple {
+    color: #9333ea;
+  }
+
+  &.green {
+    color: #16a34a;
+  }
+
+  &.red {
+    color: #dc2626;
+  }
+
+  &.blue {
+    color: #4f46e5;
+  }
+}
+
+.top-left {
+  top: 20px;
+  left: 10px;
+}
+
+.middle-left {
+  top: 70px;
+  left: 10px;
+}
+
+.top-right {
+  top: 20px;
+  right: 10px;
+}
+
+.middle-right {
+  top: 110px;
+  right: 10px;
+}
+
+.bottom {
+  bottom: 20px;
+  left: 10px;
+}
+
+.assessment-card,
+.review-card {
+  border-radius: 6px;
+  border-bottom: 1px solid #d4d4d4;
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
+  padding: 12px;
+  flex: 1 1 calc(50% - 8px);
+  min-width: 300px;
+  background-color: #fff;
+}
+
+@media (max-width: 991px) {
+  .assessment-card,
+  .review-card {
+    flex: 1 1 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  .assessment-card,
+  .review-card {
+    padding: 8px;
+  }
+}
+
+.assessment-content,
+.review-content {
+  color: #171717;
+  font-size: 12px;
+  line-height: 20px;
+}
+
+.assessment-item,
+.review-item {
+  margin-bottom: 8px;
+}
+
+.label {
+  font-weight: 700;
+}
+
+.example {
+  margin-top: 4px;
+  margin-left: 16px;
+  margin-bottom: 0;
+}

@@ -1,0 +1,85 @@
+<section class="chart-container">
+    <div class="chart-header">
+        <h2 class="chart-title">Agent Performance</h2>
+        <div class="agent-filter">
+            <div class="checkbox-container">
+                <input type="checkbox" id="onlyMyAgent" class="checkbox-input" [checked]="showOnlyMyAgent"
+                    (change)="toggleOnlyMyAgent()" aria-label="Show only my agent" />
+                <label for="onlyMyAgent" class="checkbox-label">Only my Agent</label>
+            </div>
+            <button class="filter-button" aria-label="Filter options">
+                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/49cbf7a06e7bf7591d08b489a5214211a9ef8d50b9c9c0768af7275788bf54fd?placeholderIfAbsent=true&apiKey=43632c7bd1d84079a851d9b51a08f2e5"
+                    alt="Filter" class="filter-icon" />
+            </button>
+        </div>
+    </div>
+
+    <div class="chart-body">
+        <canvas id="usersChart"></canvas>
+    </div>
+</section>
+
+<section class="performance-section">
+    <div class="performance-box">
+        <div class="heading-and-icon">
+            <h5>Top Factors</h5>
+            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/49cbf7a06e7bf7591d08b489a5214211a9ef8d50b9c9c0768af7275788bf54fd?placeholderIfAbsent=true&apiKey=43632c7bd1d84079a851d9b51a08f2e5"
+                alt="Information icon" class="info-icon" />
+        </div>
+        <ol>
+            <li>Too many escalation issues</li>
+            <li>Response time is too long</li>
+            <li>High error rate for certain topics</li>
+            <li>Low user satisfaction</li>
+        </ol>
+    </div>
+</section>
+
+<section class="performance-section">
+    <div class="performance-box">
+        <div class="heading-and-icon">
+            <h2>Agent Performance</h2>
+            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/49cbf7a06e7bf7591d08b489a5214211a9ef8d50b9c9c0768af7275788bf54fd?placeholderIfAbsent=true&apiKey=43632c7bd1d84079a851d9b51a08f2e5"
+                alt="Information icon" class="info-icon" />
+        </div>
+
+        <h5 style="margin-top: 16px;">Top 5 Things Agents Did Right</h5>
+        <ol>
+            <li><strong>Quick Response Time:</strong> Responded to 90% of user queries within 5 minutes.</li>
+            <li><strong>Accurate Information:</strong> Provided correct product details in 95% of interactions.</li>
+            <li><strong>Successful Issue Resolution:</strong> Resolved return and refund requests in 85% of cases.
+            </li>
+            <li><strong>Proactive Assistance:</strong> Suggested solutions before users explicitly asked, improving
+                satisfaction by 20%.</li>
+            <li><strong>Consistency in Policy Explanation:</strong> Clear and consistent communication of return and
+                warranty policies.</li>
+        </ol>
+
+        <h5>Top 5 things agent Did Wrong</h5>
+        <ol>
+            <li><strong>Refund Delays:</strong> Failed to expedite refund processes in 30% of cases, causing
+                dissatisfaction.</li>
+            <li><strong>Incomplete Resolutions:</strong> Escalated 15% of simple issues due to lack of clarity on
+                workflows.</li>
+            <li><strong>Miscommunication:</strong> Provided conflicting information on shipping times in 10% of
+                interactions.</li>
+            <li><strong>Unempathetic Responses:</strong> Displayed a lack of empathy in handling user complaints about
+                defective products.</li>
+            <li><strong>Ineffective Follow-ups:</strong> Failed to follow up on unresolved tickets in 25% of instances.
+            </li>
+        </ol>
+
+        <h5>Top 5 Recommandations Moving Forward</h5>
+        <ol>
+            <li><strong>Improve Refund Process Efficiency:</strong> Streamline workflows to reduce refund processing
+                delays.</li>
+            <li><strong>Enhanced Training:</strong> Provide training on consistent communication and conflict
+                resolution.</li>
+            <li><strong>Proactive Issue Management:</strong> Equip agents to anticipate common user concerns and address
+                them preemptively.</li>
+            <li><strong>Empathy Modules:</strong> Incorporate empathy training for handling sensitive user issues.</li>
+            <li><strong>Better Follow-Up Protocols:</strong> Implement reminders and automated follow-ups for unresolved
+                tickets.</li>
+        </ol>
+    </div>
+</section>

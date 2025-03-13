@@ -1,0 +1,13 @@
+<div class="metric-card" [class.highlight]="highlight">
+  <h3 class="title">{{title}}</h3>
+  <div class="value-container">
+    <span class="value">{{value}}</span>
+    <div class="trend" [class]="trendDirection">
+      <svg *ngIf="trendDirection !== 'neutral'" viewBox="0 0 24 24" width="12" height="12">
+        <path *ngIf="trendDirection === 'up'" d="M7 14l5-5 5 5H7z" />
+        <path *ngIf="trendDirection === 'down'" d="M7 10l5 5 5-5H7z" />
+      </svg>
+      <span>{{trend}}</span>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,102 @@
+<section class="chart-container">
+  <div class="chart-header">
+    <h2 class="chart-title">Agent Inventory</h2>
+    <img
+      src="https://cdn.builder.io/api/v1/image/assets/TEMP/49cbf7a06e7bf7591d08b489a5214211a9ef8d50b9c9c0768af7275788bf54fd?placeholderIfAbsent=true&apiKey=43632c7bd1d84079a851d9b51a08f2e5"
+      alt="Information icon" class="info-icon" />
+  </div>
+
+  <div class="chart-body">
+    <div class="inventory-table">
+      <div class="table-header">
+        <div class="header-cell">Agent name</div>
+        <div class="header-cell">Agent type</div>
+        <div class="header-cell">Department Owner</div>
+        <div class="header-cell status-cell">Status</div>
+        <div class="header-cell">Audience</div>
+        <div class="header-cell">Risk score</div>
+      </div>
+      <div class="table-body">
+        <div class="table-row" *ngFor="let agent of agentInventory">
+          <div class="table-cell">{{ agent.name }}</div>
+          <div class="table-cell">{{ agent.type }}</div>
+          <div class="table-cell owner-cell">
+            <img [src]="agent.ownerImage" [alt]="agent.ownerName" class="owner-image" />
+            <div class="owner-info">
+              <div class="owner-name">{{ agent.ownerName }}</div>
+              <div class="owner-email">{{ agent.ownerEmail }}</div>
+            </div>
+          </div>
+          <div class="table-cell status-cell">
+            <svg 
+            xmlns="http://www.w3.org/2000/svg" 
+            width="24" 
+            height="24" 
+            viewBox="0 0 24 24" 
+            fill="none" 
+            stroke="currentColor" 
+            stroke-width="2" 
+            stroke-linecap="round" 
+            stroke-linejoin="round" 
+            [ngClass]="{
+              'status-active': agent.status === 'active',
+              'status-inactive': agent.status === 'inactive',
+              'status-pending': agent.status === 'pending'
+            }"
+            class="lucide lucide-circle-dot"
+          >
+            <circle cx="12" cy="12" r="10"/>
+            <circle cx="12" cy="12" r="1"/>
+          </svg>          </div>
+          <div class="table-cell">{{ agent.audience }}</div>
+          <div class="table-cell">{{ agent.riskScore }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--  -->
+<section class="chart-container" style="margin-top: 16px;">
+  <div class="chart-header">
+    <h2 class="chart-title">Agent Performance</h2>
+    <img
+      src="https://cdn.builder.io/api/v1/image/assets/TEMP/49cbf7a06e7bf7591d08b489a5214211a9ef8d50b9c9c0768af7275788bf54fd?placeholderIfAbsent=true&apiKey=43632c7bd1d84079a851d9b51a08f2e5"
+      alt="Information icon" class="info-icon" />
+  </div>
+
+  <div class="full-body">
+    <div class="left-section">
+      <div class="chart-body">
+        <canvas #bubbleChart id="bubbleChart" aria-label="Agent Performance Chart" role="img"></canvas>
+      </div>
+    </div>
+
+    <div class="agent-selection-container">
+      <div class="agent-item" *ngFor="let agent of agents; let i = index">
+        <div class="checkbox-container">
+          <div class="checkbox" [ngStyle]="{
+                'background-color': agent.color,
+                'border-color': agent.borderColor,
+              }" (click)="toggleDataset(i)" role="checkbox" [attr.aria-checked]="agent.checked" tabindex="0">
+            <div class="check-icon" *ngIf="agent.checked"></div>
+          </div>
+        </div>
+        <div class="agent-details">
+          <div class="agent-info">
+            <div class="agent-badge">
+              <img [src]="agent.iconUrl" alt="" class="badge-icon" />
+              <div class="agent-type">{{ agent.name }}</div>
+            </div>
+            <div class="agent-count">
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets/TEMP/c295f53f123a9ecb2f521264a781b1b17cb7982dfa1a9830f18dd399583cf7b0?placeholderIfAbsent=true&apiKey=43632c7bd1d84079a851d9b51a08f2e5"
+                alt="Count icon" class="count-icon" />
+              <div class="count-value">{{ agent.count }}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

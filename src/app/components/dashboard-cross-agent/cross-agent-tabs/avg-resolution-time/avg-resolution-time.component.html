@@ -1,0 +1,77 @@
+<section class="chart-container">
+  <div class="chart-header">
+    <h2 class="chart-title">Avg. Resolution time</h2>
+    <img
+    src="https://cdn.builder.io/api/v1/image/assets/TEMP/49cbf7a06e7bf7591d08b489a5214211a9ef8d50b9c9c0768af7275788bf54fd?placeholderIfAbsent=true&apiKey=43632c7bd1d84079a851d9b51a08f2e5"
+    alt="Information icon" class="info-icon" />
+  </div>
+  
+  <div class="full-body">
+    <div class="left-section">
+      <div class="chart-body">
+        <canvas #resolutionChart aria-label="Avg. Resolution time Chart" role="img"></canvas>
+      </div>
+    </div>
+  
+    <div class="agent-selection-container">
+      <div class="agent-item" *ngFor="let agent of agents; let i = index">
+        <div class="checkbox-container">
+          <div class="checkbox" [ngStyle]="{
+              'background-color': agent.color,
+              'border-color': agent.borderColor,
+            }" (click)="toggleAgent(i)" role="checkbox" [attr.aria-checked]="agent.checked" tabindex="0">
+            <div class="check-icon" *ngIf="agent.checked"></div>
+          </div>
+        </div>
+        <div class="agent-details">
+          <div class="agent-info">
+            <div class="agent-badge">
+              <img [src]="agent.iconUrl" alt="" class="badge-icon" />
+              <div class="agent-type">{{ agent.name }}</div>
+            </div>
+            <div class="agent-count">
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets/TEMP/c295f53f123a9ecb2f521264a781b1b17cb7982dfa1a9830f18dd399583cf7b0?placeholderIfAbsent=true&apiKey=43632c7bd1d84079a851d9b51a08f2e5"
+                alt="Count icon" class="count-icon" />
+              <div class="count-value">{{ agent.count }}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="multiple-graph-section">
+  <section class="performance-section left-chart">
+    <div class="performance-box">
+      <div class="heading-and-icon">
+        <h5>Differential Analysis</h5>
+        <img
+          src="https://cdn.builder.io/api/v1/image/assets/TEMP/49cbf7a06e7bf7591d08b489a5214211a9ef8d50b9c9c0768af7275788bf54fd?placeholderIfAbsent=true&apiKey=43632c7bd1d84079a851d9b51a08f2e5"
+          alt="Information icon" class="info-icon" />
+      </div>
+      <ol>
+        <li>IT & Developer Support agents use structured troubleshooting and automation for fast resolutions.</li>
+        <li>Product & Billing Support agents rely on manual interventions and escalations, slowing response times.</li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="performance-section right-chart">
+    <div class="performance-box">
+      <div class="heading-and-icon">
+        <h5>Recommendations</h5>
+        <img
+          src="https://cdn.builder.io/api/v1/image/assets/TEMP/49cbf7a06e7bf7591d08b489a5214211a9ef8d50b9c9c0768af7275788bf54fd?placeholderIfAbsent=true&apiKey=43632c7bd1d84079a851d9b51a08f2e5"
+          alt="Information icon" class="info-icon" />
+      </div>
+      <ol>
+        <li>Implement structured workflows and automation for Product & Billing Support.</li>
+        <li>Reduce dependency on human escalation for repetitive queries.</li>
+        <li>Introduce AI-driven triaging for faster categorization and prioritization.</li>
+      </ol>
+    </div>
+  </section>
+</div>
+

@@ -1,0 +1,123 @@
+:host {
+  display: contents;
+}
+
+.header-container {
+  background-color: #fff;
+  border-bottom: 1px solid #d4d4d4;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-height: 56px;
+  position: sticky; /* Makes the navbar sticky */
+  top: 0; /* Sticks it to the top */
+  z-index: 10; /* Ensures it appears above other content */
+}
+
+.agent-selector {
+  border-right: 1px solid #d4d4d4;
+  width: 200px;
+  padding: 8px;
+}
+
+.selector-wrapper {
+  border-radius: 8px;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 12px;
+  gap: 11px;
+}
+
+.agent-title {
+  color: var(--foreground, #171717);
+  font: 500 12px/20px var(--font-family-sans, Inter);
+  letter-spacing: var(--font-tracking-normal, 0px);
+}
+
+.selector-icon {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+}
+
+.navigation-bar {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex: 1;
+  padding: 8px 16px;
+}
+
+.menu-icon-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.menu-icon {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+}
+
+.title-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+}
+
+.title-icon {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+}
+
+.page-title {
+  color: var(--foreground, #171717);
+  font: 600 14px/24px var(--font-family-sans, Inter);
+  letter-spacing: var(--font-tracking-normal, 0px);
+  margin: 0;
+}
+
+.action-buttons {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.action-btn {
+  border: none;
+  background: transparent;
+  border-radius: 4px;
+  padding: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+
+  &:focus-visible {
+    outline: 2px solid #4f46e5;
+    outline-offset: 2px;
+  }
+
+  img {
+    width: 16px;
+    height: 16px;
+    object-fit: contain;
+  }
+}
+
+@media (max-width: 991px) {
+  .navigation-bar {
+    flex-wrap: wrap;
+  }
+  
+  .title-wrapper {
+    min-width: 240px;
+    max-width: 100%;
+  }
+}

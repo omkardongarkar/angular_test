@@ -1,0 +1,94 @@
+.insights-container {
+    display: flex;
+    flex-direction: column; 
+    border-left: 1px solid #d4d4d4;
+    
+    .insights-header {
+        padding: 8px 24px;
+        border-bottom: 1px solid #d4d4d4;
+        color: #000;
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 20px;
+    }
+
+    .insights-content {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+
+        .insight-item {
+            display: flex;
+            padding: 16px;
+            align-items: center;
+            gap: 8px;
+            border-bottom: 1px solid #d4d4d4;
+            cursor: pointer;
+
+            .insight-text-wrapper {
+                flex: 1;
+
+                .insight-text,
+                .insight-text-with-details {
+                    font-size: 12px;
+                    color: #171717;
+                    line-height: 20px;
+                    margin: 0;
+                }
+                
+                .insight-text-with-details {
+                    display: flex;
+                    flex-wrap: wrap;
+                    align-items: center;
+                    gap: 4px;
+
+                    .badge {
+                        padding: 0 8px;
+                        border: 1px solid #d4d4d4;
+                        border-radius: 9999px;
+                        font-size: 12px;
+                        color: #171717;
+                        background-color: #f5f5f5;
+                    }
+
+                    .success {
+                        color: #16a34a;
+                    }
+                    
+                    .danger {
+                        color: #dc2626;
+                    }
+                }
+            }
+
+            .chevron-wrapper {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+        }
+    }
+}
+
+
+
+
+/* Responsive styles */
+@media (max-width: 991px) {
+    .insights-container {
+        width: 100%;
+    }
+}
+
+@media (max-width: 640px) {
+    .insight-item {
+        padding: 12px;
+        gap: 4px;
+    }
+
+    .insight-text,
+    .insight-text-with-details {
+        font-size: 11px;
+    }
+}

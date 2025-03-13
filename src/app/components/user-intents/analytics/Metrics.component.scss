@@ -1,0 +1,52 @@
+.metrics-grid {
+  display: flex; /* Flexible layout */
+  gap: 2px; /* Maintain gap consistency */
+  padding: 0 24px;
+  border-bottom: 1px solid var(--border-color, #d4d4d4);
+  font-family: var(--font-family-sans, Inter);
+  height: min-content;
+  @media (max-width: 991px) {
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    gap: 12px; /* Increase gap for better readability */
+    
+  }
+}
+
+.metric-card {
+  flex: 1; /* Ensure all cards have equal width */
+  padding: 8px 16px;
+  background: #fff; /* Ensure a consistent background color */
+  border-radius: 8px;
+  text-align: center; /* Center-align text for consistency */
+
+ 
+  &.highlighted {
+    border-radius: 8px;
+    background: var(--indigo-50, #eef2ff);
+    border-bottom: 2px solid var(--indigo-600, #4f46e5);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  }
+}
+
+.metric-title, .metric-label {
+  color: var(--muted-foreground, #737373);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 20px;
+  margin: 0 0 4px; /* Space between title and value */
+}
+
+.metric-value {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--card-foreground, #171717);
+  line-height: 28px;
+  margin: 0;
+}
+
+@media (max-width: 991px) {
+  .metric-card {
+    padding: 12px 20px; /* Increased padding for better readability */
+    flex-basis: calc(50% - 12px); /* Cards take half the width on smaller screens */
+  }
+}

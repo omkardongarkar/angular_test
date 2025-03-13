@@ -1,0 +1,60 @@
+<form class="login-container" (ngSubmit)="onLogin()" [formGroup]="loginForm">
+  <div class="login-wrapper">
+    <section class="brand-section">
+      <div class="logo-container">
+        <div class="logo-wrapper">
+          <img loading="lazy"
+            src="https://cdn.builder.io/api/v1/image/assets/TEMP/47882682e3aff958ff0e3f53f045efcc89e4dafbaf0485b532c6530438006d87?placeholderIfAbsent=true&apiKey=43632c7bd1d84079a851d9b51a08f2e5"
+            alt="ChatSee Logo" class="logo-image" />
+        </div>
+        <h1 class="brand-name">ChatSee</h1>
+      </div>
+      <p class="brand-description">
+        Empower your team with smarter insights—streamline support, boost satisfaction, and drive
+        success with our multi-agent performance hub.
+      </p>
+    </section>
+
+    <section class="login-section">
+      <div class="logo-mobile">
+        <img loading="lazy"
+          src="https://cdn.builder.io/api/v1/image/assets/TEMP/acf3b5c50cfa3604fa75ce2de78ca65d1661da2abc93a09eb4e601d686cbd729?placeholderIfAbsent=true&apiKey=43632c7bd1d84079a851d9b51a08f2e5"
+          alt="" class="logo-mobile-image" />
+      </div>
+
+      <div class="login-form-container">
+        <div class="login-header">
+          <h2 class="login-title">Welcome Back</h2>
+          <p class="login-subtitle">Please enter your details</p>
+        </div>
+
+        <div class="form-group">
+          <label for="email" class="form-label">Email</label>
+          <input id="email" type="email" class="form-input" formControlName="email" placeholder="m@example.com"
+            aria-label="Email input" />
+        </div>
+
+        <div class="form-group">
+          <label for="password" class="form-label">Password</label>
+          <input id="password" type="password" class="form-input" formControlName="password"
+            aria-label="Password input" />
+        </div>
+
+        <div class="form-options">
+          <div class="remember-me">
+            <input type="checkbox" id="remember" class="checkbox-input" formControlName="remember" />
+            <label for="remember" class="checkbox-label">Remember me</label>
+          </div>
+          <a href="#" class="forgot-password" tabindex="0">Forgot your password?</a>
+        </div>
+
+        <button type="submit" class="login-button" [disabled]="loginForm.invalid">Login</button>
+      </div>
+
+      <p class="signup-prompt">
+        Don't have an account?
+        <a href="#" class="signup-link" tabindex="0">Sign Up</a>
+      </p>
+    </section>
+  </div>
+</form>

@@ -1,0 +1,33 @@
+<header class="analytics-header" role="banner">
+  <nav class="filter-nav" role="navigation" aria-label="Analytics filters">
+    <div class="filter-buttons">
+      <button
+        *ngFor="let filter of filters"
+        class="filter-btn"
+        [attr.aria-label]="filter.label"
+        type="button"
+      >
+        <span>{{filter.label}}</span>
+        <img [src]="filter.icon" alt="" aria-hidden="true" />
+      </button>
+    </div>
+
+    <div class="filter-actions">
+      <button
+        *ngFor="let action of actions"
+        class="action-btn"
+        [attr.aria-label]="action.label"
+        type="button"
+      >
+        <img [src]="action.icon" alt="" aria-hidden="true" />
+        <span>{{action.label}}</span>
+      </button>
+      <img
+        src="https://cdn.builder.io/api/v1/image/assets/43632c7bd1d84079a851d9b51a08f2e5/02364f55dd1a371812804f6ba9caea69cc4399fa6da0c5bc8e2d5a812baf1f44?apiKey=43632c7bd1d84079a851d9b51a08f2e5&"
+        alt=""
+        class="action-icon"
+        aria-hidden="true"
+      />
+    </div>
+  </nav>
+</header>

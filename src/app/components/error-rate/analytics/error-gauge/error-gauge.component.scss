@@ -1,0 +1,53 @@
+.gauge {
+  position: relative;
+  width: 100%;
+  max-width: 300px;
+  margin: 24px auto;
+}
+
+.gauge-svg {
+  width: 100%;
+  height: auto;
+  /* Remove the rotation here */
+}
+
+
+/* ... (rest of your styles) */
+.gauge-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -30%);
+  text-align: center;
+}
+
+.value {
+  font-size: 24px;
+  font-weight: 600;
+  color: #171717;
+  margin-bottom: 4px;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 8px;
+  border-radius: 9999px;
+  font-size: 12px;
+  font-weight: 500;
+
+  &.optimal {
+    color: #16a34a;
+    border: 1px solid #16a34a;
+  }
+
+  &.moderate {
+    color: #d97706;
+    border: 1px solid #d97706;
+  }
+
+  &.critical {
+    color: #dc2626;
+    border: 1px solid #dc2626;
+  }
+}

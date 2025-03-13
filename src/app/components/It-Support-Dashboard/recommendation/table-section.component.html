@@ -1,0 +1,58 @@
+<section class="table-container">
+  <header class="table-header">
+    <h2 class="table-title">Most common factors in Product Recommendations</h2>
+    <div class="menu-icon">
+      <svg
+        width="16"
+        height="16"
+        viewBox="0 0 16 16"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        class="dots-menu"
+      >
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M6.66663 7.99935C6.66663 7.26297 7.26358 6.66602 7.99996 6.66602C8.73634 6.66602 9.33329 7.26297 9.33329 7.99935C9.33329 8.73573 8.73634 9.33268 7.99996 9.33268C7.26358 9.33268 6.66663 8.73573 6.66663 7.99935Z"
+          fill="#737373"
+        ></path>
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M6.66663 3.33333C6.66663 2.59695 7.26358 2 7.99996 2C8.73634 2 9.33329 2.59695 9.33329 3.33333C9.33329 4.06971 8.73634 4.66667 7.99996 4.66667C7.26358 4.66667 6.66663 4.06971 6.66663 3.33333Z"
+          fill="#737373"
+        ></path>
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M6.66663 12.6673C6.66663 11.9309 7.26358 11.334 7.99996 11.334C8.73634 11.334 9.33329 11.9309 9.33329 12.6673C9.33329 13.4037 8.73634 14.0007 7.99996 14.0007C7.26358 14.0007 6.66663 13.4037 6.66663 12.6673Z"
+          fill="#171717"
+        ></path>
+      </svg>
+    </div>
+  </header>
+  <div class="table-content">
+    <table class="table">
+      <thead>
+        <tr>
+          <th class="th">Users</th>
+          <th class="th">Product Category</th>
+          <th class="th">Inquiries</th>
+          <th class="th">Conversions</th>
+          <th class="th">Success (%)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let row of tableData">
+          <td class="td">{{ row.date }}</td>
+          <td class="td">
+            <div [class]="row.categoryClass">{{ row.category }}</div>
+          </td>
+          <td class="td"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-message-square"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>{{ row.inquiries }}</td>
+          <td class="td"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-refresh-cw"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M8 16H3v5"/></svg>{{ row.conversions }}</td>
+          <td class="td"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check-check"><path d="M18 6 7 17l-5-5"/><path d="m22 10-7.5 7.5L13 16"/></svg>{{ row.success }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>

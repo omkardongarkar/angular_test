@@ -1,0 +1,128 @@
+<div class="dashboard-container">
+  <div class="dashboard-row">
+    <!-- Daily Count Chart Panel -->
+    <section class="dashboard-panel">
+      <header class="panel-header">
+        <h2 class="panel-title">
+          Daily Count of Users Requesting Information About Product Features
+        </h2>
+        <div class="panel-icon">
+          <img
+            src="https://cdn.builder.io/api/v1/image/assets/TEMP/40aaa5f53181159dd213d4de17f35015e5e03754edea92d26e7812d5fb1e56c5?placeholderIfAbsent=true&apiKey=43632c7bd1d84079a851d9b51a08f2e5"
+            alt="Info icon"
+            class="icon-image"
+          />
+        </div>
+      </header>
+      <div class="chart-container">
+        <div class="chart-wrapper">
+          <canvas #dailyCountChart></canvas>
+        </div>
+        <div class="chart-legend">
+          <div class="legend-item">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/274c63eb9b0ffc58cf3c9b63f0dcb99c6209dbc764ef6a711ef1319574924113?placeholderIfAbsent=true&apiKey=43632c7bd1d84079a851d9b51a08f2e5"
+              alt="Legend icon"
+              class="legend-icon"
+            />
+            <span class="legend-text">Average Cart values ($)</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Product Features Chart Panel -->
+    <section class="dashboard-panel">
+      <header class="panel-header">
+        <h2 class="panel-title">Daily Most Common Product Features</h2>
+        <div class="panel-icon">
+          <img
+            src="https://cdn.builder.io/api/v1/image/assets/TEMP/cde431a809b9f9ae5747da590a8d95c44b476935bb35037573ebbf301b0af5b5?placeholderIfAbsent=true&apiKey=43632c7bd1d84079a851d9b51a08f2e5"
+            alt="Info icon"
+            class="icon-image"
+          />
+        </div>
+      </header>
+      <div class="chart-container">
+        <div class="chart-wrapper">
+          <canvas #productFeaturesChart></canvas>
+        </div>
+        <div class="chart-legend">
+          <div class="legend-item">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/04e735d3db08b732bcfbc3e533760d3b9b160ac5c5f6b23d65faaf104b15ff6b?placeholderIfAbsent=true&apiKey=43632c7bd1d84079a851d9b51a08f2e5"
+              alt="Battery Life icon"
+              class="legend-icon"
+            />
+            <span class="legend-text">Discounts</span>
+          </div>
+          <div class="legend-item">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/188534c01279271b8880cd67cdb48d843576d5c778d8dc28ea8987ffd60cca63?placeholderIfAbsent=true&apiKey=43632c7bd1d84079a851d9b51a08f2e5"
+              alt="Hardware icon"
+              class="legend-icon"
+            />
+            <span class="legend-text">Upseil Recommendation</span>
+          </div>
+          <div class="legend-item">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/97281a1f127e38bf62ed0c523f7e5e73a5ce85d7ad2715aae1e7276bc383a1e5?placeholderIfAbsent=true&apiKey=43632c7bd1d84079a851d9b51a08f2e5"
+              alt="Processor Speed icon"
+              class="legend-icon"
+            />
+            <span class="legend-text">Abandoned Cart reminders</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <div class="dashboard-row">
+    <!-- Weekly Assessment Panel -->
+    <section class="dashboard-panel">
+      <header class="panel-header">
+        <h2 class="panel-title">Weekly Assessment of ChatAgent's Performance (Product Features)</h2>
+        <div class="panel-icon">
+          <img
+            src="https://cdn.builder.io/api/v1/image/assets/TEMP/40aaa5f53181159dd213d4de17f35015e5e03754edea92d26e7812d5fb1e56c5?placeholderIfAbsent=true&apiKey=43632c7bd1d84079a851d9b51a08f2e5"
+            alt="Info icon"
+            class="icon-image"
+          />
+        </div>
+      </header>
+      <div class="panel-content">
+        <ol class="assessment-list">
+          <li *ngFor="let item of weeklyAssessmentItems">
+            <span class="item-title">{{ item.title }}</span>: {{ item.description }}
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Weekly Review Panel -->
+    <section class="dashboard-panel">
+      <header class="panel-header">
+        <h2 class="panel-title">
+          Weekly Review of Additional Support That Could Have Been Offered
+        </h2>
+        <div class="panel-icon">
+          <img
+            src="https://cdn.builder.io/api/v1/image/assets/TEMP/cde431a809b9f9ae5747da590a8d95c44b476935bb35037573ebbf301b0af5b5?placeholderIfAbsent=true&apiKey=43632c7bd1d84079a851d9b51a08f2e5"
+            alt="Info icon"
+            class="icon-image"
+          />
+        </div>
+      </header>
+      <div class="panel-content">
+        <ol class="review-list">
+          <li *ngFor="let item of weeklyReviewItems">
+            <span class="item-title">{{ item.title }}</span> {{ item.description }}
+            <ul>
+              <li> {{ item.example }}</li>
+            </ul>
+          </li>
+        </ol>
+      </div>
+    </section>
+  </div>
+</div>

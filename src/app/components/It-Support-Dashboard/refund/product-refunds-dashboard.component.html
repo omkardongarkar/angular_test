@@ -1,0 +1,91 @@
+<main class="dashboard-container">
+  <section class="dashboard-row">
+    <!-- Bar Chart Section -->
+    <article class="dashboard-card bar-chart-card">
+      <header class="card-header">
+        <h2 class="card-title">Daily Count of Most Common Products Refunds Requested</h2>
+        <div class="info-icon-container">
+          <img
+            src="https://cdn.builder.io/api/v1/image/assets/TEMP/4a74a23dd9e39643496b79b76e683f0c721522e8659b27277f24a46d4b273b00?placeholderIfAbsent=true&apiKey=43632c7bd1d84079a851d9b51a08f2e5"
+            class="info-icon"
+            alt="Information icon"
+          />
+        </div>
+      </header>
+
+      <div class="chart-container">
+        <canvas baseChart [data]="barChartData" [options]="barChartOptions" [type]="barChartType">
+        </canvas>
+
+      </div>
+    </article>
+
+    <!-- Pie Chart Section -->
+    <article class="dashboard-card pie-chart-card">
+      <header class="card-header">
+        <h2 class="card-title">Most common factors in product return</h2>
+        <div class="info-icon-container">
+          <img
+            src="https://cdn.builder.io/api/v1/image/assets/TEMP/4a74a23dd9e39643496b79b76e683f0c721522e8659b27277f24a46d4b273b00?placeholderIfAbsent=true&apiKey=43632c7bd1d84079a851d9b51a08f2e5"
+            class="info-icon"
+            alt="Information icon"
+          />
+        </div>
+      </header>
+
+      <div class="chart-container">
+        <canvas
+          baseChart
+          [data]="pieChartChartData"
+          [options]="pieChartOptions"
+          [type]="pieChartType"
+        >
+        </canvas>
+      </div>
+    </article>
+  </section>
+
+  <section class="dashboard-row">
+    <!-- Weekly Assessment Section -->
+    <article class="dashboard-card assessment-card">
+      <header class="card-header">
+        <h2 class="card-title">Weekly Assessment of ChatAgent's Performance (Product Refunds)</h2>
+        <div class="info-icon-container">
+          <img
+            src="https://cdn.builder.io/api/v1/image/assets/TEMP/4a74a23dd9e39643496b79b76e683f0c721522e8659b27277f24a46d4b273b00?placeholderIfAbsent=true&apiKey=43632c7bd1d84079a851d9b51a08f2e5"
+            class="info-icon"
+            alt="Information icon"
+          />
+        </div>
+      </header>
+
+      <ol class="assessment-list">
+        <li *ngFor="let item of weeklyAssessmentItems">
+          <strong>{{ item.title }}</strong>
+          {{ item.content }}
+        </li>
+      </ol>
+    </article>
+
+    <!-- Additional Support Section -->
+    <article class="dashboard-card support-card">
+      <header class="card-header">
+        <h2 class="card-title">Weekly Review of Additional Support That Could Have Been Offered</h2>
+        <div class="info-icon-container">
+          <img
+            src="https://cdn.builder.io/api/v1/image/assets/TEMP/4a74a23dd9e39643496b79b76e683f0c721522e8659b27277f24a46d4b273b00?placeholderIfAbsent=true&apiKey=43632c7bd1d84079a851d9b51a08f2e5"
+            class="info-icon"
+            alt="Information icon"
+          />
+        </div>
+      </header>
+
+      <ol class="assessment-list">
+        <li *ngFor="let item of additionalSupportItems">
+          <strong>{{ item.title }}</strong>
+          {{ item.content }}
+        </li>
+      </ol>
+    </article>
+  </section>
+</main>

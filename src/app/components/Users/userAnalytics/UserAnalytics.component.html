@@ -1,0 +1,158 @@
+<div class="user-analytics">
+  <div class="filter-bar">
+    <div class="date-range">
+      <div class="badge">
+        <div class="filter-text">{{ dateRange }}</div>
+        <img
+          loading="lazy"
+          src="https://cdn.builder.io/api/v1/image/assets/TEMP/56f4684ebdc720c103690290ce1f657357b66f0b82bad52908e6e9c6cd8904ee?placeholderIfAbsent=true&apiKey=43632c7bd1d84079a851d9b51a08f2e5"
+          alt=""
+          class="icon"
+        />
+      </div>
+    </div>
+    <div class="filter-options">
+      <div class="button-group">
+        <button class="btn btn-default">Default</button>
+        <button class="btn btn-custom">
+          <img
+            loading="lazy"
+            src="https://cdn.builder.io/api/v1/image/assets/TEMP/0f30085e7267d7261145423e52382723d64374936731b30a8f1c3d8a8ce9a051?placeholderIfAbsent=true&apiKey=43632c7bd1d84079a851d9b51a08f2e5"
+            alt=""
+            class="icon"
+          />
+          <span>Custom</span>
+        </button>
+        <button class="btn">Today</button>
+        <button class="btn">7D</button>
+        <button class="btn">30D</button>
+        <button class="btn">3M</button>
+        <button class="btn">6M</button>
+        <button class="btn">12M</button>
+        <button class="btn">Q1</button>
+        <button class="btn">Q2</button>
+        <button class="btn">Q3</button>
+        <button class="btn">Q4</button>
+        <button class="btn btn-icon">
+          <img
+            loading="lazy"
+            src="https://cdn.builder.io/api/v1/image/assets/TEMP/e73d21c2c0a5f83faa149cd1ccb57bd43b33715e92e9acbc6ea3bdb7a4491d04?placeholderIfAbsent=true&apiKey=43632c7bd1d84079a851d9b51a08f2e5"
+            alt="More options"
+            class="icon"
+          />
+        </button>
+      </div>
+      <img
+        loading="lazy"
+        src="https://cdn.builder.io/api/v1/image/assets/TEMP/ad800c4e14d7d68965539205f8f9f96477ae97fad45b326068fb9ad34cc51415?placeholderIfAbsent=true&apiKey=43632c7bd1d84079a851d9b51a08f2e5"
+        alt=""
+        class="icon"
+      />
+    </div>
+  </div>
+  <div class="action-bar">
+    <button class="btn btn-filter">
+      <img
+        loading="lazy"
+        src="https://cdn.builder.io/api/v1/image/assets/TEMP/f30a7fd995d517db3abf51b137ca7909597c2a66c7e66d6c085dc5dc4eebe659?placeholderIfAbsent=true&apiKey=43632c7bd1d84079a851d9b51a08f2e5"
+        alt=""
+        class="icon"
+      />
+      <span>Filters</span>
+    </button>
+    <div class="search-container">
+      <img
+        loading="lazy"
+        src="https://cdn.builder.io/api/v1/image/assets/TEMP/c4c28c4817c2b9afc5873292cd64ddd19f2cc13ae0fff99354c1ef5946242f1b?placeholderIfAbsent=true&apiKey=43632c7bd1d84079a851d9b51a08f2e5"
+        alt=""
+        class="icon"
+      />
+      <input type="text" placeholder="Search here..." class="search-input" />
+    </div>
+    <button class="btn btn-save">
+      <img
+        loading="lazy"
+        src="https://cdn.builder.io/api/v1/image/assets/TEMP/4962d2a40a392ab1201c2e162e16742d65cb509ff00e8704d35b3e8cceca1526?placeholderIfAbsent=true&apiKey=43632c7bd1d84079a851d9b51a08f2e5"
+        alt=""
+        class="icon"
+      />
+      <span>Save User Type</span>
+    </button>
+  </div>
+  <div class="content-wrapper">
+    <div class="analytics-table">
+      <div class="table-header-row">
+        <div class="table-header">Users</div>
+
+        <div class="table-header">Interactions</div>
+        <div class="table-header">Cost</div>
+        <div class="table-header">
+          <button class="btn export-btn" (click)="exportCsv()">
+            <img
+              loading="lazy"
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/e6551de112ca8590682d7f92f8e39202f385725b3fd809b92d87919aed829d84?placeholderIfAbsent=true&apiKey=43632c7bd1d84079a851d9b51a08f2e5"
+              alt=""
+              class="icon"
+            />
+            <span>Export CSV</span>
+          </button>
+        </div>
+      </div>
+      <div *ngFor="let interaction of interactions; let i = index" class="table-row">
+        <div class="table-cell">$ {{ users[i] }}</div>
+        <div class="table-cell">
+          <img
+            loading="lazy"
+            src="https://cdn.builder.io/api/v1/image/assets/TEMP/669e0f86f5fc479922893c4fa6be6de2359d0ec11512c67c9637c15f119c59c5?placeholderIfAbsent=true&apiKey=43632c7bd1d84079a851d9b51a08f2e5"
+            alt=""
+            class="icon"
+          />
+          <span>{{ interaction }}</span>
+        </div>
+        <div class="table-cell">$ {{ costs[i] }}</div>
+        <div class="table-cell">
+          <button class="btn btn-view" (click)="viewDetails()">
+            <span>View Details</span>
+            <img
+              loading="lazy"
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/082bb03e059d59dc476daf17534b3e7e2597d43b4d996067e44ed19307772ac6?placeholderIfAbsent=true&apiKey=43632c7bd1d84079a851d9b51a08f2e5"
+              alt=""
+              class="icon"
+            />
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="pagination">
+    <button class="btn btn-nav">
+      <img
+        loading="lazy"
+        src="https://cdn.builder.io/api/v1/image/assets/TEMP/4bffbe4bb1cd3b2eb6ac526a43e6ae665276874adc26394206f33fe6717a0b6a?placeholderIfAbsent=true&apiKey=43632c7bd1d84079a851d9b51a08f2e5"
+        alt="Previous"
+        class="icon"
+      />
+      <span>Previous</span>
+    </button>
+    <button class="btn btn-page active">1</button>
+    <button class="btn btn-page">2</button>
+    <button class="btn btn-page">3</button>
+    <div class="ellipsis">
+      <img
+        loading="lazy"
+        src="https://cdn.builder.io/api/v1/image/assets/TEMP/9438438e51bbb12439bc1f3a44d85bd70dbe26f92dfe1e7bc8d02764c4267c25?placeholderIfAbsent=true&apiKey=43632c7bd1d84079a851d9b51a08f2e5"
+        alt="More pages"
+        class="icon"
+      />
+    </div>
+    <button class="btn btn-nav">
+      <span>Next</span>
+      <img
+        loading="lazy"
+        src="https://cdn.builder.io/api/v1/image/assets/TEMP/b3d9ae1828ddd7b1bc8e1811d3940d0e43aca0d1ee1c07ea072bc76cadbd4e89?placeholderIfAbsent=true&apiKey=43632c7bd1d84079a851d9b51a08f2e5"
+        alt="Next"
+        class="icon"
+      />
+    </button>
+  </div>
+</div>

@@ -1,0 +1,112 @@
+<section class="chart-container">
+  <div class="chart-header">
+    <h2 class="chart-title">Support Tickets Created Each Day (Last Week)</h2>
+    <img
+      src="https://cdn.builder.io/api/v1/image/assets/TEMP/49cbf7a06e7bf7591d08b489a5214211a9ef8d50b9c9c0768af7275788bf54fd?placeholderIfAbsent=true&apiKey=43632c7bd1d84079a851d9b51a08f2e5"
+      alt="Information icon" class="info-icon" />
+  </div>
+
+  <div class="chart-body">
+    <canvas #supportTicketsChart aria-label="Support Tickets Chart" role="img"></canvas>
+  </div>
+</section>
+
+<div class="multiple-graph-section">
+  <section class="chart-container left-chart">
+    <div class="chart-header">
+      <h2 class="chart-title">Top 10 Queries</h2>
+      <img
+        src="https://cdn.builder.io/api/v1/image/assets/TEMP/49cbf7a06e7bf7591d08b489a5214211a9ef8d50b9c9c0768af7275788bf54fd?placeholderIfAbsent=true&apiKey=43632c7bd1d84079a851d9b51a08f2e5"
+        alt="Information icon" class="info-icon" />
+    </div>
+    <div class="chart-body">
+      <div class="inventory-table">
+        <div class="table-header">
+          <div class="header-cell">Query</div>
+          <div class="header-cell">Agent</div>
+          <div class="header-cell">Resolution Rate</div>
+        </div>
+        <div class="table-body">
+          <div class="table-row" *ngFor="let query of Query">
+            <div class="table-cell">{{ query.name }}</div>
+            <div class="table-cell">{{ query.agent }}</div>
+            <div class="table-cell">{{ query.resolutionRate }}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="performance-section right-chart">
+    <div class="performance-box">
+      <div class="heading-and-icon">
+        <h2>Top resolutions per agent</h2>
+        <img
+          src="https://cdn.builder.io/api/v1/image/assets/TEMP/49cbf7a06e7bf7591d08b489a5214211a9ef8d50b9c9c0768af7275788bf54fd?placeholderIfAbsent=true&apiKey=43632c7bd1d84079a851d9b51a08f2e5"
+          alt="Information icon" class="info-icon" />
+      </div>
+
+      <div class="list-row1 list-row">
+        <div class="list-col">
+          <h5>Product support Agent</h5>
+          <ol>
+            <li>Warranty Information</li>
+            <li>Troubleshooting Products</li>
+            <li>Product Availability</li>
+            <li>User Manuals/Guides</li>
+            <li>Replacement Parts</li>
+          </ol>
+        </div>
+
+        <div class="list-col">
+          <h5>IT Support Agent</h5>
+          <ol>
+            <li>Password Reset Assistance</li>
+            <li>Network Connectivity Issues</li>
+            <li>Software Installation Help</li>
+            <li>Hardware Troubleshooting</li>
+            <li>Email Access Issues</li>
+          </ol>
+        </div>
+
+        <div class="list-col">
+          <h5>Billing Support Agent</h5>
+          <ol>
+            <li>Product Pricing</li>
+            <li>Order Placement</li>
+            <li>Promotional Offers</li>
+            <li>Payment Methods</li>
+            <li>Delivery Status</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="list-row2 list-row">
+        <div class="list-col">
+          <h5>Developer Support Agent</h5>
+          <ol>
+            <li>Leave Requests</li>
+            <li>Payroll Queries</li>
+            <li>Onboarding Process</li>
+            <li>Employee Benefits</li>
+            <li>Performance Reviews</li>
+          </ol>
+        </div>
+
+        <div class="list-col">
+          <h5>Sales Support Agent</h5>
+          <ol>
+            <li>Campaign Updates</li>
+            <li>Customer Demographics</li>
+            <li>Product Promotions</li>
+            <li>Content Creation</li>
+            <li>Social Media Strategy</li>
+          </ol>
+        </div>
+
+        <div class="list-col">
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

@@ -1,0 +1,32 @@
+<div class="gauge" role="meter" [attr.aria-valuenow]="value" aria-valuemin="0" aria-valuemax="100">
+  <svg viewBox="0 0 200 120" class="gauge-svg">
+    <!-- Background Segments -->
+    <g *ngFor="let segment of segments; let i = index">
+      <path
+        [attr.d]="getSegmentPath(i, segments.length)"
+        fill="none"
+        stroke="#e5e5e5"
+        stroke-width="6"
+        stroke-linecap="round"
+      />
+    </g>
+
+    <!-- Colored Segments -->
+    <g *ngFor="let segment of activeSegments; let i = index">
+      <path
+        [attr.d]="getSegmentPath(i, segments.length)"
+        fill="none"
+        [attr.stroke]="statusColor"
+        stroke-width="6"
+        stroke-linecap="round"
+      />
+    </g>
+  </svg>
+
+  <div class="gauge-content">
+    <div class="value">{{ value }}%</div>
+    <div class="badge" [class]="status">
+      <span>{{ status | titlecase }}</span>
+    </div>
+  </div>
+</div>

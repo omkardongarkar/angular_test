@@ -1,0 +1,156 @@
+
+<div class="dashboard">
+  <header class="header">
+    <nav class="filters" role="navigation" aria-label="Dashboard filters">
+      <div class="filters">
+        <select class="filter-select">
+          <option>All Channels</option>
+        </select>
+        <select class="filter-select">
+          <option>All Queues</option>
+        </select>
+        <select class="filter-select">
+          <option>All Status</option>
+        </select>
+        <select class="filter-select">
+          <option>PST (UTC-8:00)</option>
+        </select>
+      </div>
+      <div class="right-filters">
+        <select class="filter-select">
+          <option>Filter</option>
+        </select>
+        <select class="filter-select">
+          <option>Last 7 Days</option>
+        </select>       
+        <button class="refresh-btn" aria-label="Refresh data">
+          <img
+            src="https://cdn.builder.io/api/v1/image/assets/43632c7bd1d84079a851d9b51a08f2e5/c8187ba500c8ada48db13df39a1d7b7f5639fb865fd91b383d8476138212065e?apiKey=43632c7bd1d84079a851d9b51a08f2e5&"
+            alt=""
+            class="icon"
+          />
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  
+  <header class="header">
+      <div class="filters">        
+
+        <div class="metric-card">
+          <p class="metric-title m-5">Daily Users</p>
+          <h5 class="metric-value m-5">4324</h5>
+        </div>    
+        <div class="metric-card">
+          <p class="metric-title m-5">Session Handled</p>
+          <h5 class="metric-value m-5">434</h5>
+        </div>    
+        <div class="metric-card">
+          <p class="metric-title m-5">Resolution Rate</p>
+          <h5 class="metric-value m-5">24</h5>
+        </div>
+        <div class="metric-card">
+          <p class="metric-title m-5">Top Quries</p>
+          <h5 class="metric-value m-5">24</h5>
+        </div>
+        <div class="metric-card">
+          <p class="metric-title m-5">Top Issues</p>
+          <h5 class="metric-value m-5">34</h5>
+        </div>    
+        <div class="metric-card">
+          <p class="metric-title m-5">Avg. Resolution Time</p>
+          <h5 class="metric-value m-5">234</h5>
+        </div>
+        <div class="metric-card">
+          <p class="metric-title m-5">Customer Saticefaction</p>
+          <h5 class="metric-value m-5">4324</h5>
+        </div>
+        <div class="metric-card">
+          <p class="metric-title m-5">Agent Performance</p>
+          <h5 class="metric-value m-5">37</h5>
+        </div>
+        <div class="metric-card">
+          <p class="metric-title m-5">Error rate</p>
+          <h5 class="metric-value m-5">124</h5>
+        </div>      
+    </div>
+  </header>
+
+  <main class="main-content">     
+    <div class="charts-container">
+      <section class="chart-section users-chart" aria-label="Users over time">
+        <header class="chart-header">
+          <h2>Users over Time</h2>
+          <button aria-label="Chart options">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/43632c7bd1d84079a851d9b51a08f2e5/96b6e3aabc389a0f7d5b798ddc4e843c7ae4cf206781c9078dc66af90a3ef06b?apiKey=43632c7bd1d84079a851d9b51a08f2e5&"
+              alt=""
+              class="icon"
+            />
+          </button>
+        </header>
+        <app-line-chart></app-line-chart>
+      </section>
+
+      <div class="secondary-charts">
+        <section class="chart-section devices-chart" aria-label="Device usage">
+          <header class="chart-header">
+            <h2>Device and Platform Usage</h2>
+            <button aria-label="Chart options">
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets/43632c7bd1d84079a851d9b51a08f2e5/96b6e3aabc389a0f7d5b798ddc4e843c7ae4cf206781c9078dc66af90a3ef06b?apiKey=43632c7bd1d84079a851d9b51a08f2e5&"
+                alt=""
+                class="icon"
+              />
+            </button>
+          </header>
+          <app-pie-chart></app-pie-chart>
+        </section>
+
+        <section class="chart-section regions-chart" aria-label="Regional usage">
+          <header class="chart-header">
+            <h2>Users by Region</h2>
+            <button aria-label="Chart options">
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets/43632c7bd1d84079a851d9b51a08f2e5/96b6e3aabc389a0f7d5b798ddc4e843c7ae4cf206781c9078dc66af90a3ef06b?apiKey=43632c7bd1d84079a851d9b51a08f2e5&"
+                alt=""
+                class="icon"
+              />
+            </button>
+          </header>
+          <app-map-chart></app-map-chart>
+        </section>
+      </div>
+    </div>
+
+    <aside class="insights-panel">
+      <h2>Insights</h2>
+      <!-- <div class="insights-list">
+        <div class="insight-item">
+          <p>Users in Northeast are experiencing continued low user sentiment.</p>
+          <img src="https://cdn.builder.io/api/v1/image/assets/43632c7bd1d84079a851d9b51a08f2e5/87da144d1683e88739ed31f7dbb6f94df5a8a01891b7e6404bc99edb24b33b78?apiKey=43632c7bd1d84079a851d9b51a08f2e5&" alt="" />
+        </div>
+        
+        <div class="insight-item">
+          <p>Users in Northeast are experiencing increased issues submissions and lower user sentiment.</p>
+          <img src="https://cdn.builder.io/api/v1/image/assets/43632c7bd1d84079a851d9b51a08f2e5/87da144d1683e88739ed31f7dbb6f94df5a8a01891b7e6404bc99edb24b33b78?apiKey=43632c7bd1d84079a851d9b51a08f2e5&" alt="" />
+        </div>
+
+        <div class="insight-item">
+          <div class="insight-content">
+            <span>The volume of conversations about</span>
+            <span class="badge">Refund</span>
+            <span>has increased by</span>
+            <span class="highlight positive">500%</span>
+            <img src="https://cdn.builder.io/api/v1/image/assets/43632c7bd1d84079a851d9b51a08f2e5/c99c18adf83045d55d9ff0f0c56ee7d0db5c13101e8f270fadc07cf158dd77e6?apiKey=43632c7bd1d84079a851d9b51a08f2e5&" alt="" />
+            <span>(+6) relative to last 7 days</span>
+          </div>
+          <img src="https://cdn.builder.io/api/v1/image/assets/43632c7bd1d84079a851d9b51a08f2e5/87da144d1683e88739ed31f7dbb6f94df5a8a01891b7e6404bc99edb24b33b78?apiKey=43632c7bd1d84079a851d9b51a08f2e5&" alt="" />
+        </div>
+
+      </div> -->
+    </aside>
+  </main>
+</div>
+

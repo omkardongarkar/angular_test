@@ -1,0 +1,92 @@
+<div class="multiple-graph-section">
+  <section class="chart-container left-chart">
+    <div class="chart-header">
+      <h2 class="chart-title">Top 10 Queries</h2>
+      <img
+        src="https://cdn.builder.io/api/v1/image/assets/TEMP/49cbf7a06e7bf7591d08b489a5214211a9ef8d50b9c9c0768af7275788bf54fd?placeholderIfAbsent=true&apiKey=43632c7bd1d84079a851d9b51a08f2e5"
+        alt="Information icon" class="info-icon" />
+    </div>
+    <div class="chart-body">
+      <div class="inventory-table">
+        <div class="table-header">
+          <div class="header-cell">Query</div>
+          <div class="header-cell">Agent</div>
+          <div class="header-cell">Resolution Rate</div>
+        </div>
+        <div class="table-body">
+          <div class="table-row" *ngFor="let query of Query">
+            <div class="table-cell">{{ query.name }}</div>
+            <div class="table-cell">{{ query.agent }}</div>
+            <div class="table-cell">{{ query.resolutionRate }}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="performance-section right-chart">
+    <div class="performance-box">
+      <div class="heading-and-icon">
+        <h2>Top resolutions per agent</h2>
+        <img
+          src="https://cdn.builder.io/api/v1/image/assets/TEMP/49cbf7a06e7bf7591d08b489a5214211a9ef8d50b9c9c0768af7275788bf54fd?placeholderIfAbsent=true&apiKey=43632c7bd1d84079a851d9b51a08f2e5"
+          alt="Information icon" class="info-icon" />
+      </div>
+
+      <div class="list-row">
+        <h5>Product support Agent</h5>
+        <ol>
+          <li>Warranty Information: Questions about product warranties, coverage duration, and claims process.</li>
+          <li>Troubleshooting Products: Help with fixing or diagnosing product malfunctions.</li>
+          <li>Product Availability: Inquiries about stock levels and restocking timelines.</li>
+          <li>User Manuals/Guides: Requests for user guides or instructions for specific products.</li>
+          <li>Replacement Parts: Questions about purchasing or sourcing spare or replacement parts.</li>
+        </ol>
+      </div>
+
+      <div class="list-row">
+        <h5>IT Support Agent</h5>
+        <ol>
+          <li>Password Reset Assistance: Issues related to resetting passwords for internal or external systems.</li>
+          <li>Network Connectivity Issues: Problems with internet or intranet access, VPN setup, or slow connectivity.</li>
+          <li>Software Installation Help: Guidance on installing or updating software applications.</li>
+          <li>Hardware Troubleshooting: Assistance with hardware-related problems (printers, monitors, etc.).</li>
+          <li>Email Access Issues: Support for accessing work email, password recovery, or syncing issues.</li>
+        </ol>
+      </div>
+
+      <div class="list-row">
+        <h5>Billing Support Agent</h5>
+        <ol>
+          <li>Product Pricing: Requests for detailed pricing, discounts, or bulk purchase rates.</li>
+          <li>Order Placement: Assistance with placing new orders or modifying existing ones.</li>
+          <li>Promotional Offers: Inquiries about active sales, promotions, or loyalty programs.</li>
+          <li>Payment Methods: Questions regarding payment options, invoices, or billing.</li>
+          <li>Delivery Status: Tracking and updates on order shipping and delivery timelines.</li>
+        </ol>
+      </div>
+
+      <div class="list-row">
+        <h5>Developer Support Agent</h5>
+        <ol>
+          <li>Leave Requests: Assistance with applying for or understanding leave policies.</li>
+          <li>Payroll Queries: Issues related to salary, deductions, and pay slips.</li>
+          <li>Onboarding Process: Guidance for new hires regarding documentation and setup.</li>
+          <li>Employee Benefits: Inquiries about health insurance, retirement plans, or other perks.</li>
+          <li>Performance Reviews: Questions regarding appraisal processes and evaluation metrics.</li>
+        </ol>
+      </div>
+
+      <div class="list-row">
+        <h5>Sales Support Agent</h5>
+        <ol>
+          <li>Campaign Updates</li>
+          <li>Customer Demographics</li>
+          <li>Product Promotions</li>
+          <li>Content Creation</li>
+          <li>Social Media Strategy</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+</div>

@@ -1,0 +1,276 @@
+.dashboard-container {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  height: 100vh;
+  max-height: 1080px;
+  background: var(--background, #fff);
+
+  
+.header {
+  border-bottom: 1px solid #d4d4d4;
+  padding: 4px 24px; /* Reduced the top and bottom padding */
+}
+
+
+.filters {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px;
+  border-radius: 2px;
+  border: none;
+  background: none;
+  color: #525252;
+  font-size: 12px;
+  cursor: pointer;
+
+  &:hover {
+    background: #f5f5f5;
+  }
+}
+
+.filter-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: auto;
+}
+
+.action-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: 1px solid #d4d4d4;
+  background: #fff;
+  color: #171717;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+
+  &:hover {
+    background: #f5f5f5;
+  }
+}
+
+.icon {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+}
+
+  /* Main Content - 70/30 Layout */
+  .main-content {
+    display: grid;
+    // grid-template-columns: 70% 30%;
+    gap: 24px;
+    padding: 2px;
+    // overflow: auto;
+
+    
+  }
+
+  /* Metrics at the Top */
+
+  // .metrics-grid {
+  //   display: flex ;
+  //   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  //   gap: 2px;
+  //   padding: 0 15px;
+  //   border-bottom: 1px solid #d4d4d4;
+  // }
+  
+  // .metric-card {
+  //   padding: 8px;
+  //   background: #fff;
+  // }
+  
+  // .metric-card.active {
+  //     background: #eef2ff;
+  //     border-bottom: 2px solid #4f46e5;
+  // } 
+  
+  // .metric-title {
+  //   font-size: 12px;
+  //   color: #737373;
+  //   margin: 0 0 2px;
+  // }
+  // .metric-link {
+  //   cursor: pointer;
+  // }
+  
+  // .metric-value {
+  //   font-size: 18px;
+  //   font-weight: 500;
+  //   color: #171717;
+  //   margin: 0;
+  //   text-align: center;
+  // }
+
+  .metrics-grid {
+    display: flex;
+    gap: 8px;
+    padding: 0 15px;
+    border-bottom: 1px solid #d4d4d4;
+  }
+  
+  .metric-card {
+    padding: 12px;
+    background: #fff;
+    text-align: center;
+  }
+  
+  .metric-card.active {
+    background: #eef2ff;
+    border-bottom: 2px solid #4f46e5;
+  }
+  
+  .metric-card:hover {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .metric-title {
+    font-size: 12px;
+    color: #737373;
+    margin: 0 0 4px;
+  }
+  
+  .metric-value {
+    font-size: 18px;
+    font-weight: 600;
+    color: #171717;
+    margin: 0;
+  }
+  
+  @media (max-width: 600px) {
+    .metrics-grid {
+      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+      padding: 0 10px;
+    }
+  
+    .metric-card {
+      padding: 10px;
+    }
+  
+    .metric-title {
+      font-size: 11px;
+    }
+  
+    .metric-value {
+      font-size: 16px;
+    }
+  }
+  
+  
+
+  /* Graphs */
+  .chart-section {
+    background: var(--card-bg);
+    padding: 10px;
+    border-radius: 8px;
+    max-height: 1000px;
+    box-shadow: var(--card-shadow);
+
+    h5{
+      margin: 5px !important;
+    }
+  }
+
+  .users-chart {
+    width: 95%;
+    height: 350px;
+  }
+
+  .secondary-charts {
+    display: flex;
+    margin-top: 20px;
+    gap: 16px;
+  }
+
+  .platform-chart {
+    flex: 1;
+    height: 250px;
+    width: 300px;
+  }
+   .region-map-image{
+    flex: 1;
+    height: 280px;
+    width: 300px;
+  }
+
+  
+.insights-panel {
+  width: 290px;
+  border-left: 1px solid #d4d4d4;
+
+  h2 {
+    padding: 8px 10px;
+    border-bottom: 1px solid #d4d4d4;
+    font: 500 12px/20px Inter, sans-serif;
+  }
+}
+
+.insights-list {
+  height: calc(100% - 37px);
+  overflow-y: auto;
+}
+
+.insight-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 10px;
+  border-bottom: 1px solid #d4d4d4;
+  font: 400 12px/20px Inter, sans-serif;
+  p{
+    margin: 0 !important;
+  }
+}
+
+.badge {
+  background: #f5f5f5;
+  border: 1px solid #d4d4d4;
+  border-radius: 9999px;
+  padding: 0 8px;
+  font: 500 12px/24px Inter, sans-serif;
+}
+
+.highlight {
+  &.positive {
+    color: #16a34a;
+  }
+  &.negative {
+    color: #dc2626;
+  }
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+@media (max-width: 991px) {
+  .header {
+    padding: 8px 20px;
+  }
+  
+  .insights-panel {
+    display: none;
+  }
+}
+
+}

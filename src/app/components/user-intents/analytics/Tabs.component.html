@@ -1,0 +1,57 @@
+<nav class="tabs-container" role="navigation" aria-label="View options">
+  <div class="tabs-group">
+    <button
+      class="tab-btn"
+      [class.active]="activeTab === 'table'"
+      (click)="activeTab = 'table'"
+      aria-label="Table view"
+    >
+      <img
+        src="https://cdn.builder.io/api/v1/image/assets/43632c7bd1d84079a851d9b51a08f2e5/1dae556fa67fc65b02636bc7cd7bdeab38fb2ca89ae502e7ced7c5983c6be61e?apiKey=43632c7bd1d84079a851d9b51a08f2e5&"
+        alt=""
+      />
+      Table
+    </button>
+    <button
+      class="tab-btn"
+      [class.active]="activeTab === 'map'"
+      (click)="activeTab = 'map'"
+      aria-label="Map view"
+    >
+      <img
+        src="https://cdn.builder.io/api/v1/image/assets/43632c7bd1d84079a851d9b51a08f2e5/35b174bcd95c75cfa842314cd7bf8c40363ff23edadbee6d68bdd285c509ff84?apiKey=43632c7bd1d84079a851d9b51a08f2e5&"
+        alt=""
+      />
+      Map
+    </button>
+    <button
+      class="tab-btn"
+      [class.active]="activeTab === 'trends'"
+      (click)="activeTab = 'trends'"
+      aria-label="Trends view"
+    >
+      <img
+        src="https://cdn.builder.io/api/v1/image/assets/43632c7bd1d84079a851d9b51a08f2e5/10cc98d9761f61f530f48caa2eb97417ab5f8d57d7835155b503f135e5f5c0df?apiKey=43632c7bd1d84079a851d9b51a08f2e5&"
+        alt=""
+      />
+      Trends
+    </button>
+  </div>
+
+  <div class="actions">
+    <button class="action-btn" aria-label="Filter">
+      <img
+        src="https://cdn.builder.io/api/v1/image/assets/43632c7bd1d84079a851d9b51a08f2e5/842cbb67850f9d77b514684c7e721f94d70b40c039eb0f6ef85aa642b1e191ca?apiKey=43632c7bd1d84079a851d9b51a08f2e5&"
+        alt=""
+      />
+      Filter
+    </button>
+    <div class="search">
+      <img
+        src="https://cdn.builder.io/api/v1/image/assets/43632c7bd1d84079a851d9b51a08f2e5/9a04c128b719c11a8be5a630023d52ac0c8377ac6ad1d6271b52bdbd20becfa3?apiKey=43632c7bd1d84079a851d9b51a08f2e5&"
+        alt=""
+      />
+      <input type="search" placeholder="Search here..." aria-label="Search analytics data" />
+    </div>
+  </div>
+</nav>

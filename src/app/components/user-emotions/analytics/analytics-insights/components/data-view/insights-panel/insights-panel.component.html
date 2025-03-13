@@ -1,0 +1,51 @@
+<aside class="insights-panel" role="complementary" aria-label="Emotional insights">
+  <div class="panel-header">
+    <div class="badge">User Emotions: {{selectedCount}}</div>
+    <div class="separator"></div>
+    <button class="clear-btn" (click)="clearFilters()">
+      <span>Clear</span>
+      <img
+        src="https://cdn.builder.io/api/v1/image/assets/43632c7bd1d84079a851d9b51a08f2e5/1730922da4a35314aa1393df6eaaa493e4f5c1cb59368ad1ba5448d4e9fa1319?apiKey=43632c7bd1d84079a851d9b51a08f2e5&"
+        alt=""
+        aria-hidden="true"
+      />
+    </button>
+  </div>
+
+  <div class="emotions-list">
+    <div
+      *ngFor="let emotion of emotions"
+      class="emotion-item"
+      role="article"
+      [attr.aria-label]="emotion.emotion + ' insight'"
+    >
+      <div class="emotion-header">
+        <div class="emotion-badge">
+          <input 
+          type="checkbox" 
+          [(ngModel)]="emotion.selected" 
+          [id]="'checkbox-' + emotion.emotion" 
+          class="emotion-checkbox"
+          (change)="countSelected()"
+        />
+          <img [src]="emotion.icon" alt="" aria-hidden="true" />
+          <span>{{emotion.emotion}}</span>
+        </div>
+        <img
+          src="https://cdn.builder.io/api/v1/image/assets/43632c7bd1d84079a851d9b51a08f2e5/d63b6512232f8620b312fd9dab08eecc22df3623055e550bbdbab31b7a602a04?apiKey=43632c7bd1d84079a851d9b51a08f2e5&"
+          alt=""
+          aria-hidden="true"
+        />
+      </div>
+      <div
+        class="emotion-bar"
+        [style.background-color]="emotion.color"
+        [style.width.%]="emotion.percentage"
+        role="progressbar"
+        [attr.aria-valuenow]="emotion.percentage"
+        aria-valuemin="0"
+        aria-valuemax="100"
+      ></div>
+    </div>
+  </div>
+</aside>

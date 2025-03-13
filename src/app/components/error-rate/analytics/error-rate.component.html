@@ -1,0 +1,135 @@
+<main class="dashboard" role="main">
+  <header class="header">
+    <nav class="filters" role="navigation" aria-label="Main filters">
+      <button class="filter-btn" aria-expanded="false">
+        All Channels
+        <img
+          src="https://cdn.builder.io/api/v1/image/assets/43632c7bd1d84079a851d9b51a08f2e5/5bcf29e651e7bb4e4d04e7bac6d079d42be2fc7f2c53309d1537f8e9d73368c4?apiKey=43632c7bd1d84079a851d9b51a08f2e5&"
+          alt=""
+          class="icon"
+        />
+      </button>
+      <button class="filter-btn" aria-expanded="false">
+        All Queues
+        <img
+          src="https://cdn.builder.io/api/v1/image/assets/43632c7bd1d84079a851d9b51a08f2e5/5bcf29e651e7bb4e4d04e7bac6d079d42be2fc7f2c53309d1537f8e9d73368c4?apiKey=43632c7bd1d84079a851d9b51a08f2e5&"
+          alt=""
+          class="icon"
+        />
+      </button>
+      <button class="filter-btn" aria-expanded="false">
+        All Status
+        <img
+          src="https://cdn.builder.io/api/v1/image/assets/43632c7bd1d84079a851d9b51a08f2e5/5bcf29e651e7bb4e4d04e7bac6d079d42be2fc7f2c53309d1537f8e9d73368c4?apiKey=43632c7bd1d84079a851d9b51a08f2e5&"
+          alt=""
+          class="icon"
+        />
+      </button>
+      <button class="filter-btn" aria-expanded="false">
+        PST (UTC-8:00)
+        <img
+          src="https://cdn.builder.io/api/v1/image/assets/43632c7bd1d84079a851d9b51a08f2e5/5bcf29e651e7bb4e4d04e7bac6d079d42be2fc7f2c53309d1537f8e9d73368c4?apiKey=43632c7bd1d84079a851d9b51a08f2e5&"
+          alt=""
+          class="icon"
+        />
+      </button>
+      <div class="filter-actions">
+        <button class="action-btn">
+          <img
+            src="https://cdn.builder.io/api/v1/image/assets/43632c7bd1d84079a851d9b51a08f2e5/842cbb67850f9d77b514684c7e721f94d70b40c039eb0f6ef85aa642b1e191ca?apiKey=43632c7bd1d84079a851d9b51a08f2e5&"
+            alt=""
+            class="icon"
+          />
+          Filters
+        </button>
+        <button class="action-btn">
+          <img
+            src="https://cdn.builder.io/api/v1/image/assets/43632c7bd1d84079a851d9b51a08f2e5/b34f12957dea29a9315bd3d9b634cc964e868f2a025bf27b4bb04e7de2bbb36e?apiKey=43632c7bd1d84079a851d9b51a08f2e5&"
+            alt=""
+            class="icon"
+          />
+          Last 7 Days
+        </button>
+        <img
+          src="https://cdn.builder.io/api/v1/image/assets/43632c7bd1d84079a851d9b51a08f2e5/3799295a61e655969507a363ff950e564478fbf58f24f84bb365cf0dc2571a0d?apiKey=43632c7bd1d84079a851d9b51a08f2e5&"
+          alt=""
+          class="icon"
+        />
+      </div>
+    </nav>
+  </header>
+  <app-tab-nav></app-tab-nav>
+
+  <div class="content">
+    <section class="error-stats" aria-labelledby="error-rate-title">
+      <div class="error-header">
+        <h2 id="error-rate-title" class="error-title">Error Rate</h2>
+        <p class="error-description">
+          The error rate represents the percentage of interactions where users express
+          dissatisfaction with the LLM's responses, encompassing Agenth explicit feedback (e.g.,
+          thumbs down) and implicit signals.
+        </p>
+      </div>
+
+      <app-error-gauge 
+      [value]="errorRate.value" 
+      [status]="getStatus(errorRate.status)">
+    </app-error-gauge>
+    
+    
+      <ul class="error-legend" role="list">
+        <li class="optimal">
+          <span style="color: #16a34a; font-style: oblique;"><strong>"Optimal" - Error rate < 10%:</strong></span>
+          The LLM is performing exceptionally well with minimal user frustration
+        </li>
+        <li class="moderate">
+          <span style="color: #d97706;"><strong>"Moderate" - Error rate 10% - 20%:</strong></span>
+          The LLM performance is acceptable, but some users are experiencing frustration.
+        </li>
+        <li class="critical">
+          <span style="color: #dc2626; font-style: oblique;"><strong>"Critical" - Error rate > 20%:</strong></span>
+          The LLM performance is poor, with a significant number of users experiencing frustration.
+        </li>
+      </ul>
+    </section>
+
+    <section class="metrics">
+      <div class="metric-cards">
+        <app-metrics-card
+    *ngFor="let metric of metrics"
+    [title]="metric.title"
+    [value]="metric.value"
+    [trend]="metric.trend"
+    [trendDirection]="metric.trendDirection"
+    [highlight]="metric.highlight ?? false"
+    (click)="onMetricCardClick(metric.title)"  [class.selected]="metric.title === selectedMetric"  >
+  </app-metrics-card>
+      </div>
+
+      <div class="chart-container" *ngIf="selectedMetric === 'Main Issues'">
+        <p-chart
+          type="bar"
+          [data]="chartData"
+          [options]="chartOptions"
+          aria-label="Error distribution chart"
+        >
+        </p-chart>
+      </div>
+      <div class="chart-rate-container" *ngIf="selectedMetric === 'Error Rate'">
+        <div class="chart-area">
+          <canvas id="myChart" [hidden]="!selectedMetric"></canvas>
+        </div>
+      </div>      
+      <div class="chart-rate-container" *ngIf="selectedMetric === 'Users Impacted'">
+        <div class="chart-area">
+          <canvas id="myChart" [hidden]="!selectedMetric"></canvas>
+        </div>
+      </div>   
+      <div class="chart-rate-container" *ngIf="selectedMetric === 'Total Users'">
+        <div class="chart-area">
+          <canvas id="myChart" [hidden]="!selectedMetric"></canvas>
+        </div>
+      </div>   
+    </section>
+  </div>
+</main>

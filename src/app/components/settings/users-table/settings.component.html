@@ -1,0 +1,216 @@
+<div class="users-container">
+  <div class="users-header">
+    <div class="nav-item" 
+         [class.active]="activeTab === 'agents'"
+         (click)="setActiveTab('agents')">Agents</div>
+    <div class="nav-item" 
+         [class.active]="activeTab === 'users'"
+         (click)="setActiveTab('users')">Users</div>
+    <div class="nav-item" 
+         [class.active]="activeTab === 'profile'"
+         (click)="setActiveTab('profile')">My Profile</div>
+</div>
+
+
+<div class="users-content" *ngIf="activeTab === 'agents'">
+  <div class="search-add-container">
+    <div class="search-container">
+      <img
+        src="https://cdn.builder.io/api/v1/image/assets/TEMP/d2520482123dc8cf42234cb07453dc030ea84b36d96cf2b8cb95ae40dff1e78d?placeholderIfAbsent=true&apiKey=43632c7bd1d84079a851d9b51a08f2e5"
+        alt="Search icon"
+        class="search-icon"
+      />
+      <input
+        type="text"
+        class="search-input"
+        placeholder="Search here..."
+        aria-label="Search users"
+      />
+    </div>
+    <button class="add-user-btn" (click)="openAddUserPanel()">
+      <img
+        src="https://cdn.builder.io/api/v1/image/assets/TEMP/098bf76695fc830edbe87a84b7a32122238a637bc9966ffce5fd5260dbfa11d9?placeholderIfAbsent=true&apiKey=43632c7bd1d84079a851d9b51a08f2e5"
+        alt=""
+        class="add-icon"
+      />
+      <span>Add Agent</span>
+      
+    </button>
+  </div>
+  <table class="users-table" >
+    <thead>
+      <tr>
+        <th>Agent</th>
+        <th>
+          Date of Creation
+          <img
+            src="https://cdn.builder.io/api/v1/image/assets/TEMP/99cee3cb6008863c6e142270d6ef4b45a58346e3d236de74c49c0c3a2c68e147?placeholderIfAbsent=true&apiKey=43632c7bd1d84079a851d9b51a08f2e5"
+            alt="Sort icon"
+            class="sort-icon"
+          />
+        </th>
+        <th>Users
+          <img
+          src="https://cdn.builder.io/api/v1/image/assets/TEMP/99cee3cb6008863c6e142270d6ef4b45a58346e3d236de74c49c0c3a2c68e147?placeholderIfAbsent=true&apiKey=43632c7bd1d84079a851d9b51a08f2e5"
+          alt="Sort icon"
+          class="sort-icon"
+        />
+        </th>
+        <th>
+         Interactions
+         
+        </th>
+        <th>Keys</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let agent of agents">
+        <td>{{ agent.agent }}</td>
+        <td>{{ agent.date | date:'MMM dd, yyyy' }}</td>
+        <td>
+         {{agent.users}}
+      </td>
+        <td>
+         {{agent.interactions}}
+        </td>
+        <td style="color:blue">
+          {{agent.keys}}
+         </td>
+        <td>
+          <button class="view-details-btn">View Details
+
+            <img
+            src="https://cdn.builder.io/api/v1/image/assets/43632c7bd1d84079a851d9b51a08f2e5/3263935affdd2733f957e2d8ed84e36c00fb218bbb11a4bfb836d4e6e01cafda?apiKey=43632c7bd1d84079a851d9b51a08f2e5&"
+            alt=""
+            aria-hidden="true"
+          />
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+
+
+
+
+
+  <div class="users-content" *ngIf="activeTab === 'users'">
+    <div class="search-add-container">
+      <div class="search-container">
+        <img
+          src="https://cdn.builder.io/api/v1/image/assets/TEMP/d2520482123dc8cf42234cb07453dc030ea84b36d96cf2b8cb95ae40dff1e78d?placeholderIfAbsent=true&apiKey=43632c7bd1d84079a851d9b51a08f2e5"
+          alt="Search icon"
+          class="search-icon"
+        />
+        <input
+          type="text"
+          class="search-input"
+          placeholder="Search here..."
+          aria-label="Search users"
+        />
+      </div>
+      <button class="add-user-btn" (click)="openAddUserPanel()">
+        <img
+          src="https://cdn.builder.io/api/v1/image/assets/TEMP/098bf76695fc830edbe87a84b7a32122238a637bc9966ffce5fd5260dbfa11d9?placeholderIfAbsent=true&apiKey=43632c7bd1d84079a851d9b51a08f2e5"
+          alt=""
+          class="add-icon"
+        />
+        <span>Add User</span>
+        
+      </button>
+    </div>
+    <table class="users-table" >
+      <thead>
+        <tr>
+          <th>User</th>
+          <th>
+            Role
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/99cee3cb6008863c6e142270d6ef4b45a58346e3d236de74c49c0c3a2c68e147?placeholderIfAbsent=true&apiKey=43632c7bd1d84079a851d9b51a08f2e5"
+              alt="Sort icon"
+              class="sort-icon"
+            />
+          </th>
+          <th>Agents</th>
+          <th>
+            Date of added
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/99cee3cb6008863c6e142270d6ef4b45a58346e3d236de74c49c0c3a2c68e147?placeholderIfAbsent=true&apiKey=43632c7bd1d84079a851d9b51a08f2e5"
+              alt="Sort icon"
+              class="sort-icon"
+            />
+          </th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users">
+          <td>{{ user.name }}</td>
+          <td>{{ user.role }}</td>
+          <td>
+            <ng-container *ngIf="!user.agents.includes('All Agents'); else singleAgent">  <span *ngFor="let agent of user.agents" class="agent-badge">{{ agent }}</span>
+            </ng-container>
+            <ng-template #singleAgent> {{ user.agents[0] }} </ng-template>
+        </td>
+          <td>
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/8de6b5bebc518cc6dd4808739237416b170113648fd049a0c5cdad89de568ed4?placeholderIfAbsent=true&apiKey=43632c7bd1d84079a851d9b51a08f2e5"
+              alt="Calendar icon"
+              class="calendar-icon"
+            />
+            {{ user.dateAdded | date:'MMM dd, yyyy' }}
+          </td>
+          <td>
+            <button class="view-details-btn">View Details</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<div class="add-user-sidepanel"  *ngIf="isAddUserPanelVisible">
+  <header class="sidepanel-header">
+    <h2 class="sidepanel-title">Add User</h2>
+    <button class="close-button" aria-label="Close panel" (click)="closeAddUserPanel()">
+      <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/a0a659bfc82cdedf5b8cec2500ec490e234851fbc417749dd20ae36c73cd7179?placeholderIfAbsent=true&apiKey=43632c7bd1d84079a851d9b51a08f2e5" alt="" class="close-icon" />
+    </button>
+  </header>
+  <form class="user-form">
+    <div class="form-field">
+      <label for="userName" class="form-label">Name</label>
+      <input id="userName" type="text" class="form-input" [(ngModel)]="userName" name="userName" />
+    </div>
+    <div class="form-field">
+      <label for="userEmail" class="form-label">Email</label>
+      <input id="userEmail" type="email" class="form-input" [(ngModel)]="userEmail" name="userEmail" />
+    </div>
+    <div class="form-field">
+      <label for="userRole" class="form-label">Role</label>
+      <div class="select-wrapper">
+        <select id="userRole" class="form-select" [(ngModel)]="userRole" name="userRole">
+          <option *ngFor="let role of roleOptions" [value]="role.value">
+            {{ role.label }}
+          </option>          <!-- Add more options as needed -->
+        </select>
+        <!-- <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/dc7fa49170051b642d1b62e40f179b5a8b0c63a0459bed699fb9bfb8bb83436d?placeholderIfAbsent=true&apiKey=43632c7bd1d84079a851d9b51a08f2e5" alt="" class="select-arrow" /> -->
+      </div>
+    </div>
+    <div class="form-field">
+      <label for="userAgents" class="form-label">Agents</label>
+      <div class="agents-input">
+        <div class="add-agent-badge">
+          <span class="agent-name">{{selectedAgent}}</span>
+          <button class="remove-agent" aria-label="Remove agent">
+            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/ca93d1b734fe79643d81729e372ee0b3ad078729e6c7ef840e3590c1e06872b6?placeholderIfAbsent=true&apiKey=43632c7bd1d84079a851d9b51a08f2e5" alt="" class="remove-icon" />
+          </button>
+        </div>
+        <!-- <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/dc7fa49170051b642d1b62e40f179b5a8b0c63a0459bed699fb9bfb8bb83436d?placeholderIfAbsent=true&apiKey=43632c7bd1d84079a851d9b51a08f2e5" alt="" class="select-arrow" /> -->
+      </div>
+    </div>
+  </form>
+  <button class="add-user-button" (click)="addUser()">Add User</button>
+</div>

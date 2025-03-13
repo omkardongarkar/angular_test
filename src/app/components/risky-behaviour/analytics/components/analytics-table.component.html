@@ -1,0 +1,80 @@
+<div class="table-container">
+  <div class="table-header">
+    <div class="header-cell">Users</div>
+    <div class="header-cell">Retention</div>
+    <div class="header-cell">Conversations</div>
+    <div class="header-cell actions">
+      <button class="export-btn">
+        <img
+          src="https://cdn.builder.io/api/v1/image/assets/43632c7bd1d84079a851d9b51a08f2e5/864c8fb1b03b0fa2dbac686d929d4dd2079f9c9712559e62e582038545f73a81?apiKey=43632c7bd1d84079a851d9b51a08f2e5&"
+          alt=""
+          role="presentation"
+        />
+        <span>Export CSV</span>
+      </button>
+    </div>
+  </div>
+
+  <div class="table-body">
+    @for (row of tableData; track row.id) {
+    <div class="table-row">
+      <div class="table-cell">
+        <div class="metric">
+          <img
+            src="https://cdn.builder.io/api/v1/image/assets/43632c7bd1d84079a851d9b51a08f2e5/ebd8b6d00e4cfdbb3596928d49dafcef4133effea8340b3c1f23bb8281ce8b0a?apiKey=43632c7bd1d84079a851d9b51a08f2e5&"
+            alt=""
+            role="presentation"
+          />
+          <span>{{row.users}}</span>
+        </div>
+        <div class="metric">
+          <img
+            src="https://cdn.builder.io/api/v1/image/assets/43632c7bd1d84079a851d9b51a08f2e5/8cfeeb812b9cb4b0904100ef67a0102da0444bf322bef88e35813c991d222786?apiKey=43632c7bd1d84079a851d9b51a08f2e5&"
+            alt=""
+            role="presentation"
+          />
+          <span>{{row.userGrowth}}%</span>
+        </div>
+      </div>
+      <div class="table-cell">
+        <div class="metric">
+          <img
+            src="https://cdn.builder.io/api/v1/image/assets/43632c7bd1d84079a851d9b51a08f2e5/9fa5b0c358b280ffaa991ac96020f5f143f96dd831a4a83eaffeb476e9273f70?apiKey=43632c7bd1d84079a851d9b51a08f2e5&"
+            alt=""
+            role="presentation"
+          />
+          <span>{{row.retention}}%</span>
+        </div>
+      </div>
+      <div class="table-cell">
+        <div class="metric">
+          <img
+            src="https://cdn.builder.io/api/v1/image/assets/43632c7bd1d84079a851d9b51a08f2e5/0a02b57d49323eb38f8e5cbe62b3ffd1cbe1c2cc9721c75f118fb7a2b1e67b30?apiKey=43632c7bd1d84079a851d9b51a08f2e5&"
+            alt=""
+            role="presentation"
+          />
+          <span>{{row.conversations}}</span>
+        </div>
+        <div class="metric">
+          <img
+            src="https://cdn.builder.io/api/v1/image/assets/43632c7bd1d84079a851d9b51a08f2e5/1022d1810febf5ee711129042524c2aad3996a8c5666798347fd8f286e2b5470?apiKey=43632c7bd1d84079a851d9b51a08f2e5&"
+            alt=""
+            role="presentation"
+          />
+          <span>{{row.conversionRate}}%</span>
+        </div>
+      </div>
+      <div class="table-cell actions">
+        <button class="details-btn">
+          <span>View Details</span>
+          <img
+            src="https://cdn.builder.io/api/v1/image/assets/43632c7bd1d84079a851d9b51a08f2e5/3263935affdd2733f957e2d8ed84e36c00fb218bbb11a4bfb836d4e6e01cafda?apiKey=43632c7bd1d84079a851d9b51a08f2e5&"
+            alt=""
+            role="presentation"
+          />
+        </button>
+      </div>
+    </div>
+    }
+  </div>
+</div>

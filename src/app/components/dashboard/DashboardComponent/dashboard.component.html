@@ -1,0 +1,451 @@
+<div class="insights-container">
+  <header class="header">
+    <nav class="filters">
+      <button class="filter-btn" aria-label="Select channel">
+        <span>All Channels</span>
+        <img src="https://cdn.builder.io/api/v1/image/assets/43632c7bd1d84079a851d9b51a08f2e5/b9e727b545ff3ea2d6420dd654352f5b158fca050d4037877fb79b25cb9c8544?apiKey=43632c7bd1d84079a851d9b51a08f2e5&" alt="" />
+      </button>
+      <button class="filter-btn" aria-label="Select status">
+        <span>All Status</span>
+        <img src="https://cdn.builder.io/api/v1/image/assets/43632c7bd1d84079a851d9b51a08f2e5/b9e727b545ff3ea2d6420dd654352f5b158fca050d4037877fb79b25cb9c8544?apiKey=43632c7bd1d84079a851d9b51a08f2e5&" alt="" />
+      </button>
+      <button class="filter-btn" aria-label="Select timezone">
+        <span>PST (UTC-8:00)</span>
+        <img src="https://cdn.builder.io/api/v1/image/assets/43632c7bd1d84079a851d9b51a08f2e5/b9e727b545ff3ea2d6420dd654352f5b158fca050d4037877fb79b25cb9c8544?apiKey=43632c7bd1d84079a851d9b51a08f2e5&" alt="" />
+      </button>
+      
+      <div class="date-filters">
+        <div class="date-buttons">
+          <button class="date-btn active">Default</button>
+          <button class="date-btn custom">
+            <img src="https://cdn.builder.io/api/v1/image/assets/43632c7bd1d84079a851d9b51a08f2e5/6d8410ca3c96f126978691031ad1095ca317ceaaf1db7597922a2e477c654d7c?apiKey=43632c7bd1d84079a851d9b51a08f2e5&" alt="" />
+            Custom
+          </button>
+          <button class="date-btn">Today</button>
+          <button class="date-btn">7D</button>
+          <button class="date-btn">30D</button>
+          <button class="date-btn">3M</button>
+          <button class="date-btn">6M</button>
+          <button class="date-btn">12M</button>
+          <button class="date-btn">Q1</button>
+          <button class="date-btn">Q2</button>
+          <button class="date-btn">Q3</button>
+          <button class="date-btn">Q4</button>
+          <button class="date-btn calendar">
+            <img src="https://cdn.builder.io/api/v1/image/assets/43632c7bd1d84079a851d9b51a08f2e5/74f532243858701a5806dd9ff80ef0003a952573b1488f571f8d3b976819f2e3?apiKey=43632c7bd1d84079a851d9b51a08f2e5&" alt="Calendar" />
+          </button>
+        </div>
+        
+        <button class="filter-btn">
+          <img src="https://cdn.builder.io/api/v1/image/assets/43632c7bd1d84079a851d9b51a08f2e5/2885d00d72000796292818c346802bbc02c8488c48053573fe4f95febad037ed?apiKey=43632c7bd1d84079a851d9b51a08f2e5&" alt="" />
+          <span>Filters</span>
+        </button>
+        
+        <img src="https://cdn.builder.io/api/v1/image/assets/43632c7bd1d84079a851d9b51a08f2e5/5562650d7c826d8ea88bd8d1d0689ffd2411194dcb0d2bf8dac6a59ef0437ace?apiKey=43632c7bd1d84079a851d9b51a08f2e5&" alt="" class="filter-icon" />
+      </div>
+    </nav>
+  </header>
+
+  <main class="main-content">
+    <section class="query-section">
+      <div class="query-header">
+        <div class="query-label">
+          <img src="https://cdn.builder.io/api/v1/image/assets/43632c7bd1d84079a851d9b51a08f2e5/beaf6a5b66d8a320dadb76f8a54d24fd72e98a69152dad97c9e456223df5c268?apiKey=43632c7bd1d84079a851d9b51a08f2e5&" alt="" />
+          <h3 class="m-5">Business Query</h3>
+          <img src="https://cdn.builder.io/api/v1/image/assets/43632c7bd1d84079a851d9b51a08f2e5/a32c68794eebe880c8468cbdc547a8bfe8e4bc8e92c1203fc8827c3ecdf577c3?apiKey=43632c7bd1d84079a851d9b51a08f2e5&" alt="" />
+        </div>
+        
+        <form class="search-form" role="search">
+          <div class="search-field">
+            <label for="searchInput" class="visually-hidden">Define your search objective</label>
+            <input 
+              type="search"
+              id="searchInput"
+              placeholder="Define your search objective"
+              aria-label="Search query input"
+            />
+            <img src="https://cdn.builder.io/api/v1/image/assets/43632c7bd1d84079a851d9b51a08f2e5/df4b17c23ed9885a7dc83fd3abdd697fc21122ddbf783e639070f6b1aec759d4?apiKey=43632c7bd1d84079a851d9b51a08f2e5&" alt="" />
+          </div>
+          <button type="submit" class="search-btn">Search</button>
+        </form>
+      </div>
+
+
+    <div class="sub-section">
+      <div class="search-results">
+        <div class="search-query">
+          <div class="query-details" (click)="toggleAnalysis()">
+            <div>
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/43632c7bd1d84079a851d9b51a08f2e5/beaf6a5b66d8a320dadb76f8a54d24fd72e98a69152dad97c9e456223df5c268?apiKey=43632c7bd1d84079a851d9b51a08f2e5&"
+              alt=""
+              class="query-icon"
+            />
+            <span class="text-sm semibold txt-style">
+              Did the chatAgent provide comprehensive information on return policies? Please plot
+              the Return policy interaction breakdown as % of affected queries.</span>
+              </div>
+            <div class="query-actions">
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets/43632c7bd1d84079a851d9b51a08f2e5/6fec264902a423b95c00e8d77451fe0dde30f10736a3c05629e065428d5472b4?apiKey=43632c7bd1d84079a851d9b51a08f2e5&"
+                alt="Action 1"
+              />
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets/43632c7bd1d84079a851d9b51a08f2e5/8e01c8b48f52097c38417f6963b16227c31331cbcaff3fff2950e028a419a3bc?apiKey=43632c7bd1d84079a851d9b51a08f2e5&"
+                alt="Action 2"
+              />
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets/43632c7bd1d84079a851d9b51a08f2e5/bf0d3d4071096d743f98eca331d153ad34dd981bbeced5bc83f40cf75adb2bdf?apiKey=43632c7bd1d84079a851d9b51a08f2e5&"
+                alt="Action 3"
+              />
+            <img *ngIf="!isClicked1"
+              src="https://cdn.builder.io/api/v1/image/assets/43632c7bd1d84079a851d9b51a08f2e5/a2252dbf170c0b0a3e36b32cdb0b49a31d2a6d3a1c44c03d990175fdbc855c3d?apiKey=43632c7bd1d84079a851d9b51a08f2e5&"
+              alt=""
+              class="arrow-icon"
+            />
+            <img *ngIf="isClicked1" src="https://cdn.builder.io/api/v1/image/assets/43632c7bd1d84079a851d9b51a08f2e5/157c367d3fc9d27a1b9832e05afeaa50c0c8962932b61fbbcbc3dab8ab2bc0ac?apiKey=43632c7bd1d84079a851d9b51a08f2e5&" alt="Additional analytics icon" class="icon" />
+          </div>
+          </div>
+        </div>
+      </div>
+
+      <div *ngIf="isClicked1" class="returns-analysis">
+        <div class="content">
+          <p class="intro m-5">The top factors that drive returns based on the analyzed records can be categorized as:</p>
+          <ol class="categories-list">
+            <li class="category">
+              <span class="category-title">Product Quality Issues</span>:
+              <ol class="subcategories">
+                <li>A significant number (48%) of customers returned items due to product defects or overall poor quality. Examples range from non-operational electronic items to quality complaints about clothing.</li>
+                <li>There was spike in laptops not connecting to the networks. Likely most common factor the patch update on 12/13/2024.</li>
+                <li>There were instances of the product malfunctioning (20%), such as appliances making noises, hairdryers not working, and screens flickering.</li>
+                <li>Some customers (4%) received damaged items like chipped knives, broken coffee makers, or cracked screens.</li>
+                <li>In about 24% of conversations, discrepancies in product quality, such as defective items, wrong size, or non-functioning goods led to return intentions.</li>
+              </ol>
+            </li>
+            <li class="category">
+              <span class="category-title">Incorrect Product or Misfit</span>:
+              <ol class="subcategories">
+                <li>Clothing items with incorrect fit or size lead to a fraction of returns (12%).</li>
+                <li>Customers (10%) returned items such as clothing or shoes due to size issues.</li>
+              </ol>
+            </li>
+            <li class="category">
+              <span class="category-title">Return Process and Policy Dissatisfaction</span>:
+              <ol class="subcategories">
+                <li>A noticeable percentage of customers (36%) complained about the return process and policy. This includes slow refund processes (delayed for 3-5 business days) and perceived limitations within the return policy.</li>
+                <li>Frustration with policy limitations and exceptions, particularly around the return of worn or used items and customized gifts, accounted for another 20% of complaints.</li>
+                <li>There were instances of customers dissatisfied with account services, with main complaints related to unprocessed refunds, unexpected charges, and poor customer service.</li>
+              </ol>
+            </li>
+            <li class="category">
+              <span class="category-title">System and Service Issues</span>:
+              <ol class="subcategories">
+                <li>Long resolution times for problems, payment processing, and account access issues resulted in customers (36%) wanting to cancel subscriptions or services.</li>
+                <li>Technical glitches such as failures during checkout, inability to update payment details, or password reset complications led to heightened user dissatisfaction.</li>
+                <li>Billing errors such as double charges or erroneous payments accounted for 12% of complaints, with dissatisfaction with customer support a factor in an additional 8%.</li>
+              </ol>
+            </li>
+            <li class="category">
+              <span class="category-title">Order and Delivery Errors</span>:
+              <ol class="subcategories">
+                <li>Incorrect items delivered or missing from the order (12%) also led to returns.</li>
+              </ol>
+            </li>
+          </ol>
+          <p class="conclusion">In conclusion, focusing on improving product quality, refining return policies, speeding up the refund process, addressing system glitches, and enhancing customer service could help significantly reduce these return-related issues.</p>
+        </div>
+      </div>
+
+      <!-- 2  format-->
+      <div class="search-results">
+        <div class="search-query">
+          <div class="query-details" (click)="toggleAnalysis2()">
+           
+           <div> 
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/43632c7bd1d84079a851d9b51a08f2e5/beaf6a5b66d8a320dadb76f8a54d24fd72e98a69152dad97c9e456223df5c268?apiKey=43632c7bd1d84079a851d9b51a08f2e5&"
+              alt=""
+              class="query-icon"
+            />
+            <span class="text-sm semibold txt-style">
+              Access the all agent performance last week related to refunds</span>
+              </div>
+            <div class="query-actions">
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets/43632c7bd1d84079a851d9b51a08f2e5/6fec264902a423b95c00e8d77451fe0dde30f10736a3c05629e065428d5472b4?apiKey=43632c7bd1d84079a851d9b51a08f2e5&"
+                alt="Action 1"
+              />
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets/43632c7bd1d84079a851d9b51a08f2e5/8e01c8b48f52097c38417f6963b16227c31331cbcaff3fff2950e028a419a3bc?apiKey=43632c7bd1d84079a851d9b51a08f2e5&"
+                alt="Action 2"
+              />
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets/43632c7bd1d84079a851d9b51a08f2e5/bf0d3d4071096d743f98eca331d153ad34dd981bbeced5bc83f40cf75adb2bdf?apiKey=43632c7bd1d84079a851d9b51a08f2e5&"
+                alt="Action 3"
+              />
+            <img *ngIf="!isClicked2"
+              src="https://cdn.builder.io/api/v1/image/assets/43632c7bd1d84079a851d9b51a08f2e5/a2252dbf170c0b0a3e36b32cdb0b49a31d2a6d3a1c44c03d990175fdbc855c3d?apiKey=43632c7bd1d84079a851d9b51a08f2e5&"
+              alt=""
+              class="arrow-icon"
+            />
+            <img *ngIf="isClicked2" src="https://cdn.builder.io/api/v1/image/assets/43632c7bd1d84079a851d9b51a08f2e5/157c367d3fc9d27a1b9832e05afeaa50c0c8962932b61fbbcbc3dab8ab2bc0ac?apiKey=43632c7bd1d84079a851d9b51a08f2e5&" alt="Additional analytics icon" class="icon" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="query-block">
+      <section class="query-section">
+      <div *ngIf="isClicked2" class="returns-analysis">
+        <div class="content">
+          <p class="intro m-5">The top factors that drive returns based on the analyzed records can be categorized as:</p>
+          <ol class="categories-list">
+            <li class="category">
+              <span class="category-title">Product Quality Issues</span>:
+              <ol class="subcategories">
+                <li>A significant number (48%) of customers returned items due to product defects or overall poor quality. Examples range from non-operational electronic items to quality complaints about clothing.</li>
+                <li>There was spike in laptops not connecting to the networks. Likely most common factor the patch update on 12/13/2024.</li>
+                <li>There were instances of the product malfunctioning (20%), such as appliances making noises, hairdryers not working, and screens flickering.</li>
+                <li>Some customers (4%) received damaged items like chipped knives, broken coffee makers, or cracked screens.</li>
+                <li>In about 24% of conversations, discrepancies in product quality, such as defective items, wrong size, or non-functioning goods led to return intentions.</li>
+              </ol>
+            </li>
+            <li class="category">
+              <span class="category-title">Incorrect Product or Misfit</span>:
+              <ol class="subcategories">
+                <li>Clothing items with incorrect fit or size lead to a fraction of returns (12%).</li>
+                <li>Customers (10%) returned items such as clothing or shoes due to size issues.</li>
+              </ol>
+            </li>
+            <li class="category">
+              <span class="category-title">Return Process and Policy Dissatisfaction</span>:
+              <ol class="subcategories">
+                <li>A noticeable percentage of customers (36%) complained about the return process and policy. This includes slow refund processes (delayed for 3-5 business days) and perceived limitations within the return policy.</li>
+                <li>Frustration with policy limitations and exceptions, particularly around the return of worn or used items and customized gifts, accounted for another 20% of complaints.</li>
+                <li>There were instances of customers dissatisfied with account services, with main complaints related to unprocessed refunds, unexpected charges, and poor customer service.</li>
+              </ol>
+            </li>
+            <li class="category">
+              <span class="category-title">System and Service Issues</span>:
+              <ol class="subcategories">
+                <li>Long resolution times for problems, payment processing, and account access issues resulted in customers (36%) wanting to cancel subscriptions or services.</li>
+                <li>Technical glitches such as failures during checkout, inability to update payment details, or password reset complications led to heightened user dissatisfaction.</li>
+                <li>Billing errors such as double charges or erroneous payments accounted for 12% of complaints, with dissatisfaction with customer support a factor in an additional 8%.</li>
+              </ol>
+            </li>
+            <li class="category">
+              <span class="category-title">Order and Delivery Errors</span>:
+              <ol class="subcategories">
+                <li>Incorrect items delivered or missing from the order (12%) also led to returns.</li>
+              </ol>
+            </li>
+          </ol>
+          <p class="conclusion">In conclusion, focusing on improving product quality, refining return policies, speeding up the refund process, addressing system glitches, and enhancing customer service could help significantly reduce these return-related issues.</p>
+        </div>
+      </div>
+      </section>
+
+      <aside class="query-subPanel" *ngIf="isClicked2">
+        <h2>Interaction</h2>
+        <div class="query-list">
+          <div class="insight-item">
+            <p>Users in Northeast are experiencing continued low user sentiment.</p>
+            <img src="https://cdn.builder.io/api/v1/image/assets/43632c7bd1d84079a851d9b51a08f2e5/87da144d1683e88739ed31f7dbb6f94df5a8a01891b7e6404bc99edb24b33b78?apiKey=43632c7bd1d84079a851d9b51a08f2e5&" alt="" />
+          </div>
+          
+          <div class="insight-item">
+            <p>Users in Northeast are experiencing increased issues submissions and lower user sentiment.</p>
+            <img src="https://cdn.builder.io/api/v1/image/assets/43632c7bd1d84079a851d9b51a08f2e5/87da144d1683e88739ed31f7dbb6f94df5a8a01891b7e6404bc99edb24b33b78?apiKey=43632c7bd1d84079a851d9b51a08f2e5&" alt="" />
+          </div>
+  
+          <div class="insight-item">
+            <div class="insight-content">
+              <span>The volume of conversations about</span>
+              <span class="badge">Refund</span>
+              <span>has increased by</span>
+              <span class="highlight positive">500%</span>
+              <img src="https://cdn.builder.io/api/v1/image/assets/43632c7bd1d84079a851d9b51a08f2e5/c99c18adf83045d55d9ff0f0c56ee7d0db5c13101e8f270fadc07cf158dd77e6?apiKey=43632c7bd1d84079a851d9b51a08f2e5&" alt="" />
+              <span>(+6) relative to last 7 days</span>
+            </div>
+            <img src="https://cdn.builder.io/api/v1/image/assets/43632c7bd1d84079a851d9b51a08f2e5/87da144d1683e88739ed31f7dbb6f94df5a8a01891b7e6404bc99edb24b33b78?apiKey=43632c7bd1d84079a851d9b51a08f2e5&" alt="" />
+          </div>
+  
+          <div class="insight-item">
+            <p>Users in Northeast are experiencing increased issues submissions and lower user sentiment.</p>
+            <img src="https://cdn.builder.io/api/v1/image/assets/43632c7bd1d84079a851d9b51a08f2e5/87da144d1683e88739ed31f7dbb6f94df5a8a01891b7e6404bc99edb24b33b78?apiKey=43632c7bd1d84079a851d9b51a08f2e5&" alt="" />
+          </div>
+          <div class="insight-item">
+            <p>Users in Northeast are experiencing increased issues submissions and lower user sentiment.</p>
+            <img src="https://cdn.builder.io/api/v1/image/assets/43632c7bd1d84079a851d9b51a08f2e5/87da144d1683e88739ed31f7dbb6f94df5a8a01891b7e6404bc99edb24b33b78?apiKey=43632c7bd1d84079a851d9b51a08f2e5&" alt="" />
+          </div>
+          <div class="insight-item">
+            <p>Users in Northeast are experiencing increased issues submissions and lower user sentiment.</p>
+            <img src="https://cdn.builder.io/api/v1/image/assets/43632c7bd1d84079a851d9b51a08f2e5/87da144d1683e88739ed31f7dbb6f94df5a8a01891b7e6404bc99edb24b33b78?apiKey=43632c7bd1d84079a851d9b51a08f2e5&" alt="" />
+          </div>  
+        </div>
+      </aside>
+      </div>
+
+      <!-- 3 format -->
+      <div class="search-results">
+        <div class="search-query">
+          <div class="query-details" (click)="toggleAnalysis3()">
+           
+           <div> 
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/43632c7bd1d84079a851d9b51a08f2e5/beaf6a5b66d8a320dadb76f8a54d24fd72e98a69152dad97c9e456223df5c268?apiKey=43632c7bd1d84079a851d9b51a08f2e5&"
+              alt=""
+              class="query-icon"
+            />
+            <span class="text-sm semibold txt-style">
+              Analyse outlier patterns in success rates acroess customer segmets in last 7 days?give reason for these outler pattern.
+            </span>
+              </div>
+            <div class="query-actions">
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets/43632c7bd1d84079a851d9b51a08f2e5/6fec264902a423b95c00e8d77451fe0dde30f10736a3c05629e065428d5472b4?apiKey=43632c7bd1d84079a851d9b51a08f2e5&"
+                alt="Action 1"
+              />
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets/43632c7bd1d84079a851d9b51a08f2e5/8e01c8b48f52097c38417f6963b16227c31331cbcaff3fff2950e028a419a3bc?apiKey=43632c7bd1d84079a851d9b51a08f2e5&"
+                alt="Action 2"
+              />
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets/43632c7bd1d84079a851d9b51a08f2e5/bf0d3d4071096d743f98eca331d153ad34dd981bbeced5bc83f40cf75adb2bdf?apiKey=43632c7bd1d84079a851d9b51a08f2e5&"
+                alt="Action 3"
+              />
+            <img *ngIf="!isClicked3"
+              src="https://cdn.builder.io/api/v1/image/assets/43632c7bd1d84079a851d9b51a08f2e5/a2252dbf170c0b0a3e36b32cdb0b49a31d2a6d3a1c44c03d990175fdbc855c3d?apiKey=43632c7bd1d84079a851d9b51a08f2e5&"
+              alt=""
+              class="arrow-icon"
+            />
+            <img *ngIf="isClicked3" src="https://cdn.builder.io/api/v1/image/assets/43632c7bd1d84079a851d9b51a08f2e5/157c367d3fc9d27a1b9832e05afeaa50c0c8962932b61fbbcbc3dab8ab2bc0ac?apiKey=43632c7bd1d84079a851d9b51a08f2e5&" alt="Additional analytics icon" class="icon" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="query-block">
+      <section class="query-section">
+      <div *ngIf="isClicked3" class="returns-analysis">
+        <div class="content">
+          <p class="intro m-5">The top factors that drive returns based on the analyzed records can be categorized as:</p>
+          <ol class="categories-list">
+            <li class="category">
+              <span class="category-title">Product Quality Issues</span>:
+              <ol class="subcategories">
+                <li>A significant number (48%) of customers returned items due to product defects or overall poor quality. Examples range from non-operational electronic items to quality complaints about clothing.</li>
+                <li>There was spike in laptops not connecting to the networks. Likely most common factor the patch update on 12/13/2024.</li>
+                <li>There were instances of the product malfunctioning (20%), such as appliances making noises, hairdryers not working, and screens flickering.</li>
+                <li>Some customers (4%) received damaged items like chipped knives, broken coffee makers, or cracked screens.</li>
+                <li>In about 24% of conversations, discrepancies in product quality, such as defective items, wrong size, or non-functioning goods led to return intentions.</li>
+              </ol>
+            </li>
+            <li class="category">
+              <span class="category-title">Incorrect Product or Misfit</span>:
+              <ol class="subcategories">
+                <li>Clothing items with incorrect fit or size lead to a fraction of returns (12%).</li>
+                <li>Customers (10%) returned items such as clothing or shoes due to size issues.</li>
+              </ol>
+            </li>
+                  
+          </ol>
+          <p class="conclusion">In conclusion, focusing on improving product quality, refining return policies, speeding up the refund process, addressing system glitches, and enhancing customer service could help significantly reduce these return-related issues.</p>
+        </div>
+      </div>
+      </section>
+
+      <aside class="query-subPanel" *ngIf="isClicked3">  
+
+        <div class="chart-section users-chart ">
+          <canvas id="usersChart"></canvas>
+        </div>
+
+        <div class="query-subPanel-Title">
+        <h2>Interaction <span class="badge">View All</span>
+        </h2>
+        
+        <div class="query-list">
+          <div class="insight-item">
+            <p>Users in Northeast are experiencing continued low user sentiment.</p>
+            <img src="https://cdn.builder.io/api/v1/image/assets/43632c7bd1d84079a851d9b51a08f2e5/87da144d1683e88739ed31f7dbb6f94df5a8a01891b7e6404bc99edb24b33b78?apiKey=43632c7bd1d84079a851d9b51a08f2e5&" alt="" />
+          </div>
+          
+          <div class="insight-item">
+            <p>Users in Northeast are experiencing increased issues submissions and lower user sentiment.</p>
+            <img src="https://cdn.builder.io/api/v1/image/assets/43632c7bd1d84079a851d9b51a08f2e5/87da144d1683e88739ed31f7dbb6f94df5a8a01891b7e6404bc99edb24b33b78?apiKey=43632c7bd1d84079a851d9b51a08f2e5&" alt="" />
+          </div>
+  
+          <div class="insight-item">
+            <div class="insight-content">
+              <span>The volume of conversations about</span>
+              <span class="badge">Refund</span>
+              <span>has increased by</span>
+              <span class="highlight positive">500%</span>
+              <img src="https://cdn.builder.io/api/v1/image/assets/43632c7bd1d84079a851d9b51a08f2e5/c99c18adf83045d55d9ff0f0c56ee7d0db5c13101e8f270fadc07cf158dd77e6?apiKey=43632c7bd1d84079a851d9b51a08f2e5&" alt="" />
+              <span>(+6) relative to last 7 days</span>
+            </div>
+            <img src="https://cdn.builder.io/api/v1/image/assets/43632c7bd1d84079a851d9b51a08f2e5/87da144d1683e88739ed31f7dbb6f94df5a8a01891b7e6404bc99edb24b33b78?apiKey=43632c7bd1d84079a851d9b51a08f2e5&" alt="" />
+          </div>
+  
+          <div class="insight-item">
+            <p>Users in Northeast are experiencing increased issues submissions and lower user sentiment.</p>
+            <img src="https://cdn.builder.io/api/v1/image/assets/43632c7bd1d84079a851d9b51a08f2e5/87da144d1683e88739ed31f7dbb6f94df5a8a01891b7e6404bc99edb24b33b78?apiKey=43632c7bd1d84079a851d9b51a08f2e5&" alt="" />
+          </div>
+          <div class="insight-item">
+            <p>Users in Northeast are experiencing increased issues submissions and lower user sentiment.</p>
+            <img src="https://cdn.builder.io/api/v1/image/assets/43632c7bd1d84079a851d9b51a08f2e5/87da144d1683e88739ed31f7dbb6f94df5a8a01891b7e6404bc99edb24b33b78?apiKey=43632c7bd1d84079a851d9b51a08f2e5&" alt="" />
+          </div> 
+        </div>
+        </div>
+
+      </aside>
+      </div>
+      
+      </div>
+    </section>
+
+    <aside class="insights-panel">
+      <h2>Insights</h2>
+      <div class="insights-list">
+        <div class="insight-item">
+          <p>Users in Northeast are experiencing continued low user sentiment.</p>
+          <img src="https://cdn.builder.io/api/v1/image/assets/43632c7bd1d84079a851d9b51a08f2e5/87da144d1683e88739ed31f7dbb6f94df5a8a01891b7e6404bc99edb24b33b78?apiKey=43632c7bd1d84079a851d9b51a08f2e5&" alt="" />
+        </div>
+        
+        <div class="insight-item">
+          <p>Users in Northeast are experiencing increased issues submissions and lower user sentiment.</p>
+          <img src="https://cdn.builder.io/api/v1/image/assets/43632c7bd1d84079a851d9b51a08f2e5/87da144d1683e88739ed31f7dbb6f94df5a8a01891b7e6404bc99edb24b33b78?apiKey=43632c7bd1d84079a851d9b51a08f2e5&" alt="" />
+        </div>
+
+        <div class="insight-item">
+          <div class="insight-content">
+            <span>The volume of conversations about</span>
+            <span class="badge">Refund</span>
+            <span>has increased by</span>
+            <span class="highlight positive">500%</span>
+            <img src="https://cdn.builder.io/api/v1/image/assets/43632c7bd1d84079a851d9b51a08f2e5/c99c18adf83045d55d9ff0f0c56ee7d0db5c13101e8f270fadc07cf158dd77e6?apiKey=43632c7bd1d84079a851d9b51a08f2e5&" alt="" />
+            <span>(+6) relative to last 7 days</span>
+          </div>
+          <img src="https://cdn.builder.io/api/v1/image/assets/43632c7bd1d84079a851d9b51a08f2e5/87da144d1683e88739ed31f7dbb6f94df5a8a01891b7e6404bc99edb24b33b78?apiKey=43632c7bd1d84079a851d9b51a08f2e5&" alt="" />
+        </div>
+
+        <div class="insight-item">
+          <p>Users in Northeast are experiencing increased issues submissions and lower user sentiment.</p>
+          <img src="https://cdn.builder.io/api/v1/image/assets/43632c7bd1d84079a851d9b51a08f2e5/87da144d1683e88739ed31f7dbb6f94df5a8a01891b7e6404bc99edb24b33b78?apiKey=43632c7bd1d84079a851d9b51a08f2e5&" alt="" />
+        </div>
+        <div class="insight-item">
+          <p>Users in Northeast are experiencing increased issues submissions and lower user sentiment.</p>
+          <img src="https://cdn.builder.io/api/v1/image/assets/43632c7bd1d84079a851d9b51a08f2e5/87da144d1683e88739ed31f7dbb6f94df5a8a01891b7e6404bc99edb24b33b78?apiKey=43632c7bd1d84079a851d9b51a08f2e5&" alt="" />
+        </div>
+        <div class="insight-item">
+          <p>Users in Northeast are experiencing increased issues submissions and lower user sentiment.</p>
+          <img src="https://cdn.builder.io/api/v1/image/assets/43632c7bd1d84079a851d9b51a08f2e5/87da144d1683e88739ed31f7dbb6f94df5a8a01891b7e6404bc99edb24b33b78?apiKey=43632c7bd1d84079a851d9b51a08f2e5&" alt="" />
+        </div>
+
+        <!-- Additional insight items follow same pattern -->
+      </div>
+    </aside>
+  </main>
+</div>

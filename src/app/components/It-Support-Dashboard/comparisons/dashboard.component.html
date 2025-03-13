@@ -1,0 +1,36 @@
+<link
+  href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+  rel="stylesheet"
+/>
+<section class="dashboard">
+  <div class="chart-row">
+    <app-chart-card title="Daily Count of Users Asking for Product Comparisons">
+      <app-bar-chart [data]="barChartData"></app-bar-chart>
+    </app-chart-card>
+
+    <app-chart-card title="Most Common Product Comparisons Inquired About">
+      <app-pie-chart [data]="pieChartData"></app-pie-chart>
+    </app-chart-card>
+  </div>
+
+  <div class="info-row">
+    <app-info-card title="Weekly Assessment of ChatAgent's Performance (Browsing Time)">
+      <div class="metrics-list">
+        <div *ngFor="let metric of performanceMetrics">
+          <span class="metric-label">{{ metric.label }}:</span>
+          <span>{{ metric.value }}</span>
+        </div>
+      </div>
+    </app-info-card>
+
+    <app-info-card title="Weekly Review of Additional Support That Could Have Been Offered">
+      <div class="improvements-list">
+        <div *ngFor="let improvement of improvementSuggestions">
+          <span class="improvement-label">{{ improvement.label }}:</span>
+          <span>{{ improvement.value }}</span>
+          <div class="example">{{ improvement.example }}</div>
+        </div>
+      </div>
+    </app-info-card>
+  </div>
+</section>

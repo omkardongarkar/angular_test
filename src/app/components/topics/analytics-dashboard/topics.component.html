@@ -1,0 +1,360 @@
+<div class="dashboard">
+  <header class="header">
+    <nav class="filters" role="navigation" aria-label="Main filters">
+      <button class="filter-btn" aria-expanded="false">
+        All Channels
+        <img
+          src="https://cdn.builder.io/api/v1/image/assets/43632c7bd1d84079a851d9b51a08f2e5/5bcf29e651e7bb4e4d04e7bac6d079d42be2fc7f2c53309d1537f8e9d73368c4?apiKey=43632c7bd1d84079a851d9b51a08f2e5&"
+          alt=""
+          class="icon"
+        />
+      </button>
+      <button class="filter-btn" aria-expanded="false">
+        All Queues
+        <img
+          src="https://cdn.builder.io/api/v1/image/assets/43632c7bd1d84079a851d9b51a08f2e5/5bcf29e651e7bb4e4d04e7bac6d079d42be2fc7f2c53309d1537f8e9d73368c4?apiKey=43632c7bd1d84079a851d9b51a08f2e5&"
+          alt=""
+          class="icon"
+        />
+      </button>
+      <button class="filter-btn" aria-expanded="false">
+        All Status
+        <img
+          src="https://cdn.builder.io/api/v1/image/assets/43632c7bd1d84079a851d9b51a08f2e5/5bcf29e651e7bb4e4d04e7bac6d079d42be2fc7f2c53309d1537f8e9d73368c4?apiKey=43632c7bd1d84079a851d9b51a08f2e5&"
+          alt=""
+          class="icon"
+        />
+      </button>
+      <button class="filter-btn" aria-expanded="false">
+        PST (UTC-8:00)
+        <img
+          src="https://cdn.builder.io/api/v1/image/assets/43632c7bd1d84079a851d9b51a08f2e5/5bcf29e651e7bb4e4d04e7bac6d079d42be2fc7f2c53309d1537f8e9d73368c4?apiKey=43632c7bd1d84079a851d9b51a08f2e5&"
+          alt=""
+          class="icon"
+        />
+      </button>
+      <div class="filter-actions">
+        <button class="action-btn">
+          <img
+            src="https://cdn.builder.io/api/v1/image/assets/43632c7bd1d84079a851d9b51a08f2e5/842cbb67850f9d77b514684c7e721f94d70b40c039eb0f6ef85aa642b1e191ca?apiKey=43632c7bd1d84079a851d9b51a08f2e5&"
+            alt=""
+            class="icon"
+          />
+          Filters
+        </button>
+        <button class="action-btn">
+          <img
+            src="https://cdn.builder.io/api/v1/image/assets/43632c7bd1d84079a851d9b51a08f2e5/b34f12957dea29a9315bd3d9b634cc964e868f2a025bf27b4bb04e7de2bbb36e?apiKey=43632c7bd1d84079a851d9b51a08f2e5&"
+            alt=""
+            class="icon"
+          />
+          Last 7 Days
+        </button>
+        <img
+          src="https://cdn.builder.io/api/v1/image/assets/43632c7bd1d84079a851d9b51a08f2e5/3799295a61e655969507a363ff950e564478fbf58f24f84bb365cf0dc2571a0d?apiKey=43632c7bd1d84079a851d9b51a08f2e5&"
+          alt=""
+          class="icon"
+        />
+      </div>
+    </nav>
+  </header>
+
+  <section class="metrics-grid" role="region" aria-label="Key metrics" style="display: none;">
+    <div class="metric-card">
+      <h3 class="metric-title">Topics</h3>
+      <p class="metric-value">124</p>
+    </div>
+    <div class="metric-card">
+      <a href="/userintent" routerLink="/userintent" style="text-decoration: none;" class="metric-link">
+      <h3 class="metric-title">User intents</h3>
+      <p class="metric-value">8</p>
+    </a>
+    </div>
+    <div class="metric-card">
+      <h3 class="metric-title">User actions</h3>
+      <p class="metric-value">43</p>
+    </div>
+    <div class="metric-card">
+      <a href="/risk" routerLink="/risk" style="text-decoration: none;" class="metric-link">
+      <h3 class="metric-title">Risky behaviours</h3>
+      <p class="metric-value">27</p>
+      </a>
+    </div>
+    <div class="metric-card">
+      <h3 class="metric-title">User sentiment</h3>
+      <p class="metric-value">3.6/5</p>
+    </div>
+    <div class="metric-card">
+      <a href="/emotion" routerLink="/emotion" style="text-decoration: none;" class="metric-link">
+      <h3 class="metric-title">User Emotions</h3>
+      <p class="metric-value">9</p>
+      </a>
+    </div>
+    <div class="metric-card">
+      <h3 class="metric-title">Keywords</h3>
+      <p class="metric-value">42</p>
+    </div>
+    <div class="metric-card">
+      <a href="/userGeography" routerLink="/userGeography" style="text-decoration: none;" class="metric-link">
+      <h3 class="metric-title">Geography</h3>
+      <p class="metric-value">10</p>
+    </a>
+    </div>
+    <div class="metric-card">
+      <h3 class="metric-title">User type</h3>
+      <p class="metric-value">15</p>
+    </div>
+    <div class="metric-card">
+      <h3 class="metric-title">RAG source</h3>
+      <p class="metric-value">78</p>
+    </div>
+  </section>
+
+  <main class="main-content">
+    <div class="content-header">     
+
+      <div class="tab-group" role="tablist" >
+        <button *ngFor="let tab of TabGroup" role="tab" aria-selected="false" (click)="selectTab(tab)" [ngClass]="tab.isSelect ? 'tab-btn active':'tab-btn'">
+          <ng-container *ngIf="tab.id !== 3; else svgIcon">
+          <img [src]="tab.icon" alt="" class="icon" />
+        </ng-container>
+        <ng-template #svgIcon>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-trending-up"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+        </ng-template>
+          {{tab.name}}
+        </button>
+      </div>
+
+      <div class="tab-group" role="tablist" style="display: none;">
+        <button role="tab" aria-selected="false" class="tab-btn">
+          <img
+            src="https://cdn.builder.io/api/v1/image/assets/43632c7bd1d84079a851d9b51a08f2e5/1dae556fa67fc65b02636bc7cd7bdeab38fb2ca89ae502e7ced7c5983c6be61e?apiKey=43632c7bd1d84079a851d9b51a08f2e5&"
+            alt=""
+            class="icon"
+          />
+          Table
+        </button>
+        <button role="tab" aria-selected="true" class="tab-btn active">
+          <img
+            src="https://cdn.builder.io/api/v1/image/assets/43632c7bd1d84079a851d9b51a08f2e5/63d25d265abda75ef8bddbeea5d9b9baefc60f3282720657516016d3e67e2f2e?apiKey=43632c7bd1d84079a851d9b51a08f2e5&"
+            alt=""
+            class="icon"
+          />
+          Map
+        </button>
+        <button role="tab" aria-selected="false" class="tab-btn">
+          <img
+            src="https://cdn.builder.io/api/v1/image/assets/43632c7bd1d84079a851d9b51a08f2e5/d133f62c71e0067285e35ae0d7c7735fb24739c1fb9656a20614423cf1f10f61?apiKey=43632c7bd1d84079a851d9b51a08f2e5&"
+            alt=""
+            class="icon"
+          />
+          Trends
+        </button>
+      </div>
+      <div class="content-actions">
+        <button class="action-btn">
+          <img
+            src="https://cdn.builder.io/api/v1/image/assets/43632c7bd1d84079a851d9b51a08f2e5/842cbb67850f9d77b514684c7e721f94d70b40c039eb0f6ef85aa642b1e191ca?apiKey=43632c7bd1d84079a851d9b51a08f2e5&"
+            alt=""
+            class="icon"
+          />
+          Filter
+        </button>
+        <div class="search-wrapper">
+          <img
+            src="https://cdn.builder.io/api/v1/image/assets/43632c7bd1d84079a851d9b51a08f2e5/9a04c128b719c11a8be5a630023d52ac0c8377ac6ad1d6271b52bdbd20becfa3?apiKey=43632c7bd1d84079a851d9b51a08f2e5&"
+            alt=""
+            class="search-icon"
+          />
+          <input
+            type="search"
+            class="search-input"
+            placeholder="Search here..."
+            aria-label="Search"
+          />
+        </div>
+      </div>
+    </div>
+    
+          <div class="insights-table-wrapper">
+            <aside class="insights-panel" role="complementary" aria-label="Emotional insights">
+              <div class="panel-header">
+                <div class="badge">Selected : {{selectedCount}}</div>
+                <div class="metric">
+                  <img
+                    src="https://cdn.builder.io/api/v1/image/assets/43632c7bd1d84079a851d9b51a08f2e5/8f9ea952f63d74202d0aa1d80e50a74de635fe968b6a5cc79821745f0c3a009f?apiKey=43632c7bd1d84079a851d9b51a08f2e5&"
+                    alt=""
+                    aria-hidden="true"
+                  />
+                  <span class="panel-text">124</span>
+                </div>
+                <div class="trend">
+                  <img
+                    src="https://cdn.builder.io/api/v1/image/assets/43632c7bd1d84079a851d9b51a08f2e5/ad5795b6f35550ddac3e94a7708c51487bb35aaccbecfc933455dd320362f585?apiKey=43632c7bd1d84079a851d9b51a08f2e5&"
+                    alt=""
+                    aria-hidden="true"
+                  />
+                  <span class="panel-text">65%</span>
+                </div>
+                <div class="separator"></div>
+                <button class="clear-btn" (click)="clearFilters()">
+                  <span>Clear</span>
+                  <img
+                    src="https://cdn.builder.io/api/v1/image/assets/43632c7bd1d84079a851d9b51a08f2e5/1730922da4a35314aa1393df6eaaa493e4f5c1cb59368ad1ba5448d4e9fa1319?apiKey=43632c7bd1d84079a851d9b51a08f2e5&"
+                    alt=""
+                    aria-hidden="true"
+                  />
+                </button>
+              </div>
+
+          <div class="topics-list">
+          <div
+            *ngFor="let topic of topics"
+            class="topic-item"
+            role="article"
+            [attr.aria-label]="topic.topics + ' insight'"
+          >
+            <div class="topic-header">
+              <div class="topic-badge">
+                <input 
+          type="checkbox" 
+          [(ngModel)]="topic.selected" 
+          [id]="'checkbox-' + topic.topics" 
+          class="topic-checkbox"
+          (change)="countSelected()"
+        />
+                <img [src]="topic.icon" alt="" aria-hidden="true" />
+                <span>{{topic.topics}}</span>
+              </div>
+              <span class="topic-cell">
+              <span class="metric">
+                <img
+                  src="https://cdn.builder.io/api/v1/image/assets/43632c7bd1d84079a851d9b51a08f2e5/8f9ea952f63d74202d0aa1d80e50a74de635fe968b6a5cc79821745f0c3a009f?apiKey=43632c7bd1d84079a851d9b51a08f2e5&"
+                  alt=""
+                  aria-hidden="true"
+                />
+                <span>{{topic.users}}</span>
+              </span>
+              <span class="trend">
+                <img
+                  src="https://cdn.builder.io/api/v1/image/assets/43632c7bd1d84079a851d9b51a08f2e5/ad5795b6f35550ddac3e94a7708c51487bb35aaccbecfc933455dd320362f585?apiKey=43632c7bd1d84079a851d9b51a08f2e5&"
+                  alt=""
+                  aria-hidden="true"
+                />
+                <span>{{topic.percentage}}%</span>
+              </span>
+            </span>
+            </div>
+            <div
+              class="topic-bar"
+              [style.background-color]="topic.color"
+              [style.width.%]="topic.percentage"
+              role="progressbar"
+              [attr.aria-valuenow]="topic.percentage"
+              aria-valuemin="0"
+              aria-valuemax="100"
+            ></div>
+          </div>
+        </div>         
+
+      </aside>
+
+      <section class="visualization" role="region" aria-label="Data visualization" *ngIf="selectedTab.name === 'Map'">
+        <app-scatter-chart></app-scatter-chart>
+      </section>
+      <main class="data-table" role="main" *ngIf="selectedTab.name === 'Table'">
+        <div class="table-header">
+          <div class="header-cell" (click)="sortData('users')">
+            <span>Users</span>
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/43632c7bd1d84079a851d9b51a08f2e5/5609bf6db0bd62762a97479e65e5ecc02326e8e0269c3decc7654d4e6ec0dd79?apiKey=43632c7bd1d84079a851d9b51a08f2e5&"
+              alt=""
+              aria-hidden="true"
+            />
+          </div>
+          <div class="header-cell" (click)="sortData('retention')">
+            <span>Retention</span>
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/43632c7bd1d84079a851d9b51a08f2e5/5609bf6db0bd62762a97479e65e5ecc02326e8e0269c3decc7654d4e6ec0dd79?apiKey=43632c7bd1d84079a851d9b51a08f2e5&"
+              alt=""
+              aria-hidden="true"
+            />
+          </div>
+          <div class="header-cell">Conversations</div>
+          <div class="header-cell actions">
+            <button class="export-btn" (click)="exportCsv()">
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets/43632c7bd1d84079a851d9b51a08f2e5/10eac6833bf928aac718965a153a9f16819b68c0ac5db0759190a7381c424d38?apiKey=43632c7bd1d84079a851d9b51a08f2e5&"
+                alt=""
+                aria-hidden="true"
+              />
+              <span>Export CSV</span>
+            </button>
+          </div>
+        </div>
+      
+        <div class="table-body">
+          <div *ngFor="let row of data" class="table-row" role="row">
+            <div class="table-cell">
+              <div class="metric">
+                <img
+                  src="https://cdn.builder.io/api/v1/image/assets/43632c7bd1d84079a851d9b51a08f2e5/8f9ea952f63d74202d0aa1d80e50a74de635fe968b6a5cc79821745f0c3a009f?apiKey=43632c7bd1d84079a851d9b51a08f2e5&"
+                  alt=""
+                  aria-hidden="true"
+                />
+                <span>{{row.users.count}}</span>
+              </div>
+              <div class="trend">
+                <img
+                  src="https://cdn.builder.io/api/v1/image/assets/43632c7bd1d84079a851d9b51a08f2e5/ad5795b6f35550ddac3e94a7708c51487bb35aaccbecfc933455dd320362f585?apiKey=43632c7bd1d84079a851d9b51a08f2e5&"
+                  alt=""
+                  aria-hidden="true"
+                />
+                <span>{{row.users.trend}}%</span>
+              </div>
+            </div>
+            <div class="table-cell">
+              <div class="metric">
+                <img
+                  src="https://cdn.builder.io/api/v1/image/assets/43632c7bd1d84079a851d9b51a08f2e5/1ff76d4ab5ea99ceaf90114a8cf2722653f4f9e3a3ce9af33a7a3c7b045f7120?apiKey=43632c7bd1d84079a851d9b51a08f2e5&"
+                  alt=""
+                  aria-hidden="true"
+                />
+                <span>{{row.retention}}%</span>
+              </div>
+            </div>
+            <div class="table-cell">
+              <div class="metric">
+                <img
+                  src="https://cdn.builder.io/api/v1/image/assets/43632c7bd1d84079a851d9b51a08f2e5/8490da28982ead191faec65048904966affe4b50e80137654093246d169f4162?apiKey=43632c7bd1d84079a851d9b51a08f2e5&"
+                  alt=""
+                  aria-hidden="true"
+                />
+                <span>{{row.conversations.count}}</span>
+              </div>
+              <div class="trend">
+                <img
+                  src="https://cdn.builder.io/api/v1/image/assets/43632c7bd1d84079a851d9b51a08f2e5/8b4d7cca74c8aaf7210d27cfd5ba101a7b08666577dec6bd04493b6100a9e246?apiKey=43632c7bd1d84079a851d9b51a08f2e5&"
+                  alt=""
+                  aria-hidden="true"
+                />
+                <span>{{row.conversations.trend}}%</span>
+              </div>
+            </div>
+            <div class="table-cell actions">
+              <button class="details-btn">
+                <span>View Details</span>
+                <img
+                  src="https://cdn.builder.io/api/v1/image/assets/43632c7bd1d84079a851d9b51a08f2e5/3263935affdd2733f957e2d8ed84e36c00fb218bbb11a4bfb836d4e6e01cafda?apiKey=43632c7bd1d84079a851d9b51a08f2e5&"
+                  alt=""
+                  aria-hidden="true"
+                />
+              </button>
+            </div>
+          </div>
+        </div>
+      </main>
+      <app-chart style="height: 450px;" *ngIf="selectedTab.name === 'Trends'"></app-chart>
+    </div>
+  </main>
+</div>

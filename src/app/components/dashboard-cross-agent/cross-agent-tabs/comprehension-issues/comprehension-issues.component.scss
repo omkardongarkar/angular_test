@@ -1,0 +1,135 @@
+.performance-section {
+  border-radius: 8px;
+  padding: 12px;
+  width: 100%;
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
+  background: #ffffff;
+  box-sizing: border-box;
+  height: max-content;
+
+  .performance-box {
+    padding: 5px;
+
+    .heading-and-icon {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+    }
+
+    h2 {
+      font-size: 14px;
+      color: #333;
+      margin: 5px 5px 10px 5px;
+
+    }
+
+    h5 {
+      font-size: 12px;
+      font-weight: 600;
+      color: #171717;
+      margin: 5px;
+    }
+
+    ol {
+      margin-top: 16px;
+      padding-left: 20px;
+
+      li {
+        padding: 3px;
+        font-size: 12px;
+      }
+    }
+  }
+}
+
+// Responsive Design
+@media (max-width: 768px) {
+  .main-content {
+    padding: 10px;
+  }
+
+  .performance-section {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+///////
+.chart-container {
+  border-radius: 8px;
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
+  background-color: #fff;
+  padding: 12px;
+  width: 100%;
+  box-sizing: border-box;
+
+  .chart-header {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+
+    .chart-title {
+      font-family:
+        Inter,
+        -apple-system,
+        Roboto,
+        Helvetica,
+        sans-serif;
+      font-size: 12px;
+      color: #000;
+      font-weight: 600;
+      letter-spacing: 0px;
+      line-height: 2;
+      margin: 0;
+      flex: 1;
+    }
+
+    .info-icon {
+      aspect-ratio: 1;
+      object-fit: contain;
+      object-position: center;
+      width: 16px;
+      align-self: stretch;
+      margin-top: auto;
+      margin-bottom: auto;
+      flex-shrink: 0;
+    }
+  }
+
+  .chart-body {
+    background-color: #fff;
+    min-height: 239px;
+    padding: 8px;
+    height: 300px;
+  }
+}
+
+
+
+
+.multiple-graph-section{
+  margin-top: 16px;
+  display: flex;
+
+  gap: 16px;
+  // width: 100%;
+
+  .left-chart{
+    width: 50%;
+  }
+
+  .right-chart{
+    width: 50%;
+    // border: 1px solid red;
+  }
+
+  .centered-body{
+    display: flex;
+    align-items: center;
+    // border: 1px solid black;
+  }
+}

@@ -1,0 +1,80 @@
+<div class="dashboard-container">
+  <div class="dashboard-row">
+    <section class="dashboard-card bar-chart-card">
+      <header class="card-header">
+        <h2 class="card-title">
+          Daily Count of Users Requesting Information About Product Warranties
+        </h2>
+        <div class="info-icon-container">
+          <img
+            src="https://cdn.builder.io/api/v1/image/assets/TEMP/7871c070ca430b0c883cfe870e3c445a8feb0af5e985495ec8558fb068955065?placeholderIfAbsent=true&apiKey=43632c7bd1d84079a851d9b51a08f2e5"
+            class="info-icon"
+            alt="Information icon"
+          />
+        </div>
+      </header>
+      <div class="chart-container">
+        <app-bar-chart [chartData]="barChartData"></app-bar-chart>
+      </div>
+    </section>
+
+    <section class="dashboard-card pie-chart-card">
+      <header class="card-header">
+        <h2 class="card-title">Most Common Questions About Product Warranties</h2>
+        <div class="info-icon-container">
+          <img
+            src="https://cdn.builder.io/api/v1/image/assets/TEMP/7871c070ca430b0c883cfe870e3c445a8feb0af5e985495ec8558fb068955065?placeholderIfAbsent=true&apiKey=43632c7bd1d84079a851d9b51a08f2e5"
+            class="info-icon"
+            alt="Information icon"
+          />
+        </div>
+      </header>
+      <div class="chart-container">
+        <app-pie-chart [chartData]="pieChartData"></app-pie-chart>
+      </div>
+    </section>
+  </div>
+
+  <div class="dashboard-row">
+    <section class="dashboard-card performance-card">
+      <header class="card-header">
+        <h2 class="card-title">Weekly Assessment of ChatAgent's Performance (Browsing Time)</h2>
+        <div class="info-icon-container">
+          <img
+            src="https://cdn.builder.io/api/v1/image/assets/TEMP/7871c070ca430b0c883cfe870e3c445a8feb0af5e985495ec8558fb068955065?placeholderIfAbsent=true&apiKey=43632c7bd1d84079a851d9b51a08f2e5"
+            class="info-icon"
+            alt="Information icon"
+          />
+        </div>
+      </header>
+      <div class="card-content">
+        <ol class="assessment-list">
+          <li *ngFor="let item of assessmentItems">
+            <span class="list-item-title">{{ item.title }}</span>: {{ item.content }}
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="dashboard-card support-card">
+      <header class="card-header">
+        <h2 class="card-title">Weekly Review of Additional Support That Could Have Been Offered</h2>
+        <div class="info-icon-container">
+          <img
+            src="https://cdn.builder.io/api/v1/image/assets/TEMP/7871c070ca430b0c883cfe870e3c445a8feb0af5e985495ec8558fb068955065?placeholderIfAbsent=true&apiKey=43632c7bd1d84079a851d9b51a08f2e5"
+            class="info-icon"
+            alt="Information icon"
+          />
+        </div>
+      </header>
+      <div class="card-content">
+        <ol class="support-list">
+          <li *ngFor="let item of supportItems">
+            <span class="list-item-title">{{ item.title }}</span>
+            {{ item.content }}
+          </li>
+        </ol>
+      </div>
+    </section>
+  </div>
+</div>

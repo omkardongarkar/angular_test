@@ -1,0 +1,159 @@
+<!-- <aside class="topics-list" aria-label="Topics filter">
+  <header class="list-header">
+    <span class="selected-badge" role="status">Selected :{{selectedCount}}</span>
+    <div class="stats">
+      <span class="stat">
+        <img
+          src="https://cdn.builder.io/api/v1/image/assets/43632c7bd1d84079a851d9b51a08f2e5/2f4bcdb12f340c5dfba1c73cf74ceaec286fe19967c4aaf0c8d93e37090d09f9?apiKey=43632c7bd1d84079a851d9b51a08f2e5&"
+          alt=""
+        />
+        {{totalCount}}
+      </span>
+      <span class="stat">
+        <img
+          src="https://cdn.builder.io/api/v1/image/assets/43632c7bd1d84079a851d9b51a08f2e5/4de893d458164e129728c3a5674264a51b2002d0ca0faa23f00aa3a5bf058741?apiKey=43632c7bd1d84079a851d9b51a08f2e5&"
+          alt=""
+        />
+        {{totalPercentage}}%
+      </span>
+    </div>
+    <button class="clear-btn" (click)="clearSelection()" aria-label="Clear selection">
+      Clear
+      <img
+        src="https://cdn.builder.io/api/v1/image/assets/43632c7bd1d84079a851d9b51a08f2e5/842e1a4381c8716e497c57f548cd86108a0ac00bd6356971b4f2e40f58d4c45d?apiKey=43632c7bd1d84079a851d9b51a08f2e5&"
+        alt=""
+      />
+    </button>
+  </header>
+
+  <div class="topics" role="list">
+    <div
+      *ngFor="let topic of topics"
+      class="topic-item"
+      role="listitem"
+      [style.--topic-color]="topic.color"
+    >
+      <input
+        type="checkbox"
+        [(ngModel)]="topic.selected" 
+        [id]="'topic-' + topic.id"
+        [checked]="topic.selected"
+        (change)="countSelected()"
+        class="topic-checkbox"
+      />
+      <label [for]="'topic-' + topic.id" class="topic-label">
+        <span class="topic-badge">
+          <img [src]="topic.icon" [alt]="topic.label + ' icon'" />
+          {{topic.label}}
+        </span>
+        <span class="topic-stats">
+          <span class="count"><img
+            src="https://cdn.builder.io/api/v1/image/assets/43632c7bd1d84079a851d9b51a08f2e5/2f4bcdb12f340c5dfba1c73cf74ceaec286fe19967c4aaf0c8d93e37090d09f9?apiKey=43632c7bd1d84079a851d9b51a08f2e5&"
+            alt=""
+          />{{topic.count}}</span>
+          <span class="percentage"><img
+            src="https://cdn.builder.io/api/v1/image/assets/43632c7bd1d84079a851d9b51a08f2e5/4de893d458164e129728c3a5674264a51b2002d0ca0faa23f00aa3a5bf058741?apiKey=43632c7bd1d84079a851d9b51a08f2e5&"
+            alt=""
+          />{{topic.percentage}}%</span>
+        </span>
+      </label>
+      <div
+        class="topic-progress"
+        [style.width.%]="topic.percentage"
+        role="progressbar"
+        [attr.aria-valuenow]="topic.percentage"
+        aria-valuemin="0"
+        aria-valuemax="100"
+      ></div>
+    </div>
+  </div>
+</aside> -->
+
+
+<div class="insights-table-wrapper">
+  <aside class="insights-panel" role="complementary" aria-label="Emotional insights">
+    <div class="panel-header">
+      <div class="badge">Selected : {{selectedCount}}</div>
+      <div class="metric">
+        <img
+          src="https://cdn.builder.io/api/v1/image/assets/43632c7bd1d84079a851d9b51a08f2e5/8f9ea952f63d74202d0aa1d80e50a74de635fe968b6a5cc79821745f0c3a009f?apiKey=43632c7bd1d84079a851d9b51a08f2e5&"
+          alt=""
+          aria-hidden="true"
+        />
+        <span class="panel-text">124</span>
+      </div>
+      <div class="trend">
+        <img
+          src="https://cdn.builder.io/api/v1/image/assets/43632c7bd1d84079a851d9b51a08f2e5/ad5795b6f35550ddac3e94a7708c51487bb35aaccbecfc933455dd320362f585?apiKey=43632c7bd1d84079a851d9b51a08f2e5&"
+          alt=""
+          aria-hidden="true"
+        />
+        <span class="panel-text">65%</span>
+      </div>
+      <div class="separator"></div>
+      <button class="clear-btn" (click)="clearFilters()">
+        <span>Clear</span>
+        <img
+          src="https://cdn.builder.io/api/v1/image/assets/43632c7bd1d84079a851d9b51a08f2e5/1730922da4a35314aa1393df6eaaa493e4f5c1cb59368ad1ba5448d4e9fa1319?apiKey=43632c7bd1d84079a851d9b51a08f2e5&"
+          alt=""
+          aria-hidden="true"
+        />
+      </button>
+    </div>
+
+<div class="topics-list">
+<div
+  *ngFor="let topic of topics"
+  class="topic-item"
+  role="article"
+  [attr.aria-label]="topic.topics + ' insight'"
+>
+  <div class="topic-header">
+    <div class="topic-badge">
+      <input 
+type="checkbox" 
+[(ngModel)]="topic.selected" 
+[id]="'checkbox-' + topic.topics" 
+class="topic-checkbox"
+(change)="countSelected()"
+/>
+      <img [src]="topic.icon" alt="" aria-hidden="true" />
+      <span>{{topic.topics}}</span>
+    </div>
+    <span class="topic-cell">
+    <span class="metric">
+      <img
+        src="https://cdn.builder.io/api/v1/image/assets/43632c7bd1d84079a851d9b51a08f2e5/8f9ea952f63d74202d0aa1d80e50a74de635fe968b6a5cc79821745f0c3a009f?apiKey=43632c7bd1d84079a851d9b51a08f2e5&"
+        alt=""
+        aria-hidden="true"
+      />
+      <span>{{topic.users}}</span>
+    </span>
+    <span class="trend">
+      <img
+        src="https://cdn.builder.io/api/v1/image/assets/43632c7bd1d84079a851d9b51a08f2e5/ad5795b6f35550ddac3e94a7708c51487bb35aaccbecfc933455dd320362f585?apiKey=43632c7bd1d84079a851d9b51a08f2e5&"
+        alt=""
+        aria-hidden="true"
+      />
+      <span>{{topic.percentage}}%</span>
+    </span>
+  </span>
+  </div>
+  <div
+    class="topic-bar"
+    [style.background-color]="topic.color"
+    [style.width.%]="topic.percentage"
+    role="progressbar"
+    [attr.aria-valuenow]="topic.percentage"
+    aria-valuemin="0"
+    aria-valuemax="100"
+  ></div>
+</div>
+</div>      
+
+</aside>
+
+<!-- <section class="visualization" role="region" aria-label="Data visualization">
+<app-scatter-chart></app-scatter-chart>
+</section> -->
+</div>

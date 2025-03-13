@@ -1,0 +1,78 @@
+/* You can add global styles to this file, and also import other style files */
+/* Slim scrollbar styling for Webkit-based browsers (Chrome, Edge, Safari) */
+
+// .topics-list::-webkit-scrollbar {
+//   width: 6px;
+//   /* Slim scrollbar width */
+// }
+
+// .topics-list::-webkit-scrollbar-thumb {
+//   background-color: #888;
+//   /* Color of the scrollbar thumb */
+//   border-radius: 10px;
+//   /* Rounded corners */
+// }
+
+// .topics-list::-webkit-scrollbar-thumb:hover {
+//   background-color: #555;
+//   /* Darker color on hover */
+// }
+
+// .topics-list::-webkit-scrollbar-track {
+//   background-color: #f1f1f1;
+//   /* Track background */
+// }
+
+// /* For Firefox */
+// .topics-list {
+//   scrollbar-width: thin;
+//   /* Slim scrollbar */
+//   scrollbar-color: #888 #f1f1f1;
+//   /* Thumb color and track color */
+// }
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+// Custom Styles
+
+.m-5 {
+  margin: 5px !important;
+}
+
+
+/* For Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #c4c4c4 #f1f1f1;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Custom scrollbar styles */
+::-webkit-scrollbar {
+  width: 8px; /* Width of the scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Track background color */
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c4c4c4; /* Scrollbar thumb color */
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8; /* Thumb color on hover */
+}
+

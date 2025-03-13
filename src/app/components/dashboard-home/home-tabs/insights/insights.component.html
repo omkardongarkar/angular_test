@@ -1,0 +1,63 @@
+<section class="insights-container">
+    <header class="insights-header">Insights</header>
+    <div class="insights-content">
+        <article *ngFor="let item of insightItems" class="insight-item" [attr.aria-label]="
+          'Insight: ' + item.text + (item.trend ? ' ' + item.trend.value : '')
+        ">
+            <div class="insight-text-wrapper">
+                <!-- Simple text insight -->
+                <p *ngIf="!item.badge && !item.trend" class="insight-text">
+                    {{ item.text }}
+                </p>
+
+                <!-- Insight with badge and/or trend -->
+                <p *ngIf="item.badge || item.trend" class="insight-text-with-details">
+                    <span>{{ item.text }}</span>
+                    <span *ngIf="item.badge" class="badge">{{ item.badge.text }}</span>
+                    <span *ngIf="item.trend">has increased by</span>
+                    <span *ngIf="item.trend" [class.success]="item.trend.type === 'up'"
+                        [class.danger]="item.trend.type === 'down'">
+                        {{ item.trend.percentage }}
+                    </span>
+                    <span *ngIf="item.trend">
+                        <ng-container *ngIf="item.trend.type === 'up'; else down">
+                            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
+                                xmlns="http://www.w3.org/2000/svg" class="trend-up-icon"
+                                style="width: 14px; height: 14px; margin: 0 4px">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M13.2459 3.67085C13.4737 3.89866 13.4737 4.26801 13.2459 4.49581L8.28752 9.45415C8.05971 9.68195 7.69037 9.68195 7.46256 9.45415L4.95837 6.94996L1.57919 10.3291C1.35138 10.557 0.982034 10.557 0.754228 10.3291C0.526423 10.1013 0.526423 9.73199 0.754228 9.50419L4.5459 5.71252C4.7737 5.48472 5.14305 5.48472 5.37085 5.71252L7.87504 8.21671L12.4209 3.67085C12.6487 3.44305 13.018 3.44305 13.2459 3.67085Z"
+                                    fill="#16A34A"></path>
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M8.75 4.08333C8.75 3.76117 9.01117 3.5 9.33333 3.5H12.8333C13.1555 3.5 13.4167 3.76117 13.4167 4.08333V7.58333C13.4167 7.9055 13.1555 8.16667 12.8333 8.16667C12.5112 8.16667 12.25 7.9055 12.25 7.58333V4.66667H9.33333C9.01117 4.66667 8.75 4.4055 8.75 4.08333Z"
+                                    fill="#16A34A"></path>
+                            </svg>
+                        </ng-container>
+                        <ng-template #down>
+                            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
+                                xmlns="http://www.w3.org/2000/svg" class="trend-down-icon"
+                                style="width: 14px; height: 14px; margin: 0 4px">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M0.754228 3.67085C0.982034 3.44305 1.35138 3.44305 1.57919 3.67085L4.95837 7.05004L7.46256 4.54585C7.69037 4.31805 8.05971 4.31805 8.28752 4.54585L13.2459 9.50419C13.4737 9.73199 13.4737 10.1013 13.2459 10.3291C13.018 10.557 12.6487 10.557 12.4209 10.3291L7.87504 5.78329L5.37085 8.28748C5.14305 8.51528 4.7737 8.51528 4.5459 8.28748L0.754228 4.49581C0.526423 4.26801 0.526423 3.89866 0.754228 3.67085Z"
+                                    fill="#DC2626"></path>
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M12.8333 5.83398C13.1555 5.83398 13.4167 6.09515 13.4167 6.41732V9.91732C13.4167 10.2395 13.1555 10.5007 12.8333 10.5007H9.33333C9.01117 10.5007 8.75 10.2395 8.75 9.91732C8.75 9.59515 9.01117 9.33398 9.33333 9.33398H12.25V6.41732C12.25 6.09515 12.5112 5.83398 12.8333 5.83398Z"
+                                    fill="#DC2626"></path>
+                            </svg>
+                        </ng-template>
+                    </span>
+                    <span *ngIf="item.trend">{{ formatRelativeDays(item.trend.relativeDays) }}</span>
+                </p>
+            </div>
+
+            <!-- Chevron icon for detailed view -->
+            <div *ngIf="item.hasDetailedView" class="chevron-wrapper">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"
+                    class="chevron-icon" style="width: 16px; height: 16px; flex-shrink: 0">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M5.52864 3.52925C5.78899 3.2689 6.2111 3.2689 6.47145 3.52925L10.4714 7.52925C10.7318 7.7896 10.7318 8.21171 10.4714 8.47206L6.47145 12.4721C6.2111 12.7324 5.78899 12.7324 5.52864 12.4721C5.26829 12.2117 5.26829 11.7896 5.52864 11.5292L9.05723 8.00065L5.52864 4.47206C5.26829 4.21171 5.26829 3.7896 5.52864 3.52925Z"
+                        fill="#171717"></path>
+                </svg>
+            </div>
+        </article>
+    </div>
+</section>

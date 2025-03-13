@@ -1,0 +1,102 @@
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css"
+/>
+<link
+  href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+  rel="stylesheet"
+/>
+
+<section class="dashboard">
+  <div class="front-row">  <article class="card card-bar">
+    <header class="card-header">
+      <h2 class="title">Daily Average Time Spent Browsing Before Purchase</h2>
+      <button class="menu-icon">
+        <i class="ti ti-dots-vertical"></i>
+      </button>
+    </header>
+    <div class="chart-container">
+      <canvas #dailyCountChart></canvas>
+      <div class="legend">
+        <div class="legend-item">
+          <div class="legend-color"></div>
+          <span class="legend-text">Average Browsing Time (Minutes)</span>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- Pie Chart Card -->
+  <article class="card scard-pie">
+    <header class="card-header">
+      <h2 class="title">Factors Contributing to Time Spent Browsing</h2>
+      <button class="menu-icon">
+        <i class="ti ti-dots-vertical"></i>
+      </button>
+    </header>
+    <div class="pie-chart-container">
+      <canvas #pieChart></canvas>
+      <div class="pie-chart-labels">
+        <!-- <div class="pie-label top-right">
+          <span class="label-text">Frequent Navigation Issues</span>
+          <span class="label-value green">10.26%</span>
+        </div>
+        <div class="pie-label middle-right">
+          <span class="label-text">Product Comparisons</span>
+          <span class="label-value red">25.64%</span>
+        </div>
+        <div class="pie-label bottom">
+          <span class="label-text">Complex Product Categories</span>
+          <span class="label-value blue">38.46%</span>
+        </div>
+        <div class="pie-label middle-left">
+          <span class="label-text">Limited Search Filters</span>
+          <span class="label-value purple">17.09%</span> -->
+        <!-- </div> -->
+        <!-- <div class="pie-label top-left">
+          <span class="label-text">Unclear Product Descriptions</span>
+          <span class="label-value orange">8.55%</span>
+        </div> -->
+      </div>
+    </div>
+  </article>
+</div>
+  <!-- Assessment Card -->
+  <div class="front-row">
+  <article class="card assessment-card">
+    <header class="card-header">
+      <h2 class="title">
+        Weekly Assessment of ChatAgent's Performance (Browsing Time)
+      </h2>
+      <button class="menu-icon">
+        <i class="ti ti-dots-vertical"></i>
+      </button>
+    </header>
+    <div class="assessment-content">
+      <p class="assessment-item" *ngFor="let item of assessmentData">
+        <span class="label">{{ item.label }}</span>
+        <span>{{ item.value }}</span>
+      </p>
+    </div>
+  </article>
+
+  <!-- Review Card -->
+  <article class="card review-card">
+    <header class="card-header">
+      <h2 class="title">
+        Weekly Review of Additional Support That Could Have Been Offered
+      </h2>
+      <button class="menu-icon">
+        <i class="ti ti-dots-vertical"></i>
+      </button>
+    </header>
+    <div class="review-content">
+      <div class="review-item" *ngFor="let item of reviewData">
+        <span class="label">{{ item.label }}</span>
+        <span>{{ item.description }}</span>
+        <p class="example">{{ item.example }}</p>
+      </div>
+    </div>
+  </article>
+  </div>
+</section>

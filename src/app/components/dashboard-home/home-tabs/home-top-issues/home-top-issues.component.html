@@ -1,0 +1,133 @@
+  <section class="insights-table-wrapper">
+    <aside class="insights-panel" role="complementary" aria-label="Emotional insights">
+      <div class="panel-header">
+        <div class="metric">
+          <img
+            src="https://cdn.builder.io/api/v1/image/assets/43632c7bd1d84079a851d9b51a08f2e5/8f9ea952f63d74202d0aa1d80e50a74de635fe968b6a5cc79821745f0c3a009f?apiKey=43632c7bd1d84079a851d9b51a08f2e5&"
+            alt="" aria-hidden="true" />
+          <span class="panel-text">124</span>
+        </div>
+        <div class="trend">
+          <img
+            src="https://cdn.builder.io/api/v1/image/assets/43632c7bd1d84079a851d9b51a08f2e5/ad5795b6f35550ddac3e94a7708c51487bb35aaccbecfc933455dd320362f585?apiKey=43632c7bd1d84079a851d9b51a08f2e5&"
+            alt="" aria-hidden="true" />
+          <span class="panel-text">65%</span>
+        </div>
+        <div class="separator"></div>
+        <button class="clear-btn" (click)="clearFilters()">
+          <span>Clear</span>
+          <img
+            src="https://cdn.builder.io/api/v1/image/assets/43632c7bd1d84079a851d9b51a08f2e5/1730922da4a35314aa1393df6eaaa493e4f5c1cb59368ad1ba5448d4e9fa1319?apiKey=43632c7bd1d84079a851d9b51a08f2e5&"
+            alt="" aria-hidden="true" />
+        </button>
+      </div>
+
+      <div class="topics-list">
+        <div *ngFor="let topic of topics" class="topic-item" role="article"
+          [attr.aria-label]="topic.topics + ' insight'">
+          <div class="topic-header">
+            <div class="topic-badge">
+              <!-- <input type="checkbox" [(ngModel)]="topic.selected" [id]="'checkbox-' + topic.topics" class="topic-checkbox"
+                (change)="countSelected()" /> -->
+              <img [src]="topic.icon" alt="" aria-hidden="true" />
+              <span>{{topic.topics}}</span>
+            </div>
+            <span class="topic-cell">
+              <span class="metric">
+                <img
+                  src="https://cdn.builder.io/api/v1/image/assets/43632c7bd1d84079a851d9b51a08f2e5/8f9ea952f63d74202d0aa1d80e50a74de635fe968b6a5cc79821745f0c3a009f?apiKey=43632c7bd1d84079a851d9b51a08f2e5&"
+                  alt="" aria-hidden="true" />
+                <span>{{topic.users}}</span>
+              </span>
+              <span class="trend">
+                <img
+                  src="https://cdn.builder.io/api/v1/image/assets/43632c7bd1d84079a851d9b51a08f2e5/ad5795b6f35550ddac3e94a7708c51487bb35aaccbecfc933455dd320362f585?apiKey=43632c7bd1d84079a851d9b51a08f2e5&"
+                  alt="" aria-hidden="true" />
+                <span>{{topic.percentage}}%</span>
+              </span>
+            </span>
+          </div>
+          <div class="topic-bar" [style.background-color]="topic.color" [style.width.%]="topic.percentage"
+            role="progressbar" [attr.aria-valuenow]="topic.percentage" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+      </div>
+    </aside>
+    <div class="data-table" role="main">
+      <div class="table-header">
+        <div class="header-cell" (click)="sortData('users')">
+          <span>Users</span>
+          <img
+            src="https://cdn.builder.io/api/v1/image/assets/43632c7bd1d84079a851d9b51a08f2e5/5609bf6db0bd62762a97479e65e5ecc02326e8e0269c3decc7654d4e6ec0dd79?apiKey=43632c7bd1d84079a851d9b51a08f2e5&"
+            alt="" aria-hidden="true" />
+        </div>
+        <div class="header-cell" (click)="sortData('retention')">
+          <span>Retention</span>
+          <img
+            src="https://cdn.builder.io/api/v1/image/assets/43632c7bd1d84079a851d9b51a08f2e5/5609bf6db0bd62762a97479e65e5ecc02326e8e0269c3decc7654d4e6ec0dd79?apiKey=43632c7bd1d84079a851d9b51a08f2e5&"
+            alt="" aria-hidden="true" />
+        </div>
+        <div class="header-cell">Interacations</div>
+        <div class="header-cell">Error Rate</div>
+      </div>
+      <div class="table-body">
+        <div *ngFor="let row of data" class="table-row" role="row">
+          <div class="table-cell">
+            <div class="metric">
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets/43632c7bd1d84079a851d9b51a08f2e5/8f9ea952f63d74202d0aa1d80e50a74de635fe968b6a5cc79821745f0c3a009f?apiKey=43632c7bd1d84079a851d9b51a08f2e5&"
+                alt="" aria-hidden="true" />
+              <span>{{row.users.count}}</span>
+            </div>
+            <div class="trend">
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets/43632c7bd1d84079a851d9b51a08f2e5/ad5795b6f35550ddac3e94a7708c51487bb35aaccbecfc933455dd320362f585?apiKey=43632c7bd1d84079a851d9b51a08f2e5&"
+                alt="" aria-hidden="true" />
+              <span>{{row.users.trend}}%</span>
+            </div>
+          </div>
+          <div class="table-cell">
+            <div class="metric">
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets/43632c7bd1d84079a851d9b51a08f2e5/1ff76d4ab5ea99ceaf90114a8cf2722653f4f9e3a3ce9af33a7a3c7b045f7120?apiKey=43632c7bd1d84079a851d9b51a08f2e5&"
+                alt="" aria-hidden="true" />
+              <span>{{row.retention}}%</span>
+            </div>
+          </div>
+          <div class="table-cell">
+            <div class="metric">
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets/43632c7bd1d84079a851d9b51a08f2e5/8490da28982ead191faec65048904966affe4b50e80137654093246d169f4162?apiKey=43632c7bd1d84079a851d9b51a08f2e5&"
+                alt="" aria-hidden="true" />
+              <span>{{row.interactions.count}}</span>
+            </div>
+            <div class="trend">
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets/43632c7bd1d84079a851d9b51a08f2e5/8b4d7cca74c8aaf7210d27cfd5ba101a7b08666577dec6bd04493b6100a9e246?apiKey=43632c7bd1d84079a851d9b51a08f2e5&"
+                alt="" aria-hidden="true" />
+              <span>{{row.interactions.trend}}%</span>
+            </div>
+          </div>
+          <div class="table-cell">
+            <div class="trend">
+              <!-- <img
+                src="https://cdn.builder.io/api/v1/image/assets/43632c7bd1d84079a851d9b51a08f2e5/8b4d7cca74c8aaf7210d27cfd5ba101a7b08666577dec6bd04493b6100a9e246?apiKey=43632c7bd1d84079a851d9b51a08f2e5&"
+                alt="" aria-hidden="true" /> -->
+              <span>{{row.errorRate}}%</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="chart-container">
+    <div class="chart-header">
+        <h2 class="chart-title">Support Tickets Created Each Day (Last Week)</h2>
+        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/49cbf7a06e7bf7591d08b489a5214211a9ef8d50b9c9c0768af7275788bf54fd?placeholderIfAbsent=true&apiKey=43632c7bd1d84079a851d9b51a08f2e5"
+            alt="Information icon" class="info-icon" />
+    </div>
+    <div class="chart-body">
+        <canvas #supportTicketsChart aria-label="Support Tickets Created Each Day (Last Week)" role="img"></canvas>
+    </div>
+</section>

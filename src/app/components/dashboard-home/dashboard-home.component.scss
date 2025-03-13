@@ -1,0 +1,216 @@
+.dashboard-container {
+    // display: grid;
+    // grid-template-rows: auto 1fr;
+    // height: 100vh;
+    // max-height: 1080px;
+    height: max-content;
+    background: var(--background, #fff);
+    box-sizing: border-box ;
+
+    .header {
+      border-bottom: 1px solid #d4d4d4;
+      padding: 4px 24px;
+      /* Reduced the top and bottom padding */
+    }
+  
+    .filter-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #d4d4d4;
+      padding: 4px 24px 4px 24px;
+    }
+    
+    .date-range {
+      .badge {
+        display: flex;
+        align-items: center;
+        background-color: #f5f5f5;
+        border: 1px solid #d4d4d4;
+        border-radius: 9999px;
+        padding: 4px 8px;
+        white-space: nowrap;
+    
+        .date-range-text {
+          font-size: 12px;
+          margin-right: 4px;
+        }
+    
+        .calendar-icon {
+          width: 12px;
+          height: 12px;
+        }
+      }
+    }
+    
+    .filter-options {
+      display: flex;
+      align-items: center;
+    
+      .time-range-buttons {
+        display: flex;
+        border: 1px solid #d4d4d4;
+        border-radius: 6px;
+        overflow: hidden;
+    
+        .time-range-button {
+          font-size: 12px;
+          font-weight: 500;
+          padding: 6px 8px;
+          border: none;
+          background-color: #fff;
+          cursor: pointer;
+    
+          &:not(:last-child) {
+            border-right: 1px solid #d4d4d4;
+          }
+    
+          &.active {
+            background-color: #f5f5f5;
+          }
+    
+          &.custom {
+            display: flex;
+            align-items: center;
+    
+            .custom-icon {
+              width: 16px;
+              height: 16px;
+              margin-right: 4px;
+            }
+          }
+    
+          &.more-options {
+            padding: 6px;
+    
+            .more-icon {
+              width: 16px;
+              height: 16px;
+            }
+          }
+        }
+      }
+    
+      .filter-button {
+        display: flex;
+        align-items: center;
+        font-size: 12px;
+        font-weight: 500;
+        padding: 6px 12px;
+        border: 1px solid #d4d4d4;
+        border-radius: 6px;
+        background-color: #fff;
+        margin-left: 8px;
+        cursor: pointer;
+    
+        .filter-icon {
+          width: 16px;
+          height: 16px;
+          margin-right: 4px;
+        }
+      }
+    
+      .additional-options-icon {
+        width: 16px;
+        height: 16px;
+        margin-left: 8px;
+        cursor: pointer;
+      }
+    }
+  
+    .icon {
+      width: 16px;
+      height: 16px;
+      object-fit: contain;
+    }
+  
+    .metrics-grid {
+      display: flex;
+      gap: 5px;
+      padding: 0 10px;
+      border-bottom: 1px solid #d4d4d4;
+      background: #fff;
+      // background: #F5F5F5;
+  
+      .metric-card {
+        padding: 8px;
+        background: #fff;
+        // background: #F5F5F5;
+        text-align: center;
+        cursor: pointer;
+  
+        .metric-title {
+          font-size: 12px;
+          color: #737373;
+          margin: 0 0 4px;
+        }
+  
+        .metric-value {
+          font-size: 18px;
+          font-weight: 600;
+          color: #171717;
+          margin: 0;
+        }
+      }
+  
+      .metric-card.active {
+        background: #eef2ff;
+        border-bottom: 2px solid #4f46e5;
+      }
+  
+      .metric-card:hover {
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+    }
+  
+    .home-content {
+      width: 100%;
+      display: flex;
+      overflow: auto;
+      background: #F5F5F5;
+      box-sizing: border-box;
+      // padding: 2px;
+      // border: 2px solid red;
+      
+      .main-analytics{
+        width: 75%;
+        padding: 16px;
+        // background: #fff;
+        // border: 1px solid black;
+      }
+  
+      .insights{
+        width: 25%;
+
+        // background: #FFF;
+
+      }
+  
+    }
+  
+    @media (max-width: 600px) {
+      .metrics-grid {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        padding: 0 10px;
+  
+        .metric-card {
+          padding: 10px;
+  
+          .metric-title {
+            font-size: 11px;
+          }
+  
+          .metric-value {
+            font-size: 16px;
+          }
+        }
+      }
+    }
+  
+    @media (max-width: 991px) {
+      .header {
+        padding: 8px 20px;
+      }
+    }
+  
+  }

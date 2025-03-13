@@ -1,0 +1,29 @@
+<nav class="tab-nav" role="tablist">
+  <button
+    role="tab"
+    [attr.aria-selected]="activeTab === 'overview'"
+    class="tab"
+    [class.active]="activeTab === 'overview'"
+    (click)="setActiveTab('overview')"
+  >
+    <svg viewBox="0 0 24 24" width="16" height="16">
+      <path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z" />
+    </svg>
+    <span>Overview</span>
+  </button>
+
+  <button
+    role="tab"
+    [attr.aria-selected]="activeTab === 'problems'"
+    class="tab"
+    [class.active]="activeTab === 'problems'"
+    (click)="setActiveTab('problems')"
+  >
+    <svg viewBox="0 0 24 24" width="16" height="16">
+      <path
+        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"
+      />
+    </svg>
+    <span>Problems Identified</span>
+  </button>
+</nav>

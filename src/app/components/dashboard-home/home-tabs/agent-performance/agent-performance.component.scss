@@ -1,0 +1,234 @@
+.performance-header {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  gap: 10px;
+  color: #171717;
+  line-height: 2;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  @media (max-width: 991px) {
+    max-width: 100%;
+  }
+}
+
+.agent-filter {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+}
+
+.checkbox-input {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 4px;
+  border: 1px solid rgba(79, 70, 229, 1);
+  outline: none;
+  cursor: pointer;
+  position: relative;
+
+  &:checked::before {
+    content: "✓";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: rgba(79, 70, 229, 1);
+    font-size: 12px;
+  }
+}
+
+.checkbox-label {
+  font-weight: 500;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.filter-button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.filter-icon {
+  aspect-ratio: 1;
+  object-fit: contain;
+  object-position: center;
+  width: 16px;
+}
+
+
+
+// SCSS file for Agent Performance Component
+.chart-section {
+  background: #FFF;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
+
+  h5 {
+    font-size: 14px;
+    color: #333;
+    margin: 5px 5px 10px 5px;
+  }
+
+  .chart-graph {
+    height: 300px;
+    margin-top: 10px;
+    padding: 10px;
+  }
+}
+
+.factors-style {
+  background: #FFF;
+  padding: 10px;
+  border-radius: 8px;
+
+  h2 {
+    font-size: 14px;
+    color: #333;
+    margin: 5px 5px 10px 5px;
+  }
+
+  h5 {
+    font-size: 12px;
+    font-weight: 600;
+    color: #171717;
+    margin: 5px;
+  }
+
+  .list-style {
+    margin-top: 10px;
+    padding-left: 20px;
+
+    li {
+      padding: 2px;
+      font-size: 12px;
+    }
+  }
+}
+
+.performance-section {
+  border-radius: 8px;
+  padding: 12px;
+  margin-top: 16px;
+  width: 100%;
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
+  background: #ffffff;
+  box-sizing: border-box;
+
+  .performance-box {
+    padding: 5px;
+
+    .heading-and-icon {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+    }
+
+    h2 {
+      font-size: 14px;
+      color: #333;
+      margin: 5px 5px 10px 5px;
+
+    }
+
+    h5 {
+      font-size: 12px;
+      font-weight: 600;
+      color: #171717;
+      margin: 5px;
+    }
+
+    ol {
+      margin-top: 16px;
+      padding-left: 20px;
+
+      li {
+        padding: 3px;
+        font-size: 12px;
+      }
+    }
+  }
+}
+
+// Responsive Design
+@media (max-width: 768px) {
+  .main-content {
+    padding: 10px;
+  }
+
+  .performance-section {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+///////
+.chart-container {
+  border-radius: 8px;
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
+  background-color: #fff;
+  padding: 12px;
+  width: 100%;
+  box-sizing: border-box;
+
+  .chart-header {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+
+    .chart-title {
+      font-family:
+        Inter,
+        -apple-system,
+        Roboto,
+        Helvetica,
+        sans-serif;
+      font-size: 12px;
+      color: #000;
+      font-weight: 600;
+      letter-spacing: 0px;
+      line-height: 2;
+      margin: 0;
+      flex: 1;
+    }
+
+    .info-icon {
+      aspect-ratio: 1;
+      object-fit: contain;
+      object-position: center;
+      width: 16px;
+      align-self: stretch;
+      margin-top: auto;
+      margin-bottom: auto;
+      flex-shrink: 0;
+    }
+  }
+
+  .chart-body {
+    background-color: #fff;
+    min-height: 239px;
+    padding: 8px;
+    height: 300px;
+  }
+}

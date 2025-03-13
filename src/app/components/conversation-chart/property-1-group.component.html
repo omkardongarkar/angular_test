@@ -1,0 +1,82 @@
+<div class="property-group">
+  <div class="chart-container">
+   <app-scatter-chart (click)="onChartClick()"></app-scatter-chart>
+  </div>
+
+  <div class="summary-container" *ngIf="showSummary">
+    <div class="summary-header">
+      <div class="summary-title">Summary of Interactions</div>
+      <div class="info-icon">
+        <img
+          src="https://cdn.builder.io/api/v1/image/assets/TEMP/931097e7006c92d4f3210137c7948f43d1465958f94896c8e45116102b0adfb4?placeholderIfAbsent=true&apiKey=43632c7bd1d84079a851d9b51a08f2e5"
+          alt="Info"
+          class="icon"
+        />
+      </div>
+    </div>
+
+    <p class="summary-text">
+      Three users dropped off during interactions with the product support bot
+      due to unmet expectations: one received generic answers to a compatibility
+      query, another couldn't get tailored troubleshooting guidance, and the
+      third faced unresolved issues with warranty registration.
+    </p>
+
+    <div class="interactions-section">
+      <div class="interactions-header">
+        <div class="header-content">
+          <div class="interactions-title">Interactions</div>
+          <div class="badge">3</div>
+        </div>
+      </div>
+
+      <div class="interactions-list">
+        <div class="interaction-card">
+          <div class="card-content">
+            <div class="interaction-title">
+              Request for Bulk Discount on Laptops
+            </div>
+            <div class="interaction-date">Jul 15, 2024 08:30:00</div>
+          </div>
+          <div class="card-icon">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/edb17fb6281b8eeed03af542f7196e1aa267aff43ad929149b1987ebb9b078df?placeholderIfAbsent=true&apiKey=43632c7bd1d84079a851d9b51a08f2e5"
+              alt="Icon"
+              class="icon"
+            />
+          </div>
+        </div>
+
+        <div class="interaction-card">
+          <div class="card-content">
+            <div class="interaction-title">Aggressive Request for Discount</div>
+            <div class="interaction-date">Jul 15, 2024 08:30:00</div>
+          </div>
+          <div class="card-icon">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/edb17fb6281b8eeed03af542f7196e1aa267aff43ad929149b1987ebb9b078df?placeholderIfAbsent=true&apiKey=43632c7bd1d84079a851d9b51a08f2e5"
+              alt="Icon"
+              class="icon"
+            />
+          </div>
+        </div>
+
+        <div class="interaction-card">
+          <div class="card-content">
+            <div class="interaction-title">
+              Discount Request for Damaged Item
+            </div>
+            <div class="interaction-date">Jul 15, 2024 08:30:00</div>
+          </div>
+          <div class="card-icon">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/edb17fb6281b8eeed03af542f7196e1aa267aff43ad929149b1987ebb9b078df?placeholderIfAbsent=true&apiKey=43632c7bd1d84079a851d9b51a08f2e5"
+              alt="Icon"
+              class="icon"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

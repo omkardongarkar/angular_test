@@ -1,0 +1,504 @@
+<div class="user-types-container">
+  <div class="filter-bar">
+    <div class="date-range">
+      <div class="badge">
+        <span class="filter-text">Jul 1st - Sep 30</span>
+        <img
+          src="https://cdn.builder.io/api/v1/image/assets/TEMP/56f4684ebdc720c103690290ce1f657357b66f0b82bad52908e6e9c6cd8904ee?placeholderIfAbsent=true&apiKey=43632c7bd1d84079a851d9b51a08f2e5"
+          alt="Calendar icon"
+          class="calendar-icon"
+        />
+      </div>
+    </div>
+    <div class="filter-options">
+      <div class="button-group">
+        <button class="btn btn-default">Default</button>
+        <button class="btn btn-custom">
+          <img
+            src="https://cdn.builder.io/api/v1/image/assets/TEMP/0f30085e7267d7261145423e52382723d64374936731b30a8f1c3d8a8ce9a051?placeholderIfAbsent=true&apiKey=43632c7bd1d84079a851d9b51a08f2e5"
+            alt="Custom icon"
+            class="custom-icon"
+          />
+          <span>Custom</span>
+        </button>
+        <button class="btn">Today</button>
+        <button class="btn">7D</button>
+        <button class="btn">30D</button>
+        <button class="btn">3M</button>
+        <button class="btn">6M</button>
+        <button class="btn">12M</button>
+        <button class="btn">Q1</button>
+        <button class="btn">Q2</button>
+        <button class="btn">Q3</button>
+        <button class="btn">Q4</button>
+        <button class="btn btn-icon">
+          <img
+            src="https://cdn.builder.io/api/v1/image/assets/TEMP/e73d21c2c0a5f83faa149cd1ccb57bd43b33715e92e9acbc6ea3bdb7a4491d04?placeholderIfAbsent=true&apiKey=43632c7bd1d84079a851d9b51a08f2e5"
+            alt="More options"
+            class="more-icon"
+          />
+        </button>
+      </div>
+      <img
+        src="https://cdn.builder.io/api/v1/image/assets/TEMP/ad800c4e14d7d68965539205f8f9f96477ae97fad45b326068fb9ad34cc51415?placeholderIfAbsent=true&apiKey=43632c7bd1d84079a851d9b51a08f2e5"
+        alt="Filter icon"
+        class="filter-icon"
+      />
+    </div>
+  </div>
+
+  <div class="content-area">
+    <div class="tab-section">
+      <div class="tab-group" role="tablist" >
+        <button *ngFor="let tab of TabGroup" role="tab" aria-selected="false" (click)="selectTab(tab)" [ngClass]="tab.isSelect ? 'tab-btn active':'tab-btn'">
+          <ng-container *ngIf="tab.id !== 3; else svgIcon">
+          <img [src]="tab.icon" alt="" class="icon" />
+        </ng-container>
+        <ng-template #svgIcon>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-trending-up"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+        </ng-template>
+          {{tab.name}}
+        </button>
+      </div>
+      <div class="search-add">
+        <div class="search-bar">
+          <img
+            src="https://cdn.builder.io/api/v1/image/assets/TEMP/c4c28c4817c2b9afc5873292cd64ddd19f2cc13ae0fff99354c1ef5946242f1b?placeholderIfAbsent=true&apiKey=43632c7bd1d84079a851d9b51a08f2e5"
+            alt="Search icon"
+            class="search-icon"
+          />
+          <input type="text" placeholder="Search here..." aria-label="Search" />
+        </div>
+        <button class="add-btn">
+          <img
+            src="https://cdn.builder.io/api/v1/image/assets/TEMP/4962d2a40a392ab1201c2e162e16742d65cb509ff00e8704d35b3e8cceca1526?placeholderIfAbsent=true&apiKey=43632c7bd1d84079a851d9b51a08f2e5"
+            alt="Add icon"
+            class="add-icon"
+          />
+          <span>Add User Type</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="main-content">
+      <aside class="user-types-list">
+        <h2 class="list-header">User Types</h2>
+        <ul class="type-list">
+          <li class="type-item">
+            <span class="type-name">Enterprise Customers</span>
+            <!-- <div class="type-bar enterprise"></div> -->
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/ecadc860a636ff63eecf34dfa4c537dd9c212d398a4c452400c9fd80ac5b3b3a?placeholderIfAbsent=true&apiKey=43632c7bd1d84079a851d9b51a08f2e5"
+              alt="More options"
+              class="more-icon"
+            />
+          </li>
+          <div
+          class="topic-bar"
+          style="background-color: blue;"          [style.width.%]=74
+          role="progressbar"
+          [attr.aria-valuenow]=74
+          aria-valuemin="0"
+          aria-valuemax="100"
+        ></div>
+          <li class="type-item">
+            <span class="type-name">Low-Satisfaction Users</span>
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/ecadc860a636ff63eecf34dfa4c537dd9c212d398a4c452400c9fd80ac5b3b3a?placeholderIfAbsent=true&apiKey=43632c7bd1d84079a851d9b51a08f2e5"
+              alt="More options"
+              class="more-icon"
+            />
+          </li>
+          <div
+          class="topic-bar"
+          style="background-color: blue;"          [style.width.%]=54
+          role="progressbar"
+          [attr.aria-valuenow]=54
+          aria-valuemin="0"
+          aria-valuemax="100"
+        ></div>
+          <li class="type-item">
+            <span class="type-name">Refund/Return Users</span>
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/ecadc860a636ff63eecf34dfa4c537dd9c212d398a4c452400c9fd80ac5b3b3a?placeholderIfAbsent=true&apiKey=43632c7bd1d84079a851d9b51a08f2e5"
+              alt="More options"
+              class="more-icon"
+            />
+          </li>
+          <div
+          class="topic-bar"
+          style="background-color: violet;"          [style.width.%]=24
+          role="progressbar"
+          [attr.aria-valuenow]=24
+          aria-valuemin="0"
+          aria-valuemax="100"
+        ></div>
+          <li class="type-item">
+            <span class="type-name">Repetitive Query Users</span>
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/ecadc860a636ff63eecf34dfa4c537dd9c212d398a4c452400c9fd80ac5b3b3a?placeholderIfAbsent=true&apiKey=43632c7bd1d84079a851d9b51a08f2e5"
+              alt="More options"
+              class="more-icon"
+            />
+          </li>
+          <div
+          class="topic-bar"
+          style="background-color: red;"          [style.width.%]=94
+          role="progressbar"
+          [attr.aria-valuenow]=94
+          aria-valuemin="0"
+          aria-valuemax="100"
+        ></div>
+          <li class="type-item">
+            <span class="type-name">Frequent Users</span>
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/ecadc860a636ff63eecf34dfa4c537dd9c212d398a4c452400c9fd80ac5b3b3a?placeholderIfAbsent=true&apiKey=43632c7bd1d84079a851d9b51a08f2e5"
+              alt="More options"
+              class="more-icon"
+            />
+          </li>
+          <div
+          class="topic-bar"
+          style="background-color: orange;"          [style.width.%]=14
+          role="progressbar"
+          [attr.aria-valuenow]=14
+          aria-valuemin="0"
+          aria-valuemax="100"
+        ></div>
+        </ul>
+      </aside>
+
+      <main class="data-table" *ngIf="selectedTab.name === 'Table'">
+        <div class="table-header">
+          <div class="header-cell">
+            <span>Users</span>
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/78421f6ed82ba32c3fbb7eb28bc69a03cdd909f3e4cd1a68a2decd1e6b0be7f1?placeholderIfAbsent=true&apiKey=43632c7bd1d84079a851d9b51a08f2e5"
+              alt="Sort icon"
+              class="sort-icon"
+            />
+          </div>
+          <div class="header-cell">
+            <span>Retention</span>
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/78421f6ed82ba32c3fbb7eb28bc69a03cdd909f3e4cd1a68a2decd1e6b0be7f1?placeholderIfAbsent=true&apiKey=43632c7bd1d84079a851d9b51a08f2e5"
+              alt="Sort icon"
+              class="sort-icon"
+            />
+          </div>
+          <div class="header-cell">
+            <span>Interactions</span>
+          </div>
+          <div class="header-cell">
+            <button class="export-btn">
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets/TEMP/e6551de112ca8590682d7f92f8e39202f385725b3fd809b92d87919aed829d84?placeholderIfAbsent=true&apiKey=43632c7bd1d84079a851d9b51a08f2e5"
+                alt="Export icon"
+                class="export-icon"
+              />
+              <span>Export CSV</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="table-body">
+          <div class="table-row">
+            <div class="table-cell">
+              <div class="cell-content">
+                <img
+                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/2052a01493205a2ce51dabcf9a59a2c26a3de092f976183777c4df97e198063b?placeholderIfAbsent=true&apiKey=43632c7bd1d84079a851d9b51a08f2e5"
+                  alt="Users icon"
+                  class="cell-icon"
+                />
+                <span>47</span>
+                <img
+                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/308394564985cf831e3307ea359b9a6c1506d6d750e097f8885ce7af1ca6454b?placeholderIfAbsent=true&apiKey=43632c7bd1d84079a851d9b51a08f2e5"
+                  alt="Percentage icon"
+                  class="cell-icon"
+                />
+                <span>23%</span>
+              </div>
+            </div>
+            <div class="table-cell">
+              <div class="cell-content">
+                <img
+                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/a22f1580afdbc0617480cb693bdfd8a07a1900b295fc06eb792ddfaaf27c2ad1?placeholderIfAbsent=true&apiKey=43632c7bd1d84079a851d9b51a08f2e5"
+                  alt="Retention icon"
+                  class="cell-icon"
+                />
+                <span>23%</span>
+              </div>
+            </div>
+            <div class="table-cell">
+              <div class="cell-content">
+                <img
+                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/669e0f86f5fc479922893c4fa6be6de2359d0ec11512c67c9637c15f119c59c5?placeholderIfAbsent=true&apiKey=43632c7bd1d84079a851d9b51a08f2e5"
+                  alt="Interactions icon"
+                  class="cell-icon"
+                />
+                <span>47</span>
+                <img
+                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/40b0d3e440cf23875143951bef288ff9ac875502fa524ce98f237a8ea193180b?placeholderIfAbsent=true&apiKey=43632c7bd1d84079a851d9b51a08f2e5"
+                  alt="Percentage icon"
+                  class="cell-icon"
+                />
+                <span>12%</span>
+              </div>
+             
+            </div>
+            <div class="table-cell">
+              <button class="view-btn">
+                <span>View Details</span>
+                <img
+                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/3263935affdd2733f957e2d8ed84e36c00fb218bbb11a4bfb836d4e6e01cafda?placeholderIfAbsent=true&apiKey=43632c7bd1d84079a851d9b51a08f2e5"
+                  alt="View icon"
+                  class="view-icon"
+                />
+              </button>
+            </div>
+          </div>
+
+          <div class="table-row">
+            <div class="table-cell">
+              <div class="cell-content">
+                <img
+                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/2052a01493205a2ce51dabcf9a59a2c26a3de092f976183777c4df97e198063b?placeholderIfAbsent=true&apiKey=43632c7bd1d84079a851d9b51a08f2e5"
+                  alt="Users icon"
+                  class="cell-icon"
+                />
+                <span>12</span>
+                <img
+                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/f33ac3a395808d2f7d9d2ad06436bd4c9b26656879b3a878047dd5ea61a5598a?placeholderIfAbsent=true&apiKey=43632c7bd1d84079a851d9b51a08f2e5"
+                  alt="Percentage icon"
+                  class="cell-icon"
+                />
+                <span>20%</span>
+              </div>
+            </div>
+            <div class="table-cell">
+              <div class="cell-content">
+                <img
+                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/a22f1580afdbc0617480cb693bdfd8a07a1900b295fc06eb792ddfaaf27c2ad1?placeholderIfAbsent=true&apiKey=43632c7bd1d84079a851d9b51a08f2e5"
+                  alt="Retention icon"
+                  class="cell-icon"
+                />
+                <span>30%</span>
+              </div>
+            </div>
+            <div class="table-cell">
+              <div class="cell-content">
+                <img
+                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/669e0f86f5fc479922893c4fa6be6de2359d0ec11512c67c9637c15f119c59c5?placeholderIfAbsent=true&apiKey=43632c7bd1d84079a851d9b51a08f2e5"
+                  alt="Interactions icon"
+                  class="cell-icon"
+                />
+                <span>19</span>
+                <img
+                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/3ba15ba13b75104022af6708653f7db10f565118543ac8b46c0130a3dbe96efc?placeholderIfAbsent=true&apiKey=43632c7bd1d84079a851d9b51a08f2e5"
+                  alt="Percentage icon"
+                  class="cell-icon"
+                />
+                <span>15%</span>
+              </div>
+              <div class="cell-content">
+                
+              </div>
+            </div>
+            <div class="table-cell">
+              <button class="view-btn">
+                <span>View Details</span>
+                <img
+                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/3263935affdd2733f957e2d8ed84e36c00fb218bbb11a4bfb836d4e6e01cafda?placeholderIfAbsent=true&apiKey=43632c7bd1d84079a851d9b51a08f2e5"
+                  alt="View icon"
+                  class="view-icon"
+                />
+              </button>
+            </div>
+          </div>
+
+          <div class="table-row">
+            <div class="table-cell">
+              <div class="cell-content">
+                <img
+                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/2052a01493205a2ce51dabcf9a59a2c26a3de092f976183777c4df97e198063b?placeholderIfAbsent=true&apiKey=43632c7bd1d84079a851d9b51a08f2e5"
+                  alt="Users icon"
+                  class="cell-icon"
+                />
+                <span>56</span>
+              </div>
+              <div class="cell-content">
+                <img
+                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/fbd865bdf96e879fe675b6ff24c5f3aac13628bb3b3e89b865ec02c81290a012?placeholderIfAbsent=true&apiKey=43632c7bd1d84079a851d9b51a08f2e5"
+                  alt="Percentage icon"
+                  class="cell-icon"
+                />
+                <span>25%</span>
+              </div>
+            </div>
+            <div class="table-cell">
+              <div class="cell-content">
+                <img
+                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/a22f1580afdbc0617480cb693bdfd8a07a1900b295fc06eb792ddfaaf27c2ad1?placeholderIfAbsent=true&apiKey=43632c7bd1d84079a851d9b51a08f2e5"
+                  alt="Retention icon"
+                  class="cell-icon"
+                />
+                <span>25%</span>
+              </div>
+            </div>
+            <div class="table-cell">
+              <div class="cell-content">
+                <img
+                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/669e0f86f5fc479922893c4fa6be6de2359d0ec11512c67c9637c15f119c59c5?placeholderIfAbsent=true&apiKey=43632c7bd1d84079a851d9b51a08f2e5"
+                  alt="Interactions icon"
+                  class="cell-icon"
+                />
+                <span>52</span>
+              </div>
+              <div class="cell-content">
+                <img
+                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/e8c8c99278192233364337647c294aaa765fb7af81d5ec4b30ec1ea5a5d2220e?placeholderIfAbsent=true&apiKey=43632c7bd1d84079a851d9b51a08f2e5"
+                  alt="Percentage icon"
+                  class="cell-icon"
+                />
+                <span>10%</span>
+              </div>
+            </div>
+            <div class="table-cell">
+              <button class="view-btn">
+                <span>View Details</span>
+                <img
+                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/3263935affdd2733f957e2d8ed84e36c00fb218bbb11a4bfb836d4e6e01cafda?placeholderIfAbsent=true&apiKey=43632c7bd1d84079a851d9b51a08f2e5"
+                  alt="View icon"
+                  class="view-icon"
+                />
+              </button>
+            </div>
+          </div>
+
+          <div class="table-row">
+            <div class="table-cell">
+              <div class="cell-content">
+                <img
+                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/2052a01493205a2ce51dabcf9a59a2c26a3de092f976183777c4df97e198063b?placeholderIfAbsent=true&apiKey=43632c7bd1d84079a851d9b51a08f2e5"
+                  alt="Users icon"
+                  class="cell-icon"
+                />
+                <span>73</span>
+              </div>
+              <div class="cell-content">
+                <img
+                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/2efe507d5eee12339258202a00df288dcc87a368e88a61f92c8c518a739857ae?placeholderIfAbsent=true&apiKey=43632c7bd1d84079a851d9b51a08f2e5"
+                  alt="Percentage icon"
+                  class="cell-icon"
+                />
+                <span>28%</span>
+              </div>
+            </div>
+            <div class="table-cell">
+              <div class="cell-content">
+                <img
+                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/a22f1580afdbc0617480cb693bdfd8a07a1900b295fc06eb792ddfaaf27c2ad1?placeholderIfAbsent=true&apiKey=43632c7bd1d84079a851d9b51a08f2e5"
+                  alt="Retention icon"
+                  class="cell-icon"
+                />
+                <span>27%</span>
+              </div>
+            </div>
+            <div class="table-cell">
+              <div class="cell-content">
+                <img
+                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/669e0f86f5fc479922893c4fa6be6de2359d0ec11512c67c9637c15f119c59c5?placeholderIfAbsent=true&apiKey=43632c7bd1d84079a851d9b51a08f2e5"
+                  alt="Interactions icon"
+                  class="cell-icon"
+                />
+                <span>15</span>
+              </div>
+              <div class="cell-content">
+                <img
+                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/c806d22965976708edac0095b41675d4329b870914a7dc6d2c2bcfec8eb681c0?placeholderIfAbsent=true&apiKey=43632c7bd1d84079a851d9b51a08f2e5"
+                  alt="Percentage icon"
+                  class="cell-icon"
+                />
+                <span>13%</span>
+              </div>
+            </div>
+            <div class="table-cell">
+              <button class="view-btn">
+                <span>View Details</span>
+                <img
+                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/3263935affdd2733f957e2d8ed84e36c00fb218bbb11a4bfb836d4e6e01cafda?placeholderIfAbsent=true&apiKey=43632c7bd1d84079a851d9b51a08f2e5"
+                  alt="View icon"
+                  class="view-icon"
+                />
+              </button>
+            </div>
+          </div>
+
+          <div class="table-row">
+            <div class="table-cell">
+              <div class="cell-content">
+                <img
+                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/2052a01493205a2ce51dabcf9a59a2c26a3de092f976183777c4df97e198063b?placeholderIfAbsent=true&apiKey=43632c7bd1d84079a851d9b51a08f2e5"
+                  alt="Users icon"
+                  class="cell-icon"
+                />
+                <span>18</span>
+              </div>
+              <div class="cell-content">
+                <img
+                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/18b61dab83df07dfbfc10bb061d533dd806a1b5705c3af93d6ab62b33c8b7847?placeholderIfAbsent=true&apiKey=43632c7bd1d84079a851d9b51a08f2e5"
+                  alt="Percentage icon"
+                  class="cell-icon"
+                />
+                <span>22%</span>
+              </div>
+            </div>
+            <div class="table-cell">
+              <div class="cell-content">
+                <img
+                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/a22f1580afdbc0617480cb693bdfd8a07a1900b295fc06eb792ddfaaf27c2ad1?placeholderIfAbsent=true&apiKey=43632c7bd1d84079a851d9b51a08f2e5"
+                  alt="Retention icon"
+                  class="cell-icon"
+                />
+                <span>20%</span>
+              </div>
+            </div>
+            <div class="table-cell">
+              <div class="cell-content">
+                <img
+                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/669e0f86f5fc479922893c4fa6be6de2359d0ec11512c67c9637c15f119c59c5?placeholderIfAbsent=true&apiKey=43632c7bd1d84079a851d9b51a08f2e5"
+                  alt="Interactions icon"
+                  class="cell-icon"
+                />
+                <span>41</span>
+              </div>
+              <div class="cell-content">
+                <img
+                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/01fbead8d71d7836570bfb26ecdcd634aa76a30c21da1fab2ca14ad476a02502?placeholderIfAbsent=true&apiKey=43632c7bd1d84079a851d9b51a08f2e5"
+                  alt="Percentage icon"
+                  class="cell-icon"
+                />
+                <span>12%</span>
+              </div>
+            </div>
+            <div class="table-cell">
+              <button class="view-btn">
+                <span>View Details</span>
+                <img
+                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/3263935affdd2733f957e2d8ed84e36c00fb218bbb11a4bfb836d4e6e01cafda?placeholderIfAbsent=true&apiKey=43632c7bd1d84079a851d9b51a08f2e5"
+                  alt="View icon"
+                  class="view-icon"
+                />
+              </button>
+            </div>
+          </div>
+        </div>
+      </main>
+      <section class="visualization" role="region" aria-label="Data visualization" *ngIf="selectedTab.name === 'Map'">
+        <app-scatter-chart></app-scatter-chart>
+      </section>
+      <app-chart style="height: 300px;" *ngIf="selectedTab.name === 'Trends'"></app-chart>
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,12 @@
+<section class="metrics-grid" role="region" aria-label="Analytics metrics">
+  <div
+    *ngFor="let metric of metrics"
+    class="metric-card"
+    [class.active]="metric.isActive"
+    role="article"
+    [attr.aria-label]="metric.title + ' metric'"
+  >
+    <h2 class="metric-title">{{metric.title}}</h2>
+    <p class="metric-value">{{metric.value}}</p>
+  </div>
+</section>

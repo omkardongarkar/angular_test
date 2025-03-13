@@ -1,0 +1,78 @@
+<div class="experiments-container">
+  <div class="header">
+    <div class="tab active">Experiments</div>
+    <div class="tab">Flags</div>
+  </div>
+  <div class="content">
+    <div class="actions">
+      <div class="search">
+        <img
+          src="https://cdn.builder.io/api/v1/image/assets/TEMP/c4c28c4817c2b9afc5873292cd64ddd19f2cc13ae0fff99354c1ef5946242f1b?placeholderIfAbsent=true&apiKey=43632c7bd1d84079a851d9b51a08f2e5"
+          alt=""
+          class="search-icon"
+        />
+        <input type="text" placeholder="Search here..." class="search-input" />
+      </div>
+      <button class="create-button">
+        <img
+          src="https://cdn.builder.io/api/v1/image/assets/TEMP/ee399056a437ee40565fd639d7750ef3a6c80021a28372b9a7c5445eabbd532e?placeholderIfAbsent=true&apiKey=43632c7bd1d84079a851d9b51a08f2e5"
+          alt=""
+          class="create-icon"
+        />
+        Create Experiment
+      </button>
+    </div>
+    <table class="experiments-table">
+      <thead>
+        <tr>
+          <th>Experiment</th>
+          <th>
+            Status
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/6ed7549059cd442d68e8bc65e804e82e95f031bacda9c6fc7944977ffc9fba82?placeholderIfAbsent=true&apiKey=43632c7bd1d84079a851d9b51a08f2e5"
+              alt=""
+              class="sort-icon"
+            />
+          </th>
+          <th>
+            Duration
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/6ed7549059cd442d68e8bc65e804e82e95f031bacda9c6fc7944977ffc9fba82?placeholderIfAbsent=true&apiKey=43632c7bd1d84079a851d9b51a08f2e5"
+              alt=""
+              class="sort-icon"
+            />
+          </th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let experiment of experiments">
+          <td style="color: blue;">{{ experiment.name }}</td>
+          <td>
+            <span
+              class="badge"
+              [ngClass]="{'active': experiment.status === 'Active', 'inactive': experiment.status === 'Inactive'}"
+            >
+              {{ experiment.status }}
+            </span>
+          </td>
+          <td>
+            <div>{{ experiment.duration }}</div>
+            <div class="start-date">Started on {{ experiment.startDate }}</div>
+          </td>
+          <td>
+            <button class="details-btn">
+              <span>View Details</span>
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets/43632c7bd1d84079a851d9b51a08f2e5/3263935affdd2733f957e2d8ed84e36c00fb218bbb11a4bfb836d4e6e01cafda?apiKey=43632c7bd1d84079a851d9b51a08f2e5&"
+                alt=""
+                aria-hidden="true"
+              />
+
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,54 @@
+
+
+  <!-- <div>
+    <div #map></div>
+  </div>  -->
+
+
+  <!-- Daily Users -->
+  <section class="chart-container">
+    <div class="chart-header">
+      <h2 class="chart-title">Users over Time</h2>
+      <img
+        src="https://cdn.builder.io/api/v1/image/assets/TEMP/49cbf7a06e7bf7591d08b489a5214211a9ef8d50b9c9c0768af7275788bf54fd?placeholderIfAbsent=true&apiKey=43632c7bd1d84079a851d9b51a08f2e5"
+        alt="Information icon" class="info-icon" />
+    </div>
+    <div class="chart-body">
+      <canvas #usersLineChart id="usersLineChart" aria-label="Users over Time Chart" role="img"></canvas>
+    </div>
+  </section>
+
+  <div class="multiple-graph-section">
+    <!-- Device and Platform Usage -->
+    <section class="chart-container left-chart">
+      <div class="chart-header">
+        <h2 class="chart-title">Device and Platform Usage</h2>
+        <img
+          src="https://cdn.builder.io/api/v1/image/assets/TEMP/49cbf7a06e7bf7591d08b489a5214211a9ef8d50b9c9c0768af7275788bf54fd?placeholderIfAbsent=true&apiKey=43632c7bd1d84079a851d9b51a08f2e5"
+          alt="Information icon" class="info-icon" />
+      </div>
+      <div class="chart-body centered-body">
+        <canvas #devicePieChart id="devicePieChart" aria-label="Device and Platform Usage Chart" role="img"></canvas>
+      </div>
+    </section>
+
+    <!-- Users by Region -->
+    <section class="chart-container right-chart">
+      <div class="chart-header">
+        <h2 class="chart-title">Users by Region</h2>
+        <img
+          src="https://cdn.builder.io/api/v1/image/assets/TEMP/49cbf7a06e7bf7591d08b489a5214211a9ef8d50b9c9c0768af7275788bf54fd?placeholderIfAbsent=true&apiKey=43632c7bd1d84079a851d9b51a08f2e5"
+          alt="Information icon" class="info-icon" />
+      </div>
+      <div class="chart-body centered-body">
+        <!-- [title]="title" -->
+
+        <google-chart
+        [type]="type"
+        [data]="data"
+        [options]="options"
+        style="width: 100%; height: 100%;">
+      </google-chart>
+      </div>
+    </section>
+  </div>

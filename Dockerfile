@@ -2,7 +2,7 @@ FROM node:20.14.0 AS demo-build
 WORKDIR /app
 COPY . .
 RUN npm install -g @angular/cli@17
-RUN npm install
+RUN npm install --legacy-peer-deps
 RUN ng build --aot
 
 FROM nginx:latest

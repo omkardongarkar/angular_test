@@ -6,6 +6,7 @@ RUN npm install --legacy-peer-deps
 RUN ng build --aot
 
 FROM nginx:latest
+COPY default.conf /etc/nginx/conf.d/default.conf
 RUN rm /usr/share/nginx/html/*.html
 WORKDIR /usr/share/nginx/html/
 COPY --from=demo-build /app/dist/chat-see/browser .

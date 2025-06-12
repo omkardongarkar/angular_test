@@ -6,7 +6,7 @@
 replicaCount: 1
 
 image:
-  repository: 211223789150.dkr.ecr.us-east-1.amazonaws.com/coachak/springboot-app
+  repository: 905418252631.dkr.ecr.us-east-1.amazonaws.com/test-eks
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
   tag: ""

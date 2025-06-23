@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: angular-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: angular-app
+  template:
+    metadata:
+      labels:
+        app: angular-app
+    spec:
+      containers:
+      - name: angular-app
+        image: self1.azurecr.io/self1/cs_app:ui_app
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 90
+# service type loadbalancer       
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: angular-app
+    k8s-app: angular-app
+  name: angular-app
+spec:
+  ports:
+  - name: http
+    port: 80
+    protocol: TCP
+    targetPort: 90
+  type: LoadBalancer
+  selector:
+    app: springboot-app

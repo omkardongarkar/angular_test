@@ -35,4 +35,4 @@ spec:
     targetPort: 90
   type: LoadBalancer
   selector:
-    app: springboot-app
+    app: angular-app

@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: angular-app
-        image: self1.azurecr.io/self1/cs_app:ui_app
+        image: self1.azurecr.io/self1/cs_app:ui_app1
         imagePullPolicy: Always
         ports:
         - containerPort: 90

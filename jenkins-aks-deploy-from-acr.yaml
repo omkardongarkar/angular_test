@@ -27,6 +27,9 @@ metadata:
     app: angular-app
     k8s-app: angular-app
   name: angular-app
+  annotations:
+    service.beta.kubernetes.io/azure-pip-name: da62b626-cca3-4069-b002-cdf040823d58
+    service.beta.kubernetes.io/azure-load-balancer-resource-group: test_env
 spec:
   ports:
   - name: http

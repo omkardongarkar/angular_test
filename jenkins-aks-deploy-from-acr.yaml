@@ -17,7 +17,7 @@ spec:
         image: self1.azurecr.io/self1/cs_app:ui_app1
         imagePullPolicy: Always
         ports:
-        - containerPort: 90
+        - containerPort: 80
 # service type loadbalancer       
 ---
 apiVersion: v1
@@ -35,7 +35,7 @@ spec:
   - name: http
     port: 80
     protocol: TCP
-    targetPort: 90
+    targetPort: 80
   type: LoadBalancer
   selector:
     app: angular-app
